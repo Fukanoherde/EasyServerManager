@@ -59,7 +59,7 @@ public class CMD_ListHome implements CommandExecutor {
             if (args.length == 1) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
-                File fileTarget = new File("plugins//EasySiedlerManager//Players", target.getUniqueId() + ".yml");
+                File fileTarget = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
                 YamlConfiguration configTarget = YamlConfiguration.loadConfiguration(fileTarget);
                 if (p.hasPermission("siedlermanager.gethomes.other") || p.hasPermission("siedlermanager.*")) {
                         if (fileTarget.exists()) {
