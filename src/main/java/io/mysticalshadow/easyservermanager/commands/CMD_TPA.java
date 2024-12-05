@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,8 +14,8 @@ public class CMD_TPA implements CommandExecutor {
 
     public static HashMap<Player, ArrayList<Player>> request = new HashMap<Player, ArrayList<Player>>();
 
-    private EasySiedlerManager plugin;
-    public CMD_TPA(EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_TPA(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("tpa").setExecutor(this);
     }

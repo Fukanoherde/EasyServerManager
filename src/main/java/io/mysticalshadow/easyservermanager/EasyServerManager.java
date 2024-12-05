@@ -1,14 +1,14 @@
 package io.mysticalshadow.easyservermanager;
 
-import io.siedlermc.easysiedlermanager.listener.InventoryManager;
-import io.siedlermc.easysiedlermanager.listener.PlayerManager;
-import io.siedlermc.easysiedlermanager.listener.ServerManager;
-import io.siedlermc.easysiedlermanager.manager.JailManager;
-import io.siedlermc.easysiedlermanager.manager.MaintenanceManager;
+import io.mysticalshadow.easyservermanager.listener.PlayerManager;
+import io.mysticalshadow.easyservermanager.listener.ServerManager;
+import io.mysticalshadow.easyservermanager.commands.*;
+import io.mysticalshadow.easyservermanager.manager.JailManager;
+import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,6 @@ public class EasyServerManager extends JavaPlugin {
     public boolean broadcast;
 
     private PlayerManager playerManager;
-    private InventoryManager inventoryManager;
     private ServerManager serverManager;
 
     private CMD_GameMode gameMode;
@@ -144,7 +143,7 @@ public class EasyServerManager extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§l  ");
         Bukkit.getConsoleSender().sendMessage("§9----------------------------------------");
     }
-    public static EasySiedlerManager getInstance() {
+    public static EasyServerManager getInstance() {
         return instance;
     }
     public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("SiedlerManager.Prefix"));

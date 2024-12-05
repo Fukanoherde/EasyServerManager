@@ -1,7 +1,7 @@
-package io.siedlermc.easysiedlermanager.listener;
+package io.mysticalshadow.easyservermanager.listener;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.MaintenanceManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,8 +9,8 @@ import org.bukkit.event.server.ServerListPingEvent;
 
 public class ServerManager implements Listener {
 
-    private EasySiedlerManager plugin;
-    public ServerManager(EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public ServerManager(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }

@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.manager;
+package io.mysticalshadow.easyservermanager.manager;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -18,11 +18,11 @@ import java.util.HashMap;
 
 public class ScoreboardManager {
 
-    private EasySiedlerManager plugin;
+    private EasyServerManager plugin;
     public static Scoreboard board;
     public static HashMap<Scoreboard, Player> boards = new HashMap();
 
-    public ScoreboardManager(EasySiedlerManager plugin) {
+    public ScoreboardManager(EasyServerManager plugin) {
         this.plugin = plugin;
     }
 

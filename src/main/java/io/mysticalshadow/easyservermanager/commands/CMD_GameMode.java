@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -9,8 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CMD_GameMode implements CommandExecutor {
-    private EasySiedlerManager plugin;
-    public CMD_GameMode(EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_GameMode(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("gamemode").setExecutor(this);
     }

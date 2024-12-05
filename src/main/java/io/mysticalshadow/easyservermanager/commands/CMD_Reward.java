@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -19,8 +19,8 @@ import java.util.Random;
 
 public class CMD_Reward implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Reward (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Reward (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("reward").setExecutor(this);
     }

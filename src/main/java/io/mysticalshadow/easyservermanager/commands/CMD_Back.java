@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -15,8 +15,8 @@ import java.io.IOException;
 
 public class CMD_Back implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Back (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Back (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("back").setExecutor(this);
     }

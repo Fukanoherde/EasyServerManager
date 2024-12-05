@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,8 +12,8 @@ import java.util.List;
 
 public class CMD_GodMode implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_GodMode (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_GodMode (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("god").setExecutor(this);
     }

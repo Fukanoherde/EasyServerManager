@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.manager;
+package io.mysticalshadow.easyservermanager.manager;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class MaintenanceManager {
 
-    public static File file = new File(EasySiedlerManager.getInstance().getDataFolder(), "maintenance.yml");
+    public static File file = new File(EasyServerManager.getInstance().getDataFolder(), "maintenance.yml");
     public static YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
     public static void loadFile () throws IOException {

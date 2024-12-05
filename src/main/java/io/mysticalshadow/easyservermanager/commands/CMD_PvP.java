@@ -1,7 +1,7 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.ScoreboardManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,13 +12,10 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class CMD_PvP implements CommandExecutor {
-    private EasySiedlerManager plugin;
-    public CMD_PvP (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_PvP (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("pvp").setExecutor(this);
     }

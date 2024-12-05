@@ -1,7 +1,7 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.JailManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.manager.JailManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,8 +15,8 @@ import java.io.IOException;
 
 public class CMD_Jail implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Jail (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Jail (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("jail").setExecutor(this);
     }

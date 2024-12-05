@@ -1,7 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.MaintenanceManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -17,8 +16,8 @@ import java.io.IOException;
 
 public class CMD_Home implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Home (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Home (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("home").setExecutor(this);
     }

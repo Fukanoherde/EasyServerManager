@@ -1,7 +1,7 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.ScoreboardManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,8 +15,8 @@ import java.io.IOException;
 
 public class CMD_Pay implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Pay (EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Pay (EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("pay").setExecutor(this);
     }

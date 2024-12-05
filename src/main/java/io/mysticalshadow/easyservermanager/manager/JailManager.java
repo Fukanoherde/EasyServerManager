@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.manager;
+package io.mysticalshadow.easyservermanager.manager;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class JailManager {
 
-    public static File file = new File(EasySiedlerManager.getInstance().getDataFolder(), "jail.yml");
+    public static File file = new File(EasyServerManager.getInstance().getDataFolder(), "jail.yml");
     public static YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
     public static void setJailPoint(Player p, String jailname) throws IOException {

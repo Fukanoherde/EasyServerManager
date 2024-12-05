@@ -1,6 +1,6 @@
-package io.siedlermc.easysiedlermanager.commands;
+package io.mysticalshadow.easyservermanager.commands;
 
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
+import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,8 +9,8 @@ import org.bukkit.entity.Player;
 
 public class CMD_Clear implements CommandExecutor {
 
-    private EasySiedlerManager plugin;
-    public CMD_Clear(EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public CMD_Clear(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("clear").setExecutor(this);
     }

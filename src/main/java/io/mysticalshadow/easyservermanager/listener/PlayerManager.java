@@ -1,10 +1,9 @@
-package io.siedlermc.easysiedlermanager.listener;
+package io.mysticalshadow.easyservermanager.listener;
 
+import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
+import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import io.siedlermc.easysiedlermanager.commands.CMD_GodMode;
-import io.siedlermc.easysiedlermanager.EasySiedlerManager;
-import io.siedlermc.easysiedlermanager.manager.JailManager;
-import io.siedlermc.easysiedlermanager.manager.MaintenanceManager;
-import io.siedlermc.easysiedlermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,8 +29,8 @@ import java.util.Date;
 
 public class PlayerManager implements Listener {
 
-    private EasySiedlerManager plugin;
-    public PlayerManager(EasySiedlerManager plugin) {
+    private EasyServerManager plugin;
+    public PlayerManager(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
