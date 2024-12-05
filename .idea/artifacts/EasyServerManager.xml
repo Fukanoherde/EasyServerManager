@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EasyServerManager">
+    <output-path>$PROJECT_DIR$/../../Fertige Plugins</output-path>
+    <root id="archive" name="EasyServerManager.jar">
+      <element id="module-output" name="EasyServerManager" />
+    </root>
+  </artifact>
+</component>

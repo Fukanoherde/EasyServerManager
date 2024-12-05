@@ -1,9 +1,9 @@
 package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
-import io.siedlermc.easysiedlermanager.commands.CMD_GodMode;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;

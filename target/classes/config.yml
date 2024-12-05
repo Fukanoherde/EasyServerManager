@@ -1,0 +1,28 @@
+##############################################################
+# SiedlerManager                                             #
+# Created by MysticalShadow95                                #
+# Support on Discord http://discord.aniheaven.net/           #
+# This system has a Copyright protection by MysticalShadow95 #
+# Minecraft version tested on 1.21.3                         #
+##############################################################
+SiedlerManager:
+  Prefix: "&8&l[&3&lEasy&b&lSiedler&3&lManager&8&l] &8"
+  AllowJoinMessage: true
+  AllowQuitMessage: true
+  Farminworld: farmwelt
+  MaxPlayers: 10
+##############################################################
+Messages:
+  JoinMessage: "&8[&a+&8] %player%"
+  QuitMessage: "&8[&4-&8] %player%"
+  MOTDHeader: "&3&lSiedlerMC &2&l| §aDeutschsprachiges Projekt"
+  MOTDFooter: "&4&lNEWS: &c&lIngame Voice &2&l| &c&lNew BanSystem"
+  MOTDMaintenance: "&4The server is currently undergoing maintenance work"
+  Discord: "&2JG9MCnquuK"
+##############################################################
+MySQL:
+  Username: "root"
+  Password: "press_here_youre_password"
+  Host: "localhost"
+  Datenbank: "servermanager"
+  Port: 3306
