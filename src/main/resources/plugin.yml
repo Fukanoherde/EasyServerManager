@@ -1,6 +1,6 @@
 name: EasyServerManager
 version: '2.5.7-SNAPSHOT'
-main: io.mysticalshadow.easyservermanager.EasySiedlerManager
+main: io.mysticalshadow.easyservermanager.EasyServerManager
 api-version: '1.21'
 authors:
   - MysticalShadow_95

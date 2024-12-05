@@ -1,4 +1,4 @@
-package io.siedlermc.easysiedlermanager;
+package io.mysticalshadow.easyservermanager;
 
 import io.siedlermc.easysiedlermanager.listener.InventoryManager;
 import io.siedlermc.easysiedlermanager.listener.PlayerManager;
@@ -9,7 +9,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
-import io.siedlermc.easysiedlermanager.commands.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +16,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class EasySiedlerManager extends JavaPlugin {
+public class EasyServerManager extends JavaPlugin {
 
-    public static EasySiedlerManager instance;
+    public static EasyServerManager instance;
     public static List<Player> vanish = new ArrayList<>();
     public static List<Player> fly = new ArrayList<>();
     public static List<Player> pvp = new ArrayList<>();
