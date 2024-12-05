@@ -167,7 +167,7 @@ public class ScoreboardManager {
         }
     }
     public static void updateBoard (Player p) {
-        File filePerPlayer = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File filePerPlayer = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(filePerPlayer);
         board = p.getScoreboard();
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");

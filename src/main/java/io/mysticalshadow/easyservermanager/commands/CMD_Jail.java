@@ -89,7 +89,7 @@ public class CMD_Jail implements CommandExecutor {
             if (args[0].equalsIgnoreCase("remove")) {
                 if (target != null) {
                     if (target != sender) {
-                        File fileTarget = new File("plugins//EasySiedlerManager//Players", target.getUniqueId() + ".yml");
+                        File fileTarget = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
                         YamlConfiguration configTarget = YamlConfiguration.loadConfiguration(fileTarget);
                         try {
                             configTarget.load(fileTarget);
