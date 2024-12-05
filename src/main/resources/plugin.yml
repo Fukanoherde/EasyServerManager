@@ -1,4 +1,90 @@
 name: EasyServerManager
 version: '2.5.7-SNAPSHOT'
-main: io.mysticalshadow.easyservermanager.EasyServerManager
+main: io.mysticalshadow.easyservermanager.EasySiedlerManager
 api-version: '1.21'
+authors:
+  - MysticalShadow_95
+  - Samus337
+commands:
+  gamemode:
+    aliases:
+      - gm
+    description: The change your gamemode or annother Player
+  kick:
+    description: You kick a Player from the Server
+  chatclear:
+    aliases:
+      - cc
+    description: You Cleared the Ingame Chat
+  teleport:
+    aliases:
+      - tp
+    description: You Teleport to the annother Player
+  vanish:
+    aliases:
+      - v
+    description: You can use it to make yourself invisible
+  time:
+    description: Change the ingame Time
+  weather:
+    description: Change the ingame Weather
+  invsee:
+    description: You can see what other players have in their inventory
+  tphere:
+    description: You can a player teleport to you
+  heal:
+    description: You can heal yourself or annother Player
+  ping:
+    description: Get your Ping
+  alert:
+    description: send a Player title message
+  clear:
+    description: Clear the player inventory
+  fly:
+    description: You can set your fly mode
+  tpa:
+    description: You can a player the tp requestion
+  farm:
+    description: You can teleport to the farmingworld
+  spawn:
+    description: You can teleport to the world
+  deposit:
+    aliases:
+      - depo
+    description: You can youre level deposit on the Database
+  payout:
+    description: You can youre level from the database payout
+  bank:
+    description: You can see amount level on your bank
+  strike:
+    description: You can Warning a annother player
+  strikes:
+    description: You can see Strikes on the Player
+  removestrike:
+    description: You can remove strike from the player
+  god:
+    description: Make players god mode
+  maintenance:
+    description: you set the maintenance status
+  jail:
+    description: you jailed a player
+  enderchest:
+    aliases:
+      - ec
+    description: You can open the enderchest from a player
+  setjail:
+    description: set a Jail
+  home:
+    description: Set your home or teleport your home
+  listhomes:
+    description:
+  reward:
+    description: U Can picked your daily reward
+  pay:
+    description: U can payed a annother player level
+  pvp:
+    description: U can your the PVP status activated
+  back:
+    description: U can teleport to your last death point
+  level:
+    description: U can teleport to your last death point
