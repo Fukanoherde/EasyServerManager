@@ -60,6 +60,18 @@ public class PlayerManager implements Listener {
         String orginal = date.format(new Date());
         p.setPlayerListHeaderFooter("§3Willkommen auf \n§3SiedlerMC\n\n§3Datum §2" + orginal + "\n\n§4§l----------------------------------\n","\n§4§l----------------------------------\n\n§3Unser Discord " + plugin.Discord + "\n§3Live-Map §2siedlermc.de:8123");
         p.sendTitle("§3Welcome on the", "§2Server: §4§lSiedlerMC", 45, 45, 45);
+        if (!fileplayer.exists()) {
+            config.set(p.getName() + ".Rewards.Pickup.Date.", null);
+            config.set(p.getName() + ".Level", 0);
+            config.set(p.getName() + ".Jail.Status", false);
+            config.set(p.getName() + ".PvP.Activated", false);
+            config.set(p.getName() + ".Homes", null);
+            try {
+                config.save(fileplayer);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         new BukkitRunnable() {
             @Override
             public void run() {

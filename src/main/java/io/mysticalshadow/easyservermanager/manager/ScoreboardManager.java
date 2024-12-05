@@ -27,7 +27,7 @@ public class ScoreboardManager {
     }
 
     public static void setBoard(Player p) {
-        File filePerPlayer = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File filePerPlayer = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(filePerPlayer);
 
         board = Bukkit.getScoreboardManager().getNewScoreboard();
