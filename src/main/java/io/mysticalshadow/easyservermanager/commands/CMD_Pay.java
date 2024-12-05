@@ -24,12 +24,12 @@ public class CMD_Pay implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+            File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
             YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
             if (args.length == 2) {
                 Player t = Bukkit.getPlayer(args[0]);
                 int level = Integer.parseInt(args[1]);
-                File fileTarget = new File("plugins//EasySiedlerManager//Players", t.getUniqueId() + ".yml");
+                File fileTarget = new File("plugins//EasyServerManager//Players", t.getUniqueId() + ".yml");
                 YamlConfiguration configTarget = YamlConfiguration.loadConfiguration(fileTarget);
                 if (t != null) {
                 if (config.isSet(p.getName() + "." + "Level")) {

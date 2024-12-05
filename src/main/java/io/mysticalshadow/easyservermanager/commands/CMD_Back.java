@@ -24,7 +24,7 @@ public class CMD_Back implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+            File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
             YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
             try {
                 config.load(file);

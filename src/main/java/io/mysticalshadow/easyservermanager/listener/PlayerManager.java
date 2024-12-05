@@ -51,7 +51,7 @@ public class PlayerManager implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        File fileplayer = new File("plugins//EasySiedlerManager//Players", p.getUniqueId().toString() + ".yml");
+        File fileplayer = new File("plugins//EasyServerManager//Players", p.getUniqueId().toString() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(fileplayer);
         for (int i = 0; i <= 1000; i++) {
             p.sendMessage(" ");
@@ -142,7 +142,7 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onBreak (BlockBreakEvent e) {
         Player p = (Player) e.getPlayer();
-        File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         try {
             config.load(file);
@@ -165,7 +165,7 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onPlace (BlockPlaceEvent e) {
         Player p = (Player) e.getPlayer();
-        File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         try {
             config.load(file);
@@ -188,7 +188,7 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onFood (FoodLevelChangeEvent e) {
         Player p = (Player) e.getEntity();
-        File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         try {
             config.load(file);
@@ -212,7 +212,7 @@ public class PlayerManager implements Listener {
         Player p = event.getEntity();
         Player target = event.getEntity().getKiller();
         event.setDeathMessage("");
-        File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         try {
             config.load(file);
@@ -277,7 +277,7 @@ public class PlayerManager implements Listener {
         if (e.getDamager() instanceof Player && e.getEntity() instanceof Player) {
             Player damaged = (Player) e.getEntity();
             Player damager = (Player) e.getDamager();
-            File file = new File("plugins//EasySiedlerManager//Players", damaged.getUniqueId() + ".yml");
+            File file = new File("plugins//EasyServerManager//Players", damaged.getUniqueId() + ".yml");
             YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
             if (e.getCause().equals(EntityDamageEvent.DamageCause.ENTITY_ATTACK)) {
                 try {

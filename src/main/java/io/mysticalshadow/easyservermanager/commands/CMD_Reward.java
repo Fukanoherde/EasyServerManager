@@ -28,7 +28,7 @@ public class CMD_Reward implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            File file = new File("plugins//EasySiedlerManager//Players", p.getUniqueId() + ".yml");
+            File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
             YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
             if (args.length == 0) {
                 SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");

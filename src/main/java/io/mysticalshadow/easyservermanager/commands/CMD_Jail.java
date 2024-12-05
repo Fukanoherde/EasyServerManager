@@ -28,7 +28,7 @@ public class CMD_Jail implements CommandExecutor {
             if (sender.hasPermission("siedlermanager.jail") || sender.hasPermission("siedlermanager.*")) {
                 if (args[0].equalsIgnoreCase("set")) {
                     if (target != null) {
-                        File fileTarget = new File("plugins//EasySiedlerManager//Players", target.getUniqueId() + ".yml");
+                        File fileTarget = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
                         YamlConfiguration configTarget = YamlConfiguration.loadConfiguration(fileTarget);
                         File jailFile = new File(plugin.getDataFolder().getPath(), "jail.yml");
                         YamlConfiguration jailConfig = YamlConfiguration.loadConfiguration(jailFile);
