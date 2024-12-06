@@ -49,7 +49,9 @@ public class CMD_Home implements CommandExecutor {
                             float yaw = (float)config.getDouble(p.getName() + ".Homes." + args[0] + ".yaw");
                             float pitch = (float)config.getDouble(p.getName() + ".Homes." + args[0] + ".pitch");
                             Location location = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
-                            p.playSound(p, Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
+                            if (plugin.AllowPlayTeleportSound == true) {
+                                p.playSound(p, Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
+                            }
                             p.teleport(location);
                             p.sendMessage(plugin.Prefix + "§3You successfully teleport to your Home §2" + args[0] + "§3!");
                             return true;

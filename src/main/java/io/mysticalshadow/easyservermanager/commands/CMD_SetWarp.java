@@ -22,7 +22,7 @@ public class CMD_SetWarp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission(plugin.PermRemoveWarp) || p.hasPermission(plugin.PermSternchen)) {
+            if (p.hasPermission(plugin.PermSetWarp) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     try {
                         WarpManager.config.load(WarpManager.file);
@@ -53,11 +53,17 @@ public class CMD_SetWarp implements CommandExecutor {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
+                        String warpMSG = plugin.SetWarpMSG;
+                        warpMSG = warpMSG.replace("%warp%", warpname);
+                        p.sendMessage(plugin.Prefix + warpMSG);
+                        return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§4The warp §c" + warpname + " §4already not exist!");
+                        String alreadyWarp = plugin.WarpAlreadyExistMSG;
+                        alreadyWarp = alreadyWarp.replace("%warp%", warpname);
+                        p.sendMessage(plugin.Prefix + alreadyWarp);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§3Use command §8/setwarp <WarpName>");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "setwarp <WarpName>");
                 }
             } else {
                 p.sendMessage(plugin.Prefix + plugin.NoPermMessage);

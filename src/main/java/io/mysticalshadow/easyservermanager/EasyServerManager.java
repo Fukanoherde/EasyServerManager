@@ -62,6 +62,8 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Back cmdBack;
     private CMD_Level cmdLevel;
     private CMD_Warp cmdWarp;
+    private CMD_SetWarp cmdSetWarp;
+    private CMD_RemoveWarp cmdRemoveWarp;
 
     @Override
     public void onEnable() {
@@ -126,6 +128,8 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdBack = new CMD_Back(this);
         this.cmdLevel = new CMD_Level(this);
         this.cmdWarp = new CMD_Warp(this);
+        this.cmdSetWarp = new CMD_SetWarp(this);
+        this.cmdRemoveWarp = new CMD_RemoveWarp(this);
 
         // Enable Message \\
 
@@ -154,28 +158,47 @@ public class EasyServerManager extends JavaPlugin {
     public static EasyServerManager getInstance() {
         return instance;
     }
+    // Plugin Settings \\
     public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.Prefix"));
     public String Farminworld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.Farminworld"));
     public boolean AllowJoinMessage = getConfig().getBoolean("EasyServerManager.AllowJoinMessage");
     public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
+    public boolean AllowPlayTeleportSound = getConfig().getBoolean("EasyServerManager.AllowPlayTeleportSound");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
     public String SaveType = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.SaveType"));
     public String ServerName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.ServerName"));
+
+    // Messages \\
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDHeader"));
     public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDFooter"));
     public String MOTDMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDMaintenance"));
+    public String SetWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SetWarpMSG"));
+    public String WarpAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpAlreadyExistMSG"));
+    public String WarpDoesNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpDoesNotExistMSG"));
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
+    public String UseCommandMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.UseCommandMSG"));
+    public String OnlyRealPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OnlyRealPlayer"));
+    public String RemoveWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemoveWarpMSG"));
+    public String TeleportToWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToWarpMSG"));
+
+    // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
+
+    // Tablist \\
+
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));
     public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
-    //public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
+
+    // MySQL \\
     public String User = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Username"));
     public String Password = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Password"));
     public String Host = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Host"));
     public String Datenbank = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Datenbank"));
     public String Port = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Port"));
+
+    // Permissions \\
     public String NoPermMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.NoPermMSG"));
     public String PermSternchen = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSternchen"));
     public String PermSetWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSetWarp"));

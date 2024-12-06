@@ -27,6 +27,10 @@ Messages:
   MOTDHeader: "&3&lSiedlerMC &2&l| §aDeutschsprachiges Projekt"
   MOTDFooter: "&4&lNEWS: &c&lIngame Voice &2&l| &c&lNew BanSystem"
   MOTDMaintenance: "&4The server is currently undergoing maintenance work"
+  SetWarpMSG: "&3You successfully set the Warp &2%warp%"
+  WarpAlreadyExistMSG: "&4The warp &c%warp% &4already exist!"
+  WarpDoesNotExistMSG: "&4The warp &c%warp% &4already exist!"
+  UseCommandMSG: "&bUse command &8/"
 ##############################################################
 #                   Setting to JoinTitle                     #
 ##############################################################
