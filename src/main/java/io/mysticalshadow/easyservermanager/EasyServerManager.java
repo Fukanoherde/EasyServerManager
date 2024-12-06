@@ -176,5 +176,10 @@ public class EasyServerManager extends JavaPlugin {
     public String Host = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Host"));
     public String Datenbank = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Datenbank"));
     public String Port = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Port"));
-    public String NoPermMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.NoPerm"));
+    public String NoPermMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.NoPermMSG"));
+    public String PermSternchen = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSternchen"));
+    public String PermSetWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSetWarp"));
+    public String PermRemoveWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermRemoveWarp"));
+    public String PermTPWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTPWarp"));
+    public String PermListWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermListWarp"));
 }

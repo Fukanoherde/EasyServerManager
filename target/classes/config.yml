@@ -50,3 +50,15 @@ MySQL:
   Host: "localhost"
   Datenbank: "servermanager"
   Port: 3306
+##############################################################
+#                  Setting to Permissions                    #
+#         %date% set the current date. In TabHeader          #
+#            With "\n" can you create a new Line             #
+##############################################################
+Perms:
+  NoPermMSG: "&You don't have permission to use this command!"
+  PermSternchen: "easyservermanager.*"
+  PermSetWarp: "easyservermanager.warp.set"
+  PermRemoveWarp: "easyservermanager.warp.remove"
+  PermTPWarp: "easyservermanager.warp.tp"
+  PermListWarp: "easyservermanager.warp.list"
