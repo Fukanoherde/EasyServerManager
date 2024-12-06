@@ -5,24 +5,43 @@
 # © All right reserved by MysticalShadow95                   #
 # Minecraft version tested on 1.21.3                         #
 ##############################################################
-SiedlerManager:
+#                       Setting Plugin                       #
+#                  SaveType: [file or sql]!                  #
+#                      Setting Messages                      #
+##############################################################
+EasyServerManager:
   Prefix: "&8&l[&3&lEasy&b&lSiedler&3&lManager&8&l] &8"
   AllowJoinMessage: true
   AllowQuitMessage: true
   Farminworld: farmwelt
   MaxPlayers: 10
-##############################################################
+  SaveType: "file"
+####################################################################
+#                        Setting Messages                          #
+#  Alias "%player%" define the Player on the Join or Quit message  #
+####################################################################
 Messages:
   JoinMessage: "&8[&a+&8] %player%"
   QuitMessage: "&8[&4-&8] %player%"
   MOTDHeader: "&3&lSiedlerMC &2&l| §aDeutschsprachiges Projekt"
   MOTDFooter: "&4&lNEWS: &c&lIngame Voice &2&l| &c&lNew BanSystem"
   MOTDMaintenance: "&4The server is currently undergoing maintenance work"
-  Discord: "&2JG9MCnquuK"
+##############################################################
+#                   Setting to JoinTitle                     #
 ##############################################################
 Title:
   Header: "&3&lWelcome on the"
   Footer: "&2&lServer: &4&lServerName or Network Name!"
+##############################################################
+#                    Setting to TabList                      #
+#         %date% set the current date. In TabHeader          #
+#            With "\n" can you create a new Line             #
+##############################################################
+TabList:
+  Header: "§3Willkommen auf \n§3ServerName\n\n§3Datum §2%date%\n\n§4§l----------------------------------\n"
+  Footer: "&4&l----------------------------------\n\n&3Unser Discord: &2Link \n&3Live-Map &2Link"
+##############################################################
+#              Setting to Database connection                #
 ##############################################################
 MySQL:
   Username: "root"

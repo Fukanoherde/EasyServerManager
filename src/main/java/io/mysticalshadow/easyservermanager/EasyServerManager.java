@@ -146,19 +146,22 @@ public class EasyServerManager extends JavaPlugin {
     public static EasyServerManager getInstance() {
         return instance;
     }
-    public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("SiedlerManager.Prefix"));
-    public String Farminworld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("SiedlerManager.Farminworld"));
-    public boolean AllowJoinMessage = getConfig().getBoolean("SiedlerManager.AllowJoinMessage");
-    public int MaxPlayer = getConfig().getInt("SiedlerManager.MaxPlayers");
+    public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.Prefix"));
+    public String Farminworld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.Farminworld"));
+    public boolean AllowJoinMessage = getConfig().getBoolean("EasyServerManager.AllowJoinMessage");
+    public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
+    public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
+    public String SaveType = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.SaveType"));
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDHeader"));
     public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDFooter"));
     public String MOTDMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDMaintenance"));
-    public String Discord = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.Discord"));
-    public boolean AllowQuitMessage = getConfig().getBoolean("SiedlerManager.AllowQuitMessage");
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
+    public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));
+    public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
+    //public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
     public String User = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Username"));
     public String Password = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Password"));
     public String Host = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Host"));

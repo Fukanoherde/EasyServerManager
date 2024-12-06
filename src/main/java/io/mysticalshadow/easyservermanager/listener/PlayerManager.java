@@ -59,8 +59,10 @@ public class PlayerManager implements Listener {
         }
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
         String orginal = date.format(new Date());
-        p.setPlayerListHeaderFooter("§3Willkommen auf \n§3SiedlerMC\n\n§3Datum §2" + orginal + "\n\n§4§l----------------------------------\n","\n§4§l----------------------------------\n\n§3Unser Discord " + plugin.Discord + "\n§3Live-Map §2siedlermc.de:8123");
-        p.sendTitle(plugin.TitleHeader.replaceAll("&", "§"), plugin.TitleFooter.replaceAll("§", "&"), 45, 45, 45);
+        String currentDateHeader = plugin.TabHeader;
+        currentDateHeader = currentDateHeader.replace("%date%", orginal);
+        p.setPlayerListHeaderFooter(currentDateHeader.replaceAll("&", "§"), plugin.TabFooter.replaceAll("&", "§"));
+        p.sendTitle(plugin.TitleHeader.replaceAll("&", "§"), plugin.TitleFooter.replaceAll("&", "§"), 45, 45, 45);
         if (!file.exists()) {
             config.set(p.getName() + ".Rewards.Pickup.Date.", null);
             config.set(p.getName() + ".Level", 0);
@@ -156,11 +158,10 @@ public class PlayerManager implements Listener {
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
         String orginalDate = date.format(new Date());
-        TimeZone tz = TimeZone.getTimeZone("UTC");
-        SimpleDateFormat df = new SimpleDateFormat("hh:mm:ss");
-        df.setTimeZone(tz);
+        SimpleDateFormat hour = new SimpleDateFormat("dd/MM/yyyy");
+        String clock = hour.format(new Date());
         config.set(e.getPlayer().getName() + ".LastLogin.Date", orginalDate);
-        config.set(e.getPlayer().getName() + ".LastLogin.Clock", df);
+        config.set(e.getPlayer().getName() + ".LastLogin.Clock", clock);
         try {
             config.save(file);
         } catch (IOException ex) {
