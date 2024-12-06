@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class PlayerManager implements Listener {
 
@@ -155,10 +156,12 @@ public class PlayerManager implements Listener {
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
         String orginalDate = date.format(new Date());
-        SimpleDateFormat clock = new SimpleDateFormat("hh:mm:ss");
-        String orginalClock = clock.format(new Date());
+        TimeZone tz = TimeZone.getTimeZone("UTC");
+        SimpleDateFormat df = new SimpleDateFormat("hh:mm:ss");
+        df.setTimeZone(tz);
+        final String time = SimpleDateFormat.getTimeInstance().format(new Date());
         config.set(e.getPlayer().getName() + ".LastLogin.Date", orginalDate);
-        config.set(e.getPlayer().getName() + ".LastLogin.Clock", orginalClock);
+        config.set(e.getPlayer().getName() + ".LastLogin.Clock", time);
         try {
             config.save(file);
         } catch (IOException ex) {
