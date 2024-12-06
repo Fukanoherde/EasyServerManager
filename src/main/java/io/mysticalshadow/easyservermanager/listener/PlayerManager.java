@@ -60,7 +60,7 @@ public class PlayerManager implements Listener {
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
         String orginal = date.format(new Date());
         p.setPlayerListHeaderFooter("§3Willkommen auf \n§3SiedlerMC\n\n§3Datum §2" + orginal + "\n\n§4§l----------------------------------\n","\n§4§l----------------------------------\n\n§3Unser Discord " + plugin.Discord + "\n§3Live-Map §2siedlermc.de:8123");
-        p.sendTitle("§3Welcome on the", "§2Server: §4§lSiedlerMC", 45, 45, 45);
+        p.sendTitle(plugin.TitleHeader.replaceAll("&", "§"), plugin.TitleFooter.replaceAll("§", "&"), 45, 45, 45);
         if (!file.exists()) {
             config.set(p.getName() + ".Rewards.Pickup.Date.", null);
             config.set(p.getName() + ".Level", 0);

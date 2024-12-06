@@ -1,8 +1,8 @@
 ##############################################################
-# SiedlerManager                                             #
+# EasyServerManager                                          #
 # Created by MysticalShadow95                                #
 # Support on Discord http://discord.aniheaven.net/           #
-# This system has a Copyright protection by MysticalShadow95 #
+# © All right reserved by MysticalShadow95                   #
 # Minecraft version tested on 1.21.3                         #
 ##############################################################
 SiedlerManager:
@@ -19,6 +19,10 @@ Messages:
   MOTDFooter: "&4&lNEWS: &c&lIngame Voice &2&l| &c&lNew BanSystem"
   MOTDMaintenance: "&4The server is currently undergoing maintenance work"
   Discord: "&2JG9MCnquuK"
+##############################################################
+Title:
+  Header: "&3&lWelcome on the"
+  Footer: "&2&lServer: &4&lServerName or Network Name!"
 ##############################################################
 MySQL:
   Username: "root"
