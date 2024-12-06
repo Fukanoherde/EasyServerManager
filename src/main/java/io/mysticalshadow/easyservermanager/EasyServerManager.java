@@ -157,6 +157,8 @@ public class EasyServerManager extends JavaPlugin {
     public String Discord = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.Discord"));
     public boolean AllowQuitMessage = getConfig().getBoolean("SiedlerManager.AllowQuitMessage");
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
+    public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
+    public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
     public String User = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Username"));
     public String Password = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Password"));
     public String Host = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Host"));
