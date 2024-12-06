@@ -26,9 +26,9 @@ public class CMD_Warp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission(plugin.PermSetWarp) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("set")) {
+                        if (p.hasPermission(plugin.PermSetWarp) || p.hasPermission(plugin.PermSternchen)) {
                         String warpname = args[1];
                         String path = plugin.ServerName + "." + "WarpManager" + "." + warpname + ".";
                         try {
@@ -45,7 +45,7 @@ public class CMD_Warp implements CommandExecutor {
                             double y = p.getLocation().getY();
                             double z = p.getLocation().getZ();
                             float yaw = p.getLocation().getYaw();
-                            float pitch = p.getLocation().getYaw();
+                            float pitch = p.getLocation().getPitch();
                             WarpManager.config.set(path + "Name", name);
                             WarpManager.config.set(path + "World", world);
                             WarpManager.config.set(path + "X", x);
@@ -66,45 +66,45 @@ public class CMD_Warp implements CommandExecutor {
                         }
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp <set> <waprname>");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
+                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp <set> <waprname>");
             }
-            if (p.hasPermission(plugin.PermRemoveWarp) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("remove")) {
-                        String warpname = args[1];
-                        String path = plugin.ServerName + "." + "WarpManager" + "." + warpname;
-                        try {
-                            WarpManager.config.load(WarpManager.file);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        } catch (InvalidConfigurationException e) {
-                            throw new RuntimeException(e);
-                        }
-                        if (WarpManager.config.isSet(path)) {
-                            WarpManager.config.set(path, null);
+                        if (p.hasPermission(plugin.PermRemoveWarp) || p.hasPermission(plugin.PermSternchen)) {
+                            String warpname = args[1];
+                            String path = plugin.ServerName + "." + "WarpManager" + "." + warpname;
                             try {
-                                WarpManager.config.save(WarpManager.file);
+                                WarpManager.config.load(WarpManager.file);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
+                            } catch (InvalidConfigurationException e) {
+                                throw new RuntimeException(e);
                             }
-                            p.sendMessage(plugin.Prefix + "§3You successfully removed the warp §c" + warpname + "§3!");
-                            return true;
-                        } else {
+                            if (WarpManager.config.isSet(path)) {
+                                WarpManager.config.set(path, null);
+                                try {
+                                    WarpManager.config.save(WarpManager.file);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                p.sendMessage(plugin.Prefix + "§3You successfully removed the warp §c" + warpname + "§3!");
+                                return true;
+                            } else {
                             p.sendMessage(plugin.Prefix + "§4The warp §c" + warpname + " §4does not exist!");
-                        }
+                            }
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp <remove> <waprname>");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
+                p.sendMessage(plugin.Prefix + "§bUse command §8/warp <remove> <waprname>");
             }
-            if (p.hasPermission(plugin.PermListWarp) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("get")) {
+                        if (p.hasPermission(plugin.PermListWarp) || p.hasPermission(plugin.PermSternchen)) {
                         try {
                             WarpManager.config.load(WarpManager.file);
                         } catch (IOException e) {
@@ -131,14 +131,14 @@ public class CMD_Warp implements CommandExecutor {
                         }
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp get");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
+                p.sendMessage(plugin.Prefix + "§bUse command §8/warp get");
             }
-            if (p.hasPermission(plugin.PermTPWarp)) {
                 if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("tp")) {
+                        if (p.hasPermission(plugin.PermTPWarp)) {
                         try {
                             WarpManager.config.load(WarpManager.file);
                         } catch (IOException e) {
@@ -165,10 +165,10 @@ public class CMD_Warp implements CommandExecutor {
                         }
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp get");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
+                p.sendMessage(plugin.Prefix + "§bUse command §8/warp get");
             }
         } else {
             sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
