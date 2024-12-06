@@ -27,51 +27,6 @@ public class CMD_Warp implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
                 if (args.length == 2) {
-                    if (args[0].equalsIgnoreCase("set")) {
-                        if (p.hasPermission(plugin.PermSetWarp) || p.hasPermission(plugin.PermSternchen)) {
-                        String warpname = args[1];
-                        String path = plugin.ServerName + "." + "WarpManager" + "." + warpname + ".";
-                        try {
-                            WarpManager.config.load(WarpManager.file);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        } catch (InvalidConfigurationException e) {
-                            throw new RuntimeException(e);
-                        }
-                        if (!WarpManager.config.isSet(path)) {
-                            String name = warpname;
-                            String world = p.getWorld().getName();
-                            double x = p.getLocation().getX();
-                            double y = p.getLocation().getY();
-                            double z = p.getLocation().getZ();
-                            float yaw = p.getLocation().getYaw();
-                            float pitch = p.getLocation().getPitch();
-                            WarpManager.config.set(path + "Name", name);
-                            WarpManager.config.set(path + "World", world);
-                            WarpManager.config.set(path + "X", x);
-                            WarpManager.config.set(path + "Y", y);
-                            WarpManager.config.set(path + "Z", z);
-                            WarpManager.config.set(path + "Yaw", yaw);
-                            WarpManager.config.set(path + "Pitch", pitch);
-                            WarpManager.config.set(path + "SetFrom", p.getUniqueId() + " : " + p.getName());
-                            try {
-                                WarpManager.config.save(WarpManager.file);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                            p.sendMessage(plugin.Prefix + "§3You successfully set the Warp §2" + warpname + "§3!");
-                            return true;
-                        } else {
-                            p.sendMessage(plugin.Prefix + "§4The warp §c" + warpname + " §4Already exist!");
-                        }
-                    }
-                } else {
-                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
-                }
-            } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/warp <set> <waprname>");
-            }
-                if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("remove")) {
                         if (p.hasPermission(plugin.PermRemoveWarp) || p.hasPermission(plugin.PermSternchen)) {
                             String warpname = args[1];
