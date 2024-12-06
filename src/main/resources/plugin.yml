@@ -88,3 +88,5 @@ commands:
     description: U can teleport to your last death point
   level:
     description: U can teleport to your last death point
+  warp:
+    description: you can set a public warp point
