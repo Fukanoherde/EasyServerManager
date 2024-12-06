@@ -5,6 +5,7 @@ import io.mysticalshadow.easyservermanager.listener.ServerManager;
 import io.mysticalshadow.easyservermanager.commands.*;
 import io.mysticalshadow.easyservermanager.manager.JailManager;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
+import io.mysticalshadow.easyservermanager.manager.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -79,6 +80,7 @@ public class EasyServerManager extends JavaPlugin {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        WarpManager.savecfg();
 
         // Listener \\
         this.playerManager = new PlayerManager(this);
@@ -152,6 +154,7 @@ public class EasyServerManager extends JavaPlugin {
     public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
     public String SaveType = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.SaveType"));
+    public String ServerName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.ServerName"));
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDHeader"));
     public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDFooter"));
