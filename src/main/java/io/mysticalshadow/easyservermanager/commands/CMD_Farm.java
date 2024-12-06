@@ -19,9 +19,13 @@ public class CMD_Farm implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (plugin.Farminworld != null) {
-                p.teleport(Bukkit.getWorld(plugin.Farminworld).getSpawnLocation());
-                p.sendMessage(plugin.Prefix + "§3You successfully teleport to the Farmworld");
-                return true;
+                if (Bukkit.getWorld(plugin.Farminworld).getWorldFolder().exists()) {
+                    p.teleport(Bukkit.getWorld(plugin.Farminworld).getSpawnLocation());
+                    p.sendMessage(plugin.Prefix + "§3You successfully teleport to the Farmworld");
+                    return true;
+                } else {
+                    p.sendMessage(plugin.Prefix + "§cCannot find the farmworld. Please contact the server Administration");
+                }
             } else {
                 p.sendMessage(plugin.Prefix + "§cCannot find the farmworld. Please contact the server Administration");
             }
