@@ -66,7 +66,7 @@ public class WarpManager {
         } catch (InvalidConfigurationException e) {
             throw new RuntimeException(e);
         }
-        if (config.isSet(path + warpname)) {
+        if (config.isSet(path)) {
             config.set(path + warpname, null);
             config.set(path + warpname, null);
             config.set(path + warpname, null);
@@ -94,7 +94,7 @@ public class WarpManager {
             throw new RuntimeException(e);
         }
         String path = plugin.ServerName + "." + "WarpManager" + "." + warpname + ".";
-        if (config.get(path) == null) {
+        if (config.isSet(path)) {
             return false;
         }
         return true;
