@@ -61,6 +61,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Jail cmdJail;
     private CMD_Back cmdBack;
     private CMD_Level cmdLevel;
+    private CMD_Warp cmdWarp;
 
     @Override
     public void onEnable() {
@@ -120,7 +121,8 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdJail = new CMD_Jail(this);
         this.cmdBack = new CMD_Back(this);
         this.cmdLevel = new CMD_Level(this);
-
+        this.cmdWarp = new CMD_Warp(this);
+        
         // Enable Message \\
 
         Bukkit.getConsoleSender().sendMessage("§l");
