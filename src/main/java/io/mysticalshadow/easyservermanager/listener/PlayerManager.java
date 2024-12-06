@@ -159,9 +159,8 @@ public class PlayerManager implements Listener {
         TimeZone tz = TimeZone.getTimeZone("UTC");
         SimpleDateFormat df = new SimpleDateFormat("hh:mm:ss");
         df.setTimeZone(tz);
-        final String time = SimpleDateFormat.getTimeInstance().format(new Date());
         config.set(e.getPlayer().getName() + ".LastLogin.Date", orginalDate);
-        config.set(e.getPlayer().getName() + ".LastLogin.Clock", time);
+        config.set(e.getPlayer().getName() + ".LastLogin.Clock", df);
         try {
             config.save(file);
         } catch (IOException ex) {
