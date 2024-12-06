@@ -16,6 +16,7 @@ EasyServerManager:
   Farminworld: "farmwelt"
   MaxPlayers: 10
   SaveType: "file"
+  ServerName: "SiedlerMC"
 ####################################################################
 #                        Setting Messages                          #
 #  Alias "%player%" define the Player on the Join or Quit message  #

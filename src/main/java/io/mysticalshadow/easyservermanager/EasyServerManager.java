@@ -81,7 +81,11 @@ public class EasyServerManager extends JavaPlugin {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        WarpManager.savecfg();
+        try {
+            WarpManager.config.save(WarpManager.file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         // Listener \\
         this.playerManager = new PlayerManager(this);
@@ -172,4 +176,5 @@ public class EasyServerManager extends JavaPlugin {
     public String Host = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Host"));
     public String Datenbank = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Datenbank"));
     public String Port = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Port"));
+    public String NoPermMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.NoPerm"));
 }

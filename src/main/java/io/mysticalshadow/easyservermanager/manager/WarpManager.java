@@ -7,7 +7,6 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import javax.swing.plaf.basic.BasicButtonUI;
 import java.io.File;
 import java.io.IOException;
 
@@ -17,7 +16,7 @@ public class WarpManager {
     public WarpManager (EasyServerManager plugin) {
         this.plugin = plugin;
     }
-    public static File file = new File(plugin.getDataFolder().getPath(), "location.yml");
+    public static File file = new File("plugins//EasyServerManager", "location.yml");
     public static YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
     public static void setWarp (Player p, String warpname) {
