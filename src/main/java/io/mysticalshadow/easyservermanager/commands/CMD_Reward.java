@@ -46,70 +46,57 @@ public class CMD_Reward implements CommandExecutor {
                         switch (zufall) {
                             case 0:
                                 random = new ItemStack(Material.ANVIL, 1);
-                                p.sendMessage(plugin.Prefix + "§3You become 1 Anvil!");
                                 break;
                             case 1:
                                 random = new ItemStack(Material.NETHERITE_BLOCK, 4);
-                                p.sendMessage(plugin.Prefix + "§3You become 4 Netherite Block!");
                                 break;
                             case 2:
                                 random = new ItemStack(Material.DIAMOND, 16);
-                                p.sendMessage(plugin.Prefix + "§3You become 16 Diamond!");
                                 break;
                             case 3:
                                 random = new ItemStack(Material.COOKED_BEEF, 16);
-                                p.sendMessage(plugin.Prefix + "§3You become 16 Cooked Beef!");
                                 break;
                             case 4:
                                 random = new ItemStack(Material.ROTTEN_FLESH, 32);
-                                p.sendMessage(plugin.Prefix + "§3You become 32 Rotten Flesh!");
                                 break;
                             case 5:
                                 random = new ItemStack(Material.RAW_GOLD_BLOCK, 8);
-                                p.sendMessage(plugin.Prefix + "§3You become 8 Raw gold Block!");
                                 break;
                             case 6:
                                 random = new ItemStack(Material.EXPERIENCE_BOTTLE, 32);
-                                p.sendMessage(plugin.Prefix + "§3You become 32 Enchanting Bottle!");
                                 break;
                             case 7:
                                 random = new ItemStack(Material.ENDER_PEARL, 8);
-                                p.sendMessage(plugin.Prefix + "§3You become 8 Ender Pearl!");
                                 break;
                             case 8:
                                 random = new ItemStack(Material.BEACON, 1);
-                                p.sendMessage(plugin.Prefix + "§3You become 1 Beacon!");
                                 break;
                             case 9:
                                 random = new ItemStack(Material.DIRT, 64);
-                                p.sendMessage(plugin.Prefix + "§3You become 64 Dirt!");
                                 break;
                             case 10:
                                 random = new ItemStack(Material.VILLAGER_SPAWN_EGG, 2);
-                                p.sendMessage(plugin.Prefix + "§3You become 2 Villager Spawn Egg!");
                                 break;
                             case 11:
                                 random = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 8);
-                                p.sendMessage(plugin.Prefix + "§3You become 8 Enchanted Golden Apple!");
                                 break;
                             case 12:
                                 random = new ItemStack(Material.ENDER_CHEST, 1);
-                                p.sendMessage(plugin.Prefix + "§3You become 1 Ender Chest!");
                                 break;
                             case 13:
                                 random = new ItemStack(Material.LEATHER, 64);
-                                p.sendMessage(plugin.Prefix + "§3You become 64 Leather!");
                                 break;
                             case 14:
                                 random = new ItemStack(Material.RAW_IRON_BLOCK, 8);
-                                p.sendMessage(plugin.Prefix + "§3You become 8 Raw Iron Block!");
                                 break;
                         }
                         p.getInventory().addItem(random);
-                        p.sendMessage(plugin.Prefix + "§3got today's reward!");
+                        p.sendMessage(plugin.Prefix + plugin.YouGotRewardMSG);
                         for (Player all : Bukkit.getOnlinePlayers()) {
-                            if (all.hasPermission("siedlermanager.notify")) {
-                                all.sendMessage(plugin.Prefix + "§3The player §2" + p.getName() + " §3Collected his reward!");
+                            if (all.hasPermission(plugin.PermRewardNotify) || all.hasPermission(plugin.PermSternchen)) {
+                                String gotRewardNotify = plugin.GotPlayerRewardNotify;
+                                gotRewardNotify = gotRewardNotify.replace("%player%", p.getDisplayName());
+                                all.sendMessage(plugin.Prefix + gotRewardNotify);
                                 return true;
                             }
                         }
@@ -122,7 +109,7 @@ public class CMD_Reward implements CommandExecutor {
                         } catch (InvalidConfigurationException e) {
                             throw new RuntimeException(e);
                         }
-                        p.sendMessage(plugin.Prefix + "§4you already picked up your reward today!");
+                        p.sendMessage(plugin.Prefix + plugin.AlreadyPickupRewardMSG);
                     } else {
                         config.set((p.getName()) + ".Rewards.Pickup.Date.", "dd/mm/yyyy");
                         try {
@@ -130,13 +117,13 @@ public class CMD_Reward implements CommandExecutor {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        p.sendMessage(plugin.Prefix + "§4File does not exist!");
+                        p.sendMessage(plugin.Prefix + plugin.ThePathNotFoundMSG);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/reward");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "reward");
                 }
             } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
             }
         return false;
     }

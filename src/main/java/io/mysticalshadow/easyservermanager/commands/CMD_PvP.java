@@ -46,13 +46,13 @@ public class CMD_PvP implements CommandExecutor {
                                 ScoreboardManager.setBoard(all);
                                 ScoreboardManager.updateBoard(all);
                             }
-                            p.sendMessage(plugin.Prefix + "§4You deactivated your PVP status");
+                            p.sendMessage(plugin.Prefix + plugin.DeactivatedYourselfPvPMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4You already deactivated the PvP!");
+                            p.sendMessage(plugin.Prefix + plugin.AlreadyDeactivatedYourselfPvPMSG);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§4Path does not exist!");
+                        p.sendMessage(plugin.Prefix + plugin.ThePathNotFoundMSG);
                         config.set(p.getName() + ".PvP.Activated", false);
                         try {
                             config.save(file);
@@ -80,13 +80,13 @@ public class CMD_PvP implements CommandExecutor {
                                 ScoreboardManager.setBoard(all);
                                 ScoreboardManager.updateBoard(all);
                             }
-                            p.sendMessage(plugin.Prefix + "§2You activated your PVP status");
+                            p.sendMessage(plugin.Prefix + plugin.ActivatedYourselfPvPMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4You already activated the PvP!");
+                            p.sendMessage(plugin.Prefix + plugin.AlreadyActivatedYourselfPvPMSG);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§4Path does not exist!");
+                        p.sendMessage(plugin.Prefix + plugin.ThePathNotFoundMSG);
                         config.set(p.getName() + ".PvP.Activated", false);
                         try {
                             config.save(file);
@@ -96,10 +96,10 @@ public class CMD_PvP implements CommandExecutor {
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/pvp <on, off>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "pvp <on, off>");
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
     return false;
     }

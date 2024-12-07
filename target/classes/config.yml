@@ -138,6 +138,13 @@ Messages:
   AnnotherPlayerPingMSG: "&2The specified player has a ping of &3"
   PingYourselfMSG: "&2You have a ping from &3"
   PingInMSMSG: "&2ms!"
+  ActivatedYourselfPvPMSG: "&2You activated your PVP status!"
+  AlreadyActivatedYourselfPvPMSG: "&2You activated your PVP status!"
+  DeactivatedYourselfPvPMSG: "&4You deactivated your PVP status!"
+  AlreadyDeactivatedYourselfPvPMSG: "&4You already deactivated the PvP!"
+  YouGotRewardMSG: "&2got today's reward!"
+  GotPlayerRewardNotify: "&2The player &3%player% &2Collected his reward!"
+  AlreadyPickupRewardMSG: "&4you already picked up your reward today!"
 ##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################
@@ -191,3 +198,4 @@ Perms:
   PermMaintenanceJoin: "easyservermanager.maintenance.join"
   PermMaintenanceActivate: "easyservermanager.maintenance.activate"
   PermAnnotherPing: "easyservermanager.ping"
+  PermRewardNotify: "easyservermanager.notify"
