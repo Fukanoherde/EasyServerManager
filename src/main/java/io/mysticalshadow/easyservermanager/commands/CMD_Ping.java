@@ -20,17 +20,17 @@ public class CMD_Ping implements CommandExecutor {
         Player p = (Player) sender;
         if (sender instanceof Player) {
             if (args.length == 0) {
-                p.sendMessage(plugin.Prefix + "§3You have a ping from §2" + p.getPing() + "§3ms");
+                p.sendMessage(plugin.Prefix + plugin.PingYourselfMSG + p.getPing() + plugin.PingInMSMSG);
                 return true;
             }
         }
         if (args.length == 1) {
             Player target = Bukkit.getPlayer(args[0]);
-            if (p.hasPermission("siedlermanager.ping") || p.hasPermission("siedlermanager.*")) {
-                p.sendMessage(plugin.Prefix + "§3The specified player has a ping of §2" + target.getPing() + "§3ms");
+            if (p.hasPermission(plugin.PermAnnotherPing) || p.hasPermission(plugin.PermSternchen)) {
+                p.sendMessage(plugin.Prefix + plugin.AnnotherPlayerPingMSG + target.getPing() + plugin.PingInMSMSG);
                 return true;
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 return true;
             }
         }

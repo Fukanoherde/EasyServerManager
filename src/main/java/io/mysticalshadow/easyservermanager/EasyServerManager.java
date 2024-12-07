@@ -242,6 +242,8 @@ public class EasyServerManager extends JavaPlugin {
     public String GameModeAlreadyPlayerInSpectatorMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInSpectatorMSG"));
     public String PlayerAlreadyJailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerAlreadyJailedMSG"));
     public String JailNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JailNotExistMSG"));
+    public String PingInMSMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PingInMSMSG"));
+    public String PingYourselfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PingYourselfMSG"));
     public String PlayerIsNotJailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerIsNotJailedMSG"));
     public String WarpSpawnNotFoundMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpSpawnNotFoundMSG"));
     public String PlayerUnjailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerUnjailedMSG"));
@@ -249,9 +251,26 @@ public class EasyServerManager extends JavaPlugin {
     public String ThePathNotFoundMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThePathNotFoundMSG"));
     public String UnjailedYourselfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.UnjailedYourselfMSG"));
     public String KickMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickMSG"));
+    public String AddedLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedPlayerLevelMSG"));
+    public String AddedLevelFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedLevelFromPlayerMSG"));
+    public String RemovedPlayerLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedPlayerLevelMSG"));
+    public String RemovedLevelFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedLevelFromPlayerMSG"));
     public String KickPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickPlayerMSG"));
+    public String AnnotherPlayerPingMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnnotherPlayerPingMSG"));
+    public String EnoughPlayerLevel = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughPlayerLevel"));
     public String KickYourself = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickYourselfMSG"));
+    public String PlayerExistNotAFileMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnnotherPlayerExistNotAFileMSG"));
     public String SuccessfullyKickPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessfullyKickPlayerMSG"));
+    public String AnnotherPlayerHaveNoHomesMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnnotherPlayerHaveNoHomesMSG"));
+    public String AnnotherPlayerHomes = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnnotherPlayerHomes"));
+    public String YourHomesMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourHomesMSG"));
+    public String PayedLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PayedLevelMSG"));
+    public String PayoutSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PayoutSuccessfullyMSG"));
+    public String PayedLevelAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PayedLevelAnnotherPlayerMSG"));
+    public String YourHaveNoHomesMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourHaveNoHomesMSG"));
+    public String ActivateMaintenanceMode = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivateMaintenanceModeMSG"));
+    public String KickPlayerWhenActivateMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickPlayerWhenActivateMaintenanceMSG"));
+    public String DeactivateMaintenanceModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivateMaintenanceModeMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -287,8 +306,13 @@ public class EasyServerManager extends JavaPlugin {
     public String PermGodModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGodModeAnnotherPlayer"));
     public String PermGameModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameModeAnnotherPlayer"));
     public String PermHeal = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHeal"));
+    public String PermAnnotherPing = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAnnotherPing"));
     public String PermInvsee = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermInvsee"));
     public String PermJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermJail"));
     public String PermHealAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHealAnnotherPlayer"));
     public String PermKick = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermKick"));
+    public String PermLevel = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermLevel"));
+    public String PermGetOtherHomes = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGetOtherHomes"));
+    public String PermMaintenanceJoin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceJoin"));
+    public String PermMaintenanceActivate = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceActivate"));
 }

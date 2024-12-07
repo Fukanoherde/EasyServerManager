@@ -119,6 +119,11 @@ Messages:
   KickPlayerMSG: "&8gekickt wurdest du von: §7%player%"
   KickYourselfMSG: "&4Why do you kick yourself?!"
   SuccessfullyKickPlayerMSG: "&2You successfully kicked the player &3%player% &2from the Server!"
+  AddedPlayerLevelMSG: "&2Successfully given the player &3%player% &2the specified level!"
+  AddedLevelFromPlayerMSG: "&2You become from the player &3%player% &2Level!"
+  RemovedPlayerLevelMSG: "&2Successfully removed the player &3%player% &2the specified level!"
+  RemovedLevelFromPlayerMSG: "&4Removed level from the player &c%player%&4!"
+  EnoughPlayerLevel: "&4The player &c%player% &4hat not enough level!"
 ##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################
@@ -167,3 +172,4 @@ Perms:
   PermJail: "easyservermanager.jail"
   PermHealAnnotherPlayer: "easyservermanager.heal.other"
   PermKick: "easyservermanager.kick"
+  PermLevel: "easyservermanager.level"

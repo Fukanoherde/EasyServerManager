@@ -66,8 +66,10 @@ public class CMD_Pay implements CommandExecutor {
                                     ScoreboardManager.updateBoard(p);
                                     ScoreboardManager.setBoard(t);
                                     ScoreboardManager.updateBoard(t);
-                                    p.sendMessage(plugin.Prefix + "§3You have successfully transferred the specified amount to the player!");
-                                    t.sendMessage(plugin.Prefix + "§3The player §2" + p.getName() + " §3has you §2" + level + " §3Level send");
+                                    p.sendMessage(plugin.Prefix + plugin.PayedLevelMSG);
+                                    String becomFromPlayerLevel = plugin.PayedLevelAnnotherPlayerMSG;
+                                    becomFromPlayerLevel = becomFromPlayerLevel.replace("%player%", p.getDisplayName());
+                                    t.sendMessage(plugin.Prefix + becomFromPlayerLevel);
                                     return true;
                                 } else {
                                     p.sendMessage(plugin.Prefix + "§4You cannot payed level yourself!");

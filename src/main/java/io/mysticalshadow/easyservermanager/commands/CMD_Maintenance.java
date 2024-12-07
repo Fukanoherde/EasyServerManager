@@ -19,23 +19,23 @@ public class CMD_Maintenance implements CommandExecutor {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (sender.hasPermission("siedlermanager.maintenance") || sender.hasPermission("siedlermanager.*")) {
-            String path = "SiedlerManager" + ".";
+        if (sender.hasPermission(plugin.PermMaintenanceActivate) || sender.hasPermission(plugin.PermSternchen)) {
+            String path = plugin.ServerName + ".";
             if (args[0].equalsIgnoreCase("on")) {
                 MaintenanceManager.config.set(path + "Maintenance", Boolean.valueOf(true));
+                sender.sendMessage(plugin.Prefix + plugin.ActivateMaintenanceMode);
                 try {
                     MaintenanceManager.savecfg();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
                 for (Player all : Bukkit.getOnlinePlayers()) {
-                    if (all.hasPermission("siedlermanager.maintenance.activate") || all.hasPermission("siedlermanager.*")) {
+                    if (all.hasPermission(plugin.PermMaintenanceJoin) || all.hasPermission(plugin.PermSternchen)) {
                         return true;
                     } else {
-                        all.kickPlayer("§3SiedlerMC\n§aDu wurdest gekickt\n§4GRUND: §cWartungsarbeiten\n§3gekickt worden vom: §4System");
+                        all.kickPlayer(plugin.KickPlayerWhenActivateMaintenance);
                     }
                 }
-                sender.sendMessage(plugin.Prefix + "§2You successfully activated the maintenance mode!");
                 return true;
             } else if (args[0].equalsIgnoreCase("off")) {
                 try {
@@ -49,11 +49,11 @@ public class CMD_Maintenance implements CommandExecutor {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                sender.sendMessage(plugin.Prefix + "§4You successfully deactivated the maintenance mode!");
+                sender.sendMessage(plugin.Prefix + plugin.DeactivateMaintenanceModeMSG);
                 return true;
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+            sender.sendMessage(plugin.Prefix + plugin.NoPermMessage);
         }
         return false;
     }

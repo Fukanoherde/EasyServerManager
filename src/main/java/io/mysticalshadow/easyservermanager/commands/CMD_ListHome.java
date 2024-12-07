@@ -44,15 +44,15 @@ public class CMD_ListHome implements CommandExecutor {
                                  listHomes = listHomes.replaceAll(".y", "");
                                  listHomes = listHomes.replaceAll(".yaw", "");
                                  listHomes = listHomes.replaceAll(".pitch", "");
-                                 p.sendMessage(plugin.Prefix + "§3Your Homes: §2" + listHomes);
+                                 p.sendMessage(plugin.Prefix + plugin.YourHomesMSG + listHomes);
                              }
                              return true;
                          } else {
-                             p.sendMessage(plugin.Prefix + "§4You don't have any homes!");
+                             p.sendMessage(plugin.Prefix + plugin.YourHaveNoHomesMSG);
                              return true;
                          }
                      } else {
-                         p.sendMessage(plugin.Prefix + "§4You don't have any homes!");
+                         p.sendMessage(plugin.Prefix + plugin.YourHaveNoHomesMSG);
                          return true;
                      }
                 }
@@ -61,7 +61,7 @@ public class CMD_ListHome implements CommandExecutor {
                 if (target != null) {
                 File fileTarget = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
                 YamlConfiguration configTarget = YamlConfiguration.loadConfiguration(fileTarget);
-                if (p.hasPermission("siedlermanager.gethomes.other") || p.hasPermission("siedlermanager.*")) {
+                if (p.hasPermission(plugin.PermGetOtherHomes) || p.hasPermission(plugin.PermSternchen)) {
                         if (fileTarget.exists()) {
                             try {
                                 config.load(filePerPlayer);
@@ -79,25 +79,31 @@ public class CMD_ListHome implements CommandExecutor {
                                     listHomes = listHomes.replaceAll(".y", "");
                                     listHomes = listHomes.replaceAll(".yaw", "");
                                     listHomes = listHomes.replaceAll(".pitch", "");
-                                    p.sendMessage(plugin.Prefix + "§3The Homes from the Player §2" + target.getName() + " §3Homes: §2" + listHomes);
+                                    String playerHomes = plugin.AnnotherPlayerHomes;
+                                    playerHomes = playerHomes.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerHomes + listHomes);
                                 }
                                 return true;
                             } else {
-                                p.sendMessage(plugin.Prefix + "§4The player §c" + target.getName() + " Has not any Homes");
+                                String playerHaveNoHomes = plugin.AnnotherPlayerHaveNoHomesMSG;
+                                playerHaveNoHomes = playerHaveNoHomes.replace("%player%", target.getDisplayName());
+                                p.sendMessage(plugin.Prefix + playerHaveNoHomes);
                                 return true;
                             }
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4The Player has not exist a File!");
+                            String playerDoesExistFile = plugin.PlayerExistNotAFileMSG;
+                            playerDoesExistFile = playerDoesExistFile.replace("%player%", target.getDisplayName());
+                            p.sendMessage(plugin.Prefix + playerDoesExistFile);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cYou don't have permission to see annother player homes!");
+                        p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§4The player §c" + args[0] + " §4does not exist!");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             }
         } else {
-                sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+                sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

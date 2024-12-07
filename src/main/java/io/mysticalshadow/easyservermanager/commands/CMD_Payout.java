@@ -46,15 +46,15 @@ public class CMD_Payout implements CommandExecutor {
                         p.setLevel(p.getLevel() + level);
                         ScoreboardManager.setBoard(p);
                         ScoreboardManager.updateBoard(p);
-                        p.sendMessage(plugin.Prefix + "§3The payout was successfully");
+                        p.sendMessage(plugin.Prefix + plugin.PayoutSuccessfullyMSG);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cYou don't have enough level");
+                        p.sendMessage(plugin.Prefix + plugin.EnoughLevelMSG);
                     }
                 }
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
