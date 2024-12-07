@@ -173,6 +173,12 @@ public class EasyServerManager extends JavaPlugin {
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDHeader"));
     public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDFooter"));
+    public String YouActivatedGodFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouActivatedGodFromPlayerMSG"));
+    public String YouDeactivatedGodFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouDeactivatedGodFromPlayerMSG"));
+    public String ActivatedYourGodModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedYourGodModeMSG"));
+    public String DeactivatedYourGodModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedYourGodModeMSG"));
+    public String YouActivatedGodAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouActivatedGodAnnotherPlayerMSG"));
+    public String YouDeactivatedGodAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouDeactivatedGodAnnotherPlayerMSG"));
     public String MOTDMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDMaintenance"));
     public String SetWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SetWarpMSG"));
     public String WarpAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpAlreadyExistMSG"));
@@ -252,5 +258,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PermFly = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermFly"));
     public String PermAnnotherFly = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAnnotherFly"));
     public String PermGameMode = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameMode"));
+    public String PermGodMode = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGodMode"));
+    public String PermGodModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGodModeAnnotherPlayer"));
     public String PermGameModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameModeAnnotherPlayer"));
 }
