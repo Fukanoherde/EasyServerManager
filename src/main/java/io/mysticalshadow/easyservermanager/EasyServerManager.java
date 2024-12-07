@@ -173,14 +173,23 @@ public class EasyServerManager extends JavaPlugin {
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDHeader"));
     public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDFooter"));
+    public String YourHealedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourHealedMSG"));
+    public String YourHealedFromPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourHealedFromPlayerMSG"));
+    public String YourHealedAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourHealedAnnotherPlayerMSG"));
     public String YouActivatedGodFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouActivatedGodFromPlayerMSG"));
     public String YouDeactivatedGodFromPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouDeactivatedGodFromPlayerMSG"));
+    public String HomeSetMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.HomeSetMSG"));
+    public String HomeAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.HomeAlreadyExistMSG"));
+    public String HomeRemovedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.HomeRemovedMSG"));
     public String ActivatedYourGodModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedYourGodModeMSG"));
     public String DeactivatedYourGodModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedYourGodModeMSG"));
     public String YouActivatedGodAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouActivatedGodAnnotherPlayerMSG"));
     public String YouDeactivatedGodAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouDeactivatedGodAnnotherPlayerMSG"));
     public String MOTDMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.MOTDMaintenance"));
     public String SetWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SetWarpMSG"));
+    public String YourJailedHomeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourJailedHomeMSG"));
+    public String YouTeleportToYourHomeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouTeleportToYourHomeMSG"));
+    public String HomeNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.HomeNotExistMSG"));
     public String WarpAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpAlreadyExistMSG"));
     public String WarpDoesNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpDoesNotExistMSG"));
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
@@ -201,6 +210,8 @@ public class EasyServerManager extends JavaPlugin {
     public String ActivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyFromMSG"));
     public String DeactivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyFromMSG"));
     public String OpenEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenEnderchestMSG"));
+    public String InvseeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.InvseeMSG"));
+    public String InvseeYourselfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.InvseeYourselfMSG"));
     public String OpenYourselfEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenYourselfEnderchestMSG"));
     public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
     public String TeleportToFarmMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToFarmMSG"));
@@ -261,4 +272,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PermGodMode = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGodMode"));
     public String PermGodModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGodModeAnnotherPlayer"));
     public String PermGameModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameModeAnnotherPlayer"));
+    public String PermHeal = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHeal"));
+    public String PermInvsee = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermInvsee"));
+    public String PermJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermJail"));
+    public String PermHealAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHealAnnotherPlayer"));
 }

@@ -24,6 +24,7 @@ EasyServerManager:
 #  Alias "%player%" define the Player on the Join or Quit message  #
 #     Alias "%player%" define the Player on the PlayerMessages     #
 #      Alias "%warp%" define the Player on the warp commands       #
+#         Alias "%home%" define the homes from a Player            #
 #   In the path UseCommandMSG Nothing may be entered after the /   #
 ####################################################################
 Messages:
@@ -73,6 +74,17 @@ Messages:
   GameModeSpectatorAnntotherPlayerMSG: "&2The player &3%player% &2changed your gamemode to Spectator-Mode"
   GameModeAlreadyInSurvivalAnnotherPlayerMSG: "&4You are already on an survival mode!"
   GameModeAlreadyInCreativeAnnotherMSG: "&4You are already on an creative mode!"
+  YourHealedMSG: "&3You successfully healed!"
+  YouTeleportToYourHomeMSG: "&3You successfully teleport to your Home &2%home%&3!"
+  HomeNotExistMSG: "&4The home &c%home% &4does not exist!"
+  HomeSetMSG: "&3The home &2%home% &3was set!"
+  HomeRemovedMSG: "&3The home &2%home% &3successfully deleted!"
+  HomeAlreadyExistMSG: "&4The home &c%home% &4is already exist!"
+  YourJailedHomeMSG: "&4You jailed. You cannot teleport to your Home &c%home%&4!"
+  YourHealedAnnotherPlayerMSG: "&3You healed the Player &2%player%&3!"
+  YourHealedFromPlayerMSG: "&3You healed from &2&2%player%&3!"
+  YourJailedFromPlayerMSG: "&3You healed from &2&2%player%&3!"
+  YourJailedPlayerMSG: "&3You healed from &2&2%player%&3!"
   GameModeAlreadyInAdventureAnnotherPlayerMSG: "&4You are already on an adventure mode!"
   GameModeAlreadyInSpectatorAnnotherPlayerMSG: "&4You are already on an spectator mode!"
   GameModeSetInSurvivalAnnotherPlayerMSG: "&2You set the player &3%player% &2to Survival-Mode!"
@@ -83,6 +95,14 @@ Messages:
   GameModeAlreadyPlayerInCreativeMSG: "&4The player &c%player% &4is already in Creative-Mode!"
   GameModeAlreadyPlayerInAdventureMSG: "&4The player &c%player% &4is already in Adventure-Mode!"
   GameModeAlreadyPlayerInSpectatorMSG: "&4The player &c%player% &4is already in Spectator-Mode!"
+  ActivatedYourGodModeMSG: "&3You are now in God mode!"
+  DeactivatedYourGodModeMSG: "&3You are no longer in God mode!"
+  YouActivatedGodAnnotherPlayerMSG: "&3The player &2%player% &3is now in God-Mode"
+  YouDeactivatedGodAnnotherPlayerMSG: "&4The player &c%player% &4is no longer in God-Mode!"
+  YouActivatedGodFromPlayerMSG: "&3The player &2%player% set you in God-Mode!"
+  YouDeactivatedGodFromPlayerMSG: "&4The player &c%player% &4removed your God-Mode!"
+  InvseeMSG: "&3You can now see the player's inventory!"
+  InvseeYourselfMSG: "&4Why do open yourself inventory!"
 ##############################################################
 #                   Setting to JoinTitle                     #
 ##############################################################
@@ -107,15 +127,14 @@ MySQL:
   Datenbank: "servermanager"
   Port: 3306
 ##############################################################
-#                  Setting to Permissions                    #
-#         %date% set the current date. In TabHeader          #
-#            With "\n" can you create a new Line             #
+#                 Setting the Permissions                    #
 ##############################################################
 Perms:
   NoPermMSG: "&4You don't have permission to use this command!"
   PermSternchen: "easyservermanager.*"
   PermSetWarp: "easyservermanager.warp.set"
   PermRemoveWarp: "easyservermanager.warp.remove"
+  PermHeal: "easyservermanager.heal"
   PermTPWarp: "easyservermanager.warp.tp"
   PermListWarp: "easyservermanager.warp.list"
   PermChatClear: "easyservermanager.chatclear"
@@ -126,3 +145,8 @@ Perms:
   PermAnnotherFly: "easyservermanager.fly.other"
   PermGameMode: "easyservermanager.gamemode"
   PermGameModeAnnotherPlayer: "easyservermanager.gamemode.other"
+  PermGodModeAnnotherPlayer: "easyservermanager.god.other"
+  PermGodMode: "easyservermanager.god"
+  PermInvsee: "easyservermanager.invsee"
+  PermJail: "easyservermanager.jail"
+  PermHealAnnotherPlayer: "easyservermanager.heal.other"

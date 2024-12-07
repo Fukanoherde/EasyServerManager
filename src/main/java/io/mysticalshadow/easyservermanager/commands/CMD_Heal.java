@@ -19,42 +19,46 @@ public class CMD_Heal implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.heal") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermHeal) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 0) {
                     p.setHealth(20);
                     p.setFoodLevel(20);
-                    p.sendMessage(plugin.Prefix + "§3You successfully healed!");
+                    p.sendMessage(plugin.Prefix + plugin.YourHealedMSG);
                     return true;
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/heal");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "heal");
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
             Player target = Bukkit.getPlayer(args[0]);
-            if (p.hasPermission("siedlermanager.heal.other") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermHealAnnotherPlayer) || p.hasPermission(plugin.PermSternchen)) {
                 if (target != null) {
                     if (target.getName() != p.getName()) {
                         if (args.length == 1) {
                             target.setHealth(20);
                             target.setFoodLevel(20);
-                            target.sendMessage(plugin.Prefix + "§3You healed from §2" + p.getDisplayName());
-                            p.sendMessage(plugin.Prefix + "§3You healed the Player §2" + target.getDisplayName());
+                            String healAnnotherPlayer = plugin.YourHealedAnnotherPlayer;
+                            healAnnotherPlayer = healAnnotherPlayer.replace("%player%", target.getDisplayName());
+                            String healFromPlayer = plugin.YourHealedFromPlayer;
+                            healFromPlayer = healFromPlayer.replace("%player%", p.getDisplayName());
+                            target.sendMessage(plugin.Prefix + healFromPlayer);
+                            p.sendMessage(plugin.Prefix + healAnnotherPlayer);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§bUse comamnd §8/heal <player>");
+                            p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "heal <player>");
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§bUse command §8/heal");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "heal");
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cPlayer does not exist!");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

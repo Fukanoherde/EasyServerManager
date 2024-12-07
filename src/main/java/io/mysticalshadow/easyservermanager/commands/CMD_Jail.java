@@ -25,7 +25,7 @@ public class CMD_Jail implements CommandExecutor {
         if (args.length == 3) {
             Player target = Bukkit.getPlayer(args[1]);
             String jailName = args[2];
-            if (sender.hasPermission("siedlermanager.jail") || sender.hasPermission("siedlermanager.*")) {
+            if (sender.hasPermission(plugin.PermJail) || sender.hasPermission(plugin.PermSternchen)) {
                 if (args[0].equalsIgnoreCase("set")) {
                     if (target != null) {
                         File fileTarget = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");

@@ -18,7 +18,6 @@ public class CMD_GodMode implements CommandExecutor {
         Bukkit.getPluginCommand("god").setExecutor(this);
     }
     public static List<Player> godMode = new ArrayList<>();
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {

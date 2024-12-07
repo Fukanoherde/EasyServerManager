@@ -38,7 +38,9 @@ public class CMD_Home implements CommandExecutor {
                 }
                 if (config.isSet(p.getName() + ".Jail.Status")) {
                     if (config.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
-                        p.sendMessage(plugin.Prefix + "§4You jailed. You cannot teleport to your Home §c" + args[0]);
+                        String cannotTeleportToHome = plugin.YourJailedHomeMSG;
+                        cannotTeleportToHome = cannotTeleportToHome.replace("%home%", args[0]);
+                        p.sendMessage(plugin.Prefix + cannotTeleportToHome);
                         return true;
                     } else {
                         if (config.isSet(p.getName() + ".Homes." + args[0])) {
@@ -53,16 +55,20 @@ public class CMD_Home implements CommandExecutor {
                                 p.playSound(p, Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
                             }
                             p.teleport(location);
-                            p.sendMessage(plugin.Prefix + "§3You successfully teleport to your Home §2" + args[0] + "§3!");
+                            String TeleportToHome = plugin.YouTeleportToYourHomeMSG;
+                            TeleportToHome = TeleportToHome.replace("%home%", args[0]);
+                            p.sendMessage(plugin.Prefix + TeleportToHome);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4The home §c" + args[0] + " §4does not exist!");
+                            String homeNotExist = plugin.HomeNotExistMSG;
+                            homeNotExist = homeNotExist.replace("%home%", args[0]);
+                            p.sendMessage(plugin.Prefix + homeNotExist);
                             return true;
                         }
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/home <homename>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "home <homename>");
             }
             if (args.length == 2) {
                 if (args[0].equalsIgnoreCase("set")) {
@@ -84,15 +90,19 @@ public class CMD_Home implements CommandExecutor {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        p.sendMessage(plugin.Prefix + "§3The home §2" + args[1] + " §3was set!");
+                        String homeSet = plugin.HomeSetMSG;
+                        homeSet = homeSet.replace("%home%", args[1]);
+                        p.sendMessage(plugin.Prefix + homeSet);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§4The home §c" + args[1] + " §4already exist!");
+                        String alreadyHomeExist = plugin.HomeAlreadyExistMSG;
+                        alreadyHomeExist = alreadyHomeExist.replace("%home%", args[1]);
+                        p.sendMessage(plugin.Prefix + alreadyHomeExist);
                         return true;
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/home set <homename>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "home set <homename>");
             }
             if (args.length == 2) {
                 if (args[0].equalsIgnoreCase("remove")) {
@@ -125,18 +135,22 @@ public class CMD_Home implements CommandExecutor {
                                 throw new RuntimeException(e);
                             }
                         }
-                        p.sendMessage(plugin.Prefix + "§3The home §2" + args[1] + " §3successfully deleted!");
+                        String homeRemoved = plugin.HomeRemovedMSG;
+                        homeRemoved = homeRemoved.replace("%home%", args[0]);
+                        p.sendMessage(plugin.Prefix + homeRemoved);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§4The home §c" + args[1] + " §4does not exist!");
+                        String homeNotExist = plugin.HomeNotExistMSG;
+                        homeNotExist = homeNotExist.replace("%home%", args[0]);
+                        p.sendMessage(plugin.Prefix + homeNotExist);
                         return true;
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/home remove <homename>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "home remove <homename>");
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
