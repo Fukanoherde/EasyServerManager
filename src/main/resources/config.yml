@@ -85,4 +85,5 @@ Perms:
   PermTPWarp: "easyservermanager.warp.tp"
   PermListWarp: "easyservermanager.warp.list"
   PermChatClear: "easyservermanager.chatclear"
+  AllChatClearMSG: "easyservermanager.chatclear"
   PermClear: "easyservermanager.clear"
