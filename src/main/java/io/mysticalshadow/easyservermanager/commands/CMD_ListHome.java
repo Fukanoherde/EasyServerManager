@@ -70,7 +70,7 @@ public class CMD_ListHome implements CommandExecutor {
                             } catch (InvalidConfigurationException e) {
                                 throw new RuntimeException(e);
                             }
-                            if (configTarget.isSet(target.getName() + ".Homes.")) {
+                            if (configTarget.getString(p.getName() + ".Homes") != null) {
                                 for (String homes : configTarget.getConfigurationSection(target.getName() + ".Homes").getKeys(false)) {
                                     String listHomes = homes;
                                     listHomes = listHomes.replaceAll(".world", "");

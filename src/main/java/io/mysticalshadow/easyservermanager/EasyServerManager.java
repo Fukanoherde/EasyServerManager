@@ -191,6 +191,8 @@ public class EasyServerManager extends JavaPlugin {
     public String OpenEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenEnderchestMSG"));
     public String OpenYourselfEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenYourselfEnderchestMSG"));
     public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
+    public String TeleportToFarmMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToFarmMSG"));
+    public String CannotFindFarmworldMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.CannotFindFarmworldMSG"));
     public String SuccessfullyChatClearedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessfullyChatClearedMSG"));
     public String DepositSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DepositSuccessfullyMSG"));
 

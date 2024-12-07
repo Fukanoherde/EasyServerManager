@@ -49,6 +49,10 @@ Messages:
   DepositSuccessfullyMSG: "&3The deposit was successfully!"
   EnoughLevelMSG: "&cYou don't have enough level!"
   ReachMaxLevelMSG: "&4You reached the Maximum save Level!"
+  OpenEnderchestMSG: "&3Your open the enderchest from the player!"
+  OpenYourselfEnderchestMSG: "&cYou cannot open your enderchest!"
+  TeleportToFarmMSG: "&3You successfully teleport to the Farmworld"
+  CannotFindFarmworldMSG: "&cCannot find the farmworld. Please contact the server Administration"
 ##############################################################
 #                   Setting to JoinTitle                     #
 ##############################################################
@@ -87,3 +91,4 @@ Perms:
   PermChatClear: "easyservermanager.chatclear"
   AllChatClearMSG: "easyservermanager.chatclear"
   PermClear: "easyservermanager.clear"
+  PermEnderchest: "easyservermanager.enderchest"
