@@ -24,39 +24,48 @@ public class CMD_GodMode implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (args.length == 0) {
-                if (p.hasPermission("siedlermanager.god") || p.hasPermission("siedlermanager*")) {
+                if (p.hasPermission(plugin.PermGodMode) || p.hasPermission(plugin.PermSternchen)) {
                     if (godMode.contains(p)) {
                         godMode.remove(p);
-                        p.sendMessage(plugin.Prefix + "§3You are no longer in God mode!");
+                        p.sendMessage(plugin.Prefix + plugin.DeactivatedYourGodModeMSG);
                         return true;
                     } else {
                         godMode.add(p);
-                        p.sendMessage(plugin.Prefix + "§3You are now in God mode!");
+                        p.sendMessage(plugin.Prefix + plugin.ActivatedYourGodModeMSG);
                         return true;
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cYou do not have permission to use this command.");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else if (args.length == 1) {
                 Player target = Bukkit.getPlayer(args[0]);
-                if (p.hasPermission("siedlermanager.god.other") || p.hasPermission("siedlermanager.*")) {
+                if (p.hasPermission(plugin.PermGodModeAnnotherPlayer) || p.hasPermission(plugin.PermSternchen)) {
                     if (target != null) {
                         if (godMode.contains(target)) {
                             godMode.remove(target);
-                            p.sendMessage(plugin.Prefix + "§3You removed the player god mode!");
-                            target.sendMessage(plugin.Prefix + "§3You are no longer in God mode!");
+                            String removeTheAnnotherPlayerGodMode = plugin.YouDeactivatedGodAnnotherPlayerMSG;
+                            removeTheAnnotherPlayerGodMode = removeTheAnnotherPlayerGodMode.replace("%player%", target.getDisplayName());
+                            p.sendMessage(plugin.Prefix + removeTheAnnotherPlayerGodMode);
+                            String removeTheFromPlayerGodMode = plugin.YouDeactivatedGodFromPlayerMSG;
+                            removeTheFromPlayerGodMode = removeTheFromPlayerGodMode.replace("%player%", p.getDisplayName());
+                            target.sendMessage(plugin.Prefix + removeTheFromPlayerGodMode);
                             return true;
                         } else {
                             godMode.add(target);
-                            p.sendMessage(plugin.Prefix + "§3You gived the player god mode!");
-                            target.sendMessage(plugin.Prefix + "§3You are now in God mode!");
+                            String activatedTheAnnotherPlayerGodMode = plugin.YouActivatedGodAnnotherPlayerMSG;
+                            activatedTheAnnotherPlayerGodMode = activatedTheAnnotherPlayerGodMode.replace("%player%", target.getDisplayName());
+                            p.sendMessage(plugin.Prefix + activatedTheAnnotherPlayerGodMode);
+                            String activatedTheFromPlayerGodMode = plugin.YouActivatedGodFromPlayerMSG;
+                            activatedTheFromPlayerGodMode = activatedTheFromPlayerGodMode.replace("%player%", p.getDisplayName());
+                            target.sendMessage(plugin.Prefix + activatedTheFromPlayerGodMode);
+                            target.sendMessage(plugin.Prefix + activatedTheFromPlayerGodMode);
                             return true;
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlayer does not exist!");
+                        p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cYou do not have permission to use this command.");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             }
         }
