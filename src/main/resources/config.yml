@@ -83,6 +83,12 @@ Messages:
   GameModeAlreadyPlayerInCreativeMSG: "&4The player &c%player% &4is already in Creative-Mode!"
   GameModeAlreadyPlayerInAdventureMSG: "&4The player &c%player% &4is already in Adventure-Mode!"
   GameModeAlreadyPlayerInSpectatorMSG: "&4The player &c%player% &4is already in Spectator-Mode!"
+  ActivatedYourGodModeMSG: "&3You are now in God mode!"
+  DeactivatedYourGodModeMSG: "&3You are no longer in God mode!"
+  YouActivatedGodAnnotherPlayerMSG: "&3You are no longer in God mode!"
+  YouDeactivatedGodAnnotherPlayerMSG: "&3You are no longer in God mode!"
+  YouActivatedGodFromPlayerMSG: "&3You are no longer in God mode!"
+  YouDeactivatedGodFromPlayerMSG: "&3You are no longer in God mode!"
 ##############################################################
 #                   Setting to JoinTitle                     #
 ##############################################################
@@ -126,3 +132,5 @@ Perms:
   PermAnnotherFly: "easyservermanager.fly.other"
   PermGameMode: "easyservermanager.gamemode"
   PermGameModeAnnotherPlayer: "easyservermanager.gamemode.other"
+  PermGodModeAnnotherPlayer: "easyservermanager.god.other"
+  PermGodMode: "easyservermanager.god"
