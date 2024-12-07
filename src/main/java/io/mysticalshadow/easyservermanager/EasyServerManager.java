@@ -188,6 +188,12 @@ public class EasyServerManager extends JavaPlugin {
     public String PlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerClearMSG"));
     public String AnotherPlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnotherPlayerClearMSG"));
     public String EnoughLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughLevelMSG"));
+    public String DeactivatedFlyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyMSG"));
+    public String ActivatedFlyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyMSG"));
+    public String ActivatedFlyByPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyByPlayerMSG"));
+    public String DeactivatedFlyByPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyByPlayerMSG"));
+    public String ActivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyFromMSG"));
+    public String DeactivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyFromMSG"));
     public String OpenEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenEnderchestMSG"));
     public String OpenYourselfEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenYourselfEnderchestMSG"));
     public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
@@ -195,6 +201,26 @@ public class EasyServerManager extends JavaPlugin {
     public String CannotFindFarmworldMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.CannotFindFarmworldMSG"));
     public String SuccessfullyChatClearedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessfullyChatClearedMSG"));
     public String DepositSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DepositSuccessfullyMSG"));
+    public String GameModeSurvivalSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSurvivalSelfMSG"));
+    public String GameModeCreativeSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeCreativeSelfMSG"));
+    public String GameModeAdventureSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAdventureSelfMSG"));
+    public String GameModeSpectatorSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSpectatorSelfMSG"));
+    public String GameModeAlreadyInSurvivalSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyInSurvivalSelfMSG"));
+    public String GameModeAlreadyInCreativeSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyInCreativeSelfMSG"));
+    public String GameModeAlreadyInAdventureSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyInAdventureSelfMSG"));
+    public String GameModeAlreadyInSpectatorSelfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyInSpectatorSelfMSG"));
+    public String GameModeSurvivalAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSurvivalAnnotherPlayerMSG"));
+    public String GameModeCreativeAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeCreativeAnnotherPlayerMSG"));
+    public String GameModeAdventureAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAdventureAnnotherPlayerMSG"));
+    public String GameModeSpectatorAnntotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSpectatorAnntotherPlayerMSG"));
+    public String GameModeSetInSurvivalAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSetInSurvivalAnnotherPlayerMSG"));
+    public String GameModeSetInCreativeAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSetInCreativeAnnotherPlayerMSG"));
+    public String GameModeSetInAdventureAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSetInAdventureAnnotherPlayerMSG"));
+    public String GameModeSetInSpectatorAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeSetInSpectatorAnnotherPlayerMSG"));
+    public String GameModeAlreadyPlayerInSurvivalMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInSurvivalMSG"));
+    public String GameModeAlreadyPlayerInCreativeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInCreativeMSG"));
+    public String GameModeAlreadyPlayerInAdventureMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInAdventureMSG"));
+    public String GameModeAlreadyPlayerInSpectatorMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInSpectatorMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -220,7 +246,11 @@ public class EasyServerManager extends JavaPlugin {
     public String PermTPWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTPWarp"));
     public String PermListWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermListWarp"));
     public String PermChatClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermChatClear"));
-    public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.AllChatClearMSG"));
+    public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAllChatClearMSG"));
     public String PermClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermClear"));
     public String PermEnderchest = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermEnderchest"));
+    public String PermFly = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermFly"));
+    public String PermAnnotherFly = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAnnotherFly"));
+    public String PermGameMode = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameMode"));
+    public String PermGameModeAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermGameModeAnnotherPlayer"));
 }

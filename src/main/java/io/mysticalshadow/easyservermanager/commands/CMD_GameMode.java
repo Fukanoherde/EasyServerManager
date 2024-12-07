@@ -14,45 +14,44 @@ public class CMD_GameMode implements CommandExecutor {
         this.plugin = plugin;
         Bukkit.getPluginCommand("gamemode").setExecutor(this);
     }
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.gamemode") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermGameMode) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("0")) {
                         if (!(p.getGameMode() == GameMode.SURVIVAL)) {
                             p.setGameMode(GameMode.SURVIVAL);
-                            p.sendMessage(plugin.Prefix + "§2You are now in survival mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeSurvivalSelfMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou are already on the survival mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInSurvivalSelfMSG);
                         }
                     } else if (args[0].equalsIgnoreCase("1")) {
                         if (!(p.getGameMode() == GameMode.CREATIVE)) {
                             p.setGameMode(GameMode.CREATIVE);
-                            p.sendMessage(plugin.Prefix + "§2You are now in creative mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeCreativeSelfMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou are already on the creative mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInCreativeSelfMSG);
                         }
                     } else if (args[0].equalsIgnoreCase("2")) {
                         if (!(p.getGameMode() == GameMode.ADVENTURE)) {
                             p.setGameMode(GameMode.ADVENTURE);
-                            p.sendMessage(plugin.Prefix + "§2You are now in adventure mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeAdventureSelfMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou are already on an adventure mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInAdventureSelfMSG);
                         }
                     } else if (args[0].equalsIgnoreCase("3")) {
                         if (!(p.getGameMode() == GameMode.SPECTATOR)) {
                             p.setGameMode(GameMode.SPECTATOR);
-                            p.sendMessage(plugin.Prefix + "§2You are now in spectator mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeSpectatorSelfMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou are already on an spectator mode");
+                            p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInSpectatorSelfMSG);
                             return true;
                         }
                     }
@@ -60,9 +59,9 @@ public class CMD_GameMode implements CommandExecutor {
                     //p.sendMessage(plugin.Prefix + "§bUse Command: §8/gm <0, 1, 2, 3>");
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou do not have permission to use this command");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
-            if (p.hasPermission("siedlermanager.gamemode.other") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermGameModeAnnotherPlayer) || p.hasPermission(plugin.PermSternchen)) {
                 Player target = Bukkit.getPlayer(args[1]);
                 if (target != null) {
                     if (target.getName() != p.getName()) {
@@ -70,52 +69,76 @@ public class CMD_GameMode implements CommandExecutor {
                             if (args[0].equalsIgnoreCase("0")) {
                                 if (target.getGameMode() != GameMode.SURVIVAL) {
                                     target.setGameMode(GameMode.SURVIVAL);
-                                    target.sendMessage(plugin.Prefix + "§3You are now in survival mode");
-                                    p.sendMessage(plugin.Prefix + "§2You set the Player in survival mode");
+                                    String changedPlayerGameModeToSurvival = plugin.GameModeSurvivalAnnotherPlayerMSG;
+                                    changedPlayerGameModeToSurvival = changedPlayerGameModeToSurvival.replace("%player%", p.getDisplayName());
+                                    target.sendMessage(plugin.Prefix + changedPlayerGameModeToSurvival);
+                                    String changedFromPlayerGameModeToSurvival = plugin.GameModeSetInSurvivalAnnotherPlayerMSG;
+                                    changedFromPlayerGameModeToSurvival = changedFromPlayerGameModeToSurvival.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + changedFromPlayerGameModeToSurvival);
                                     return true;
                                 } else {
-                                    p.sendMessage(plugin.Prefix + "§cThe player is already on the survival mode");
+                                    String playerIsAlreadyInSurvival = plugin.GameModeAlreadyPlayerInSurvivalMSG;
+                                    playerIsAlreadyInSurvival = playerIsAlreadyInSurvival.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerIsAlreadyInSurvival);
                                 }
                             } else if (args[0].equalsIgnoreCase("1")) {
                                 if (target.getGameMode() != GameMode.CREATIVE) {
                                     target.setGameMode(GameMode.CREATIVE);
-                                    target.sendMessage(plugin.Prefix + "§3You are now in creative mode");
-                                    p.sendMessage(plugin.Prefix + "§2You set the Player in creative mode");
+                                    String changedPlayerGameModeToCreative = plugin.GameModeCreativeAnnotherPlayerMSG;
+                                    changedPlayerGameModeToCreative = changedPlayerGameModeToCreative.replace("%player%", p.getDisplayName());
+                                    target.sendMessage(plugin.Prefix + changedPlayerGameModeToCreative);
+                                    String changedFromPlayerGameModeToCreative = plugin.GameModeSetInCreativeAnnotherPlayerMSG;
+                                    changedFromPlayerGameModeToCreative = changedFromPlayerGameModeToCreative.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + changedFromPlayerGameModeToCreative);
                                     return true;
                                 } else {
-                                    p.sendMessage(plugin.Prefix + "§cThe player is already on the creative mode");
+                                    String playerIsAlreadyInCreative = plugin.GameModeAlreadyPlayerInCreativeMSG;
+                                    playerIsAlreadyInCreative = playerIsAlreadyInCreative.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerIsAlreadyInCreative);
                                 }
                             } else if (args[0].equalsIgnoreCase("2")) {
                                 if (target.getGameMode() != GameMode.ADVENTURE) {
                                     target.setGameMode(GameMode.ADVENTURE);
-                                    target.sendMessage(plugin.Prefix + "§3You are now in adventure mode");
-                                    p.sendMessage(plugin.Prefix + "§2You set the Player in adventure mode");
+                                    String changedPlayerGameModeToAdventure = plugin.GameModeAdventureAnnotherPlayerMSG;
+                                    changedPlayerGameModeToAdventure = changedPlayerGameModeToAdventure.replace("%player%", p.getDisplayName());
+                                    target.sendMessage(plugin.Prefix + changedPlayerGameModeToAdventure);
+                                    String changedFromPlayerGameModeToAdventure = plugin.GameModeSetInAdventureAnnotherPlayerMSG;
+                                    changedFromPlayerGameModeToAdventure = changedFromPlayerGameModeToAdventure.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + changedFromPlayerGameModeToAdventure);
                                     return true;
                                 } else {
-                                    p.sendMessage(plugin.Prefix + "§cThe player is already on an adventure mode");
+                                    String playerIsAlreadyInAdventure = plugin.GameModeAlreadyPlayerInAdventureMSG;
+                                    playerIsAlreadyInAdventure = playerIsAlreadyInAdventure.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerIsAlreadyInAdventure);
                                 }
                             } else if (args[0].equalsIgnoreCase("3")) {
                                 if (target.getGameMode() != GameMode.SPECTATOR) {
                                     target.setGameMode(GameMode.SPECTATOR);
-                                    target.sendMessage(plugin.Prefix + "§3You are now in spectator mode");
-                                    p.sendMessage(plugin.Prefix + "§2You set the Player in spectator mode");
+                                    String changedPlayerGameModeToSpectator = plugin.GameModeSpectatorAnntotherPlayerMSG;
+                                    changedPlayerGameModeToSpectator = changedPlayerGameModeToSpectator.replace("%player%", p.getDisplayName());
+                                    target.sendMessage(plugin.Prefix + changedPlayerGameModeToSpectator);
+                                    String changedFromPlayerGameModeToSpectator = plugin.GameModeSetInSpectatorAnnotherPlayerMSG;
+                                    changedFromPlayerGameModeToSpectator = changedFromPlayerGameModeToSpectator.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + changedFromPlayerGameModeToSpectator);
                                     return true;
                                 } else {
-                                    p.sendMessage(plugin.Prefix + "§cThe player is already on an spectator mode");
+                                    String playerIsAlreadyInSpectator = plugin.GameModeAlreadyPlayerInSpectatorMSG;
+                                    playerIsAlreadyInSpectator = playerIsAlreadyInSpectator.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerIsAlreadyInSpectator);
                                 }
                             }
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlease use /gm 0");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "gm <0, 1, 2, 3>");
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cThe player does not exist");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou do not have permission to use this command");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
