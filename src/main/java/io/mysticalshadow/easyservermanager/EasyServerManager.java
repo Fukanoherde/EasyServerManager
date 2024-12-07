@@ -188,6 +188,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerClearMSG"));
     public String AnotherPlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnotherPlayerClearMSG"));
     public String EnoughLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughLevelMSG"));
+    public String OpenEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenEnderchestMSG"));
+    public String OpenYourselfEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenYourselfEnderchestMSG"));
     public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
     public String SuccessfullyChatClearedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessfullyChatClearedMSG"));
     public String DepositSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DepositSuccessfullyMSG"));
@@ -218,4 +220,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermChatClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermChatClear"));
     public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.AllChatClearMSG"));
     public String PermClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermClear"));
+    public String PermEnderchest = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermEnderchest"));
 }

@@ -19,26 +19,26 @@ public class CMD_EnderChest implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.enderchest") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermEnderchest) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     Player target = Bukkit.getPlayer(args[0]);
                     if (target != null) {
                         if (target != p) {
                             p.openInventory(target.getEnderChest());
-                            p.sendMessage(plugin.Prefix + "§3Your open the enderchest from the player!");
+                            p.sendMessage(plugin.Prefix + plugin.OpenEnderchestMSG);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou cannot open your enderchest!");
+                            p.sendMessage(plugin.Prefix + plugin.OpenYourselfEnderchestMSG);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlayer does not exist!");
+                        p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
