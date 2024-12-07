@@ -136,12 +136,12 @@ public class CMD_Home implements CommandExecutor {
                             }
                         }
                         String homeRemoved = plugin.HomeRemovedMSG;
-                        homeRemoved = homeRemoved.replace("%home%", args[0]);
+                        homeRemoved = homeRemoved.replace("%home%", args[1]);
                         p.sendMessage(plugin.Prefix + homeRemoved);
                         return true;
                     } else {
                         String homeNotExist = plugin.HomeNotExistMSG;
-                        homeNotExist = homeNotExist.replace("%home%", args[0]);
+                        homeNotExist = homeNotExist.replace("%home%", args[1]);
                         p.sendMessage(plugin.Prefix + homeNotExist);
                         return true;
                     }

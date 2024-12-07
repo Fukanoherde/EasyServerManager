@@ -10,7 +10,7 @@
 #                      Setting Messages                      #
 ##############################################################
 EasyServerManager:
-  Prefix: "&8&l[&3&lEasy&b&lSiedler&3&lManager&8&l] &8"
+  Prefix: "&8&l[&3&lEasy&b&lServer&3&lManager&8&l] &8"
   AllowJoinMessage: true
   AllowQuitMessage: true
   AllowPlayTeleportSound: true
