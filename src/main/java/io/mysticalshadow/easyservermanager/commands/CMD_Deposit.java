@@ -28,23 +28,27 @@ public class CMD_Deposit implements CommandExecutor {
             if (args.length == 1) {
                 int level = Integer.parseInt(args[0]);
                 if (p.getLevel() >= level) {
-                    config.set(p.getName() + "." + "Level", config.getInt(p.getName() + "." + "Level") + level);
-                    try {
-                        config.save(file);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+                    if (level >= Integer.parseInt(String.valueOf(plugin.MaxSaveLevel))) {
+                        config.set(p.getName() + "." + "Level", config.getInt(p.getName() + "." + "Level") + level);
+                        try {
+                            config.save(file);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        p.setLevel(p.getLevel() - level);
+                        ScoreboardManager.setBoard(p);
+                        ScoreboardManager.updateBoard(p);
+                        p.sendMessage(plugin.Prefix + plugin.DepositSuccessfullyMSG);
+                        return true;
+                    } else {
+                        p.sendMessage(plugin.Prefix + plugin.ReachMaxLevel);
                     }
-                    p.setLevel(p.getLevel() - level);
-                    ScoreboardManager.setBoard(p);
-                    ScoreboardManager.updateBoard(p);
-                    p.sendMessage(plugin.Prefix + "§3The deposit was successfully");
-                    return true;
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cYou dont have enough level");
+                    p.sendMessage(plugin.Prefix + plugin.EnoughLevelMSG);
                 }
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

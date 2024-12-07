@@ -19,25 +19,29 @@ public class CMD_Clear implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.clear") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermClear) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     Player target = Bukkit.getPlayer(args[0]);
                     if (target != null) {
                         target.getInventory().clear();
-                        p.sendMessage(plugin.Prefix + "§3You cleared the Inventory from: §2" + target.getName());
-                        target.sendMessage(plugin.Prefix + "§3Your inventory has been cleared.");
+                        String clearSender = plugin.PlayerClearMSG;
+                        clearSender = clearSender.replace("%player%", target.getDisplayName());
+                        p.sendMessage(plugin.Prefix + clearSender);
+                        String targetPlayer = plugin.AnotherPlayerClearMSG;
+                        targetPlayer = targetPlayer.replace("%player%", p.getDisplayName());
+                        target.sendMessage(plugin.Prefix + targetPlayer);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlayer doas not exist");
+                        p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bUse command §8/clear <player>");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "clear <player>");
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cDo you not have permission to use this command");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

@@ -165,6 +165,7 @@ public class EasyServerManager extends JavaPlugin {
     public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
     public boolean AllowPlayTeleportSound = getConfig().getBoolean("EasyServerManager.AllowPlayTeleportSound");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
+    public int MaxSaveLevel = getConfig().getInt("EasyServerManager.MaxSaveLevel");
     public String SaveType = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.SaveType"));
     public String ServerName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.ServerName"));
 
@@ -180,7 +181,15 @@ public class EasyServerManager extends JavaPlugin {
     public String UseCommandMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.UseCommandMSG"));
     public String OnlyRealPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OnlyRealPlayer"));
     public String RemoveWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemoveWarpMSG"));
+    public String PlayerNotExist = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerNotExist"));
     public String TeleportToWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToWarpMSG"));
+    public String TeleportToDeathMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToDeathMSG"));
+    public String DeathNotFoundMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeathNotFoundMSG"));
+    public String PlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerClearMSG"));
+    public String AnotherPlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnotherPlayerClearMSG"));
+    public String EnoughLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughLevelMSG"));
+    public String ReachMaxLevel = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevel"));
+    public String DepositSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DepositSuccessfullyMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -205,4 +214,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PermRemoveWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermRemoveWarp"));
     public String PermTPWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTPWarp"));
     public String PermListWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermListWarp"));
+    public String PermChatClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermChatClear"));
+    public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.AllChatClearMSG"));
+    public String PermClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermClear"));
+    public String SuccessfullyChatClearedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.SuccessfullyChatClearedMSG"));
 }

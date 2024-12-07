@@ -13,6 +13,7 @@ EasyServerManager:
   Prefix: "&8&l[&3&lEasy&b&lSiedler&3&lManager&8&l] &8"
   AllowJoinMessage: true
   AllowQuitMessage: true
+  AllowPlayTeleportSound: true
   Farminworld: "farmwelt"
   MaxPlayers: 10
   SaveType: "file"
@@ -20,6 +21,8 @@ EasyServerManager:
 ####################################################################
 #                        Setting Messages                          #
 #  Alias "%player%" define the Player on the Join or Quit message  #
+#      Alias "%warp%" define the Player on the warp commands       #
+#   In the path UseCommandMSG Nothing may be entered after the /   #
 ####################################################################
 Messages:
   JoinMessage: "&8[&a+&8] %player%"
@@ -28,9 +31,12 @@ Messages:
   MOTDFooter: "&4&lNEWS: &c&lIngame Voice &2&l| &c&lNew BanSystem"
   MOTDMaintenance: "&4The server is currently undergoing maintenance work"
   SetWarpMSG: "&3You successfully set the Warp &2%warp%"
+  RemoveWarpMSG: "&4You successfully removed the Warp &c%warp%"
   WarpAlreadyExistMSG: "&4The warp &c%warp% &4already exist!"
   WarpDoesNotExistMSG: "&4The warp &c%warp% &4already exist!"
   UseCommandMSG: "&bUse command &8/"
+  TeleportToWarpMSG: "&3You teleport successfully teleport to the Warp §2%warp% &3!"
+  OnlyRealPlayer: "&4Error: &cThis command cannot be used"
 ##############################################################
 #                   Setting to JoinTitle                     #
 ##############################################################
@@ -43,8 +49,8 @@ Title:
 #            With "\n" can you create a new Line             #
 ##############################################################
 TabList:
-  Header: "§3Willkommen auf \n§3ServerName\n\n§3Datum §2%date%\n\n§4§l----------------------------------\n"
-  Footer: "&4&l----------------------------------\n\n&3Unser Discord: &2Link \n&3Live-Map &2Link"
+  Header: "&3Willkommen auf \n&3ServerName\n\n&3Datum &2%date%\n\n&4&l----------------------------------\n"
+  Footer: "\n&4&l----------------------------------\n\n&3Unser Discord: &2Link \n&3Live-Map &2Link"
 ##############################################################
 #              Setting to Database connection                #
 ##############################################################
@@ -60,7 +66,7 @@ MySQL:
 #            With "\n" can you create a new Line             #
 ##############################################################
 Perms:
-  NoPermMSG: "&You don't have permission to use this command!"
+  NoPermMSG: "&4You don't have permission to use this command!"
   PermSternchen: "easyservermanager.*"
   PermSetWarp: "easyservermanager.warp.set"
   PermRemoveWarp: "easyservermanager.warp.remove"

@@ -35,9 +35,9 @@ public class CMD_Back implements CommandExecutor {
             }
             if (config.isSet(p.getName() + ".Death.")) {
                 String world = (String) config.get(p.getName() + ".Death.World");
-                Double x = config.getDouble(p.getName() + ".Death.X");
-                Double y = config.getDouble(p.getName() + ".Death.Y");
-                Double z = config.getDouble(p.getName() + ".Death.Z");
+                double x = config.getDouble(p.getName() + ".Death.X");
+                double y = config.getDouble(p.getName() + ".Death.Y");
+                double z = config.getDouble(p.getName() + ".Death.Z");
                 Location location = new Location(Bukkit.getWorld(world), x, y, z);
                 p.teleport(location);
                 config.set(p.getName() + ".Death", null);
@@ -46,13 +46,13 @@ public class CMD_Back implements CommandExecutor {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                p.sendMessage(plugin.Prefix + "§3You successfully teleport to your death point!");
+                p.sendMessage(plugin.Prefix + plugin.TeleportToDeathMSG);
                 return true;
             } else {
-                p.sendMessage(plugin.Prefix + "§4does not found your last Death point!");
+                p.sendMessage(plugin.Prefix + plugin.DeathNotFoundMSG);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
