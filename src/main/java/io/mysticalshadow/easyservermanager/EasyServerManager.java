@@ -188,7 +188,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerClearMSG"));
     public String AnotherPlayerClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AnotherPlayerClearMSG"));
     public String EnoughLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughLevelMSG"));
-    public String ReachMaxLevel = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevel"));
+    public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
     public String DepositSuccessfullyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DepositSuccessfullyMSG"));
 
     // Title \\

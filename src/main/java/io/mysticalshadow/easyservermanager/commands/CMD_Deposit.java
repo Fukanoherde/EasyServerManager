@@ -41,7 +41,7 @@ public class CMD_Deposit implements CommandExecutor {
                         p.sendMessage(plugin.Prefix + plugin.DepositSuccessfullyMSG);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + plugin.ReachMaxLevel);
+                        p.sendMessage(plugin.Prefix + plugin.ReachMaxLevelMSG);
                     }
                 } else {
                     p.sendMessage(plugin.Prefix + plugin.EnoughLevelMSG);
