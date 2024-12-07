@@ -211,6 +211,8 @@ public class EasyServerManager extends JavaPlugin {
     public String DeactivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyFromMSG"));
     public String OpenEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenEnderchestMSG"));
     public String InvseeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.InvseeMSG"));
+    public String YouJailedAPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouJailedAPlayerMSG"));
+    public String YouJailedFromPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouJailedFromPlayer"));
     public String InvseeYourselfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.InvseeYourselfMSG"));
     public String OpenYourselfEnderchestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OpenYourselfEnderchestMSG"));
     public String ReachMaxLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReachMaxLevelMSG"));
@@ -238,6 +240,18 @@ public class EasyServerManager extends JavaPlugin {
     public String GameModeAlreadyPlayerInCreativeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInCreativeMSG"));
     public String GameModeAlreadyPlayerInAdventureMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInAdventureMSG"));
     public String GameModeAlreadyPlayerInSpectatorMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.GameModeAlreadyPlayerInSpectatorMSG"));
+    public String PlayerAlreadyJailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerAlreadyJailedMSG"));
+    public String JailNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JailNotExistMSG"));
+    public String PlayerIsNotJailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerIsNotJailedMSG"));
+    public String WarpSpawnNotFoundMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WarpSpawnNotFoundMSG"));
+    public String PlayerUnjailedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerUnjailedMSG"));
+    public String PlayerUnjailedFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerUnjailedFromMSG"));
+    public String ThePathNotFoundMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThePathNotFoundMSG"));
+    public String UnjailedYourselfMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.UnjailedYourselfMSG"));
+    public String KickMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickMSG"));
+    public String KickPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickPlayerMSG"));
+    public String KickYourself = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickYourselfMSG"));
+    public String SuccessfullyKickPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessfullyKickPlayerMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -276,4 +290,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermInvsee = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermInvsee"));
     public String PermJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermJail"));
     public String PermHealAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHealAnnotherPlayer"));
+    public String PermKick = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermKick"));
 }

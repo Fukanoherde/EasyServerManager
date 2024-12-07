@@ -15,7 +15,7 @@ public class JailManager {
     public static YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
     public static void setJailPoint(Player p, String jailname) throws IOException {
-        String path = "SiedlerManager" + "." + jailname + ".";
+        String path = EasyServerManager.getInstance().ServerName + "." + jailname + ".";
 
         String welt = p.getWorld().getName();
         double x = p.getLocation().getX();
@@ -38,7 +38,7 @@ public class JailManager {
         savecfg();
     }
     public static Location teleportToJail(Player player, String jailname) {
-        String path = "SiedlerManager" + "." + jailname + ".";
+        String path = EasyServerManager.getInstance().ServerName + "." + jailname + ".";
         String world = config.getString(path + "Welt");
         double x = config.getDouble(path + "X");
         double y = config.getDouble(path + "Y");

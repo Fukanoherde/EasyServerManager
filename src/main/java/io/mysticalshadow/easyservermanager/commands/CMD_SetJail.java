@@ -25,7 +25,7 @@ public class CMD_SetJail implements CommandExecutor {
             if (p.hasPermission("siedlermanager.setjail") || p.hasPermission("siedlermanager.*")) {
                 if (args.length == 1) {
                     String jailname = args[0];
-                    String path = "SiedlerManager" + "." + jailname + ".";
+                    String path = plugin.ServerName + "." + jailname + ".";
 
                     String welt = p.getWorld().getName();
                     double x = p.getLocation().getX();

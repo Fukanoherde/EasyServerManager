@@ -17,7 +17,7 @@ public class CMD_Kick implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (sender.hasPermission("siedlermanager.kick") || sender.hasPermission("siedlermanager.*")) {
+        if (sender.hasPermission(plugin.PermKick) || sender.hasPermission(plugin.PermSternchen)) {
             if (args.length >= 2) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != sender) {
@@ -26,19 +26,24 @@ public class CMD_Kick implements CommandExecutor {
                         for (int i = 1; i < args.length; i++) {
                             msg += args[i] + " ";
                         }
-                        sender.sendMessage(plugin.Prefix + "§eDu hast den Spieler §a" + target.getDisplayName() + " §eerfolgreich gekickt!");
-                        target.kickPlayer("SiedlerMC" + "\n\n"
-                                + "§bDu wurdest vom Server gekickt!\n§cGrund: §4" + msg + "\n\n§9gekickt worden von: §7" + sender.getName());
+                        String successKick = plugin.SuccessfullyKickPlayerMSG;
+                        successKick = successKick.replace("%player%", target.getDisplayName());
+                        sender.sendMessage(plugin.Prefix + successKick);
+                        String kickReason = plugin.KickMSG;
+                        kickReason = kickReason.replace("%reason%", msg);
+                        String kickSender = plugin.KickPlayer;
+                        kickSender = kickSender.replace("%player%", sender.getName());
+                        target.kickPlayer(plugin.ServerName + kickReason + kickSender);
                         return true;
                     } else {
-                        sender.sendMessage(plugin.Prefix + "§cPlayer does not exist!");
+                        sender.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 } else {
-                    sender.sendMessage(plugin.Prefix + "§cWhy do you kick yourself?!");
+                    sender.sendMessage(plugin.Prefix + plugin.KickYourself);
                 }
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+            sender.sendMessage(plugin.Prefix + plugin.NoPermMessage);
         }
         return false;
     }

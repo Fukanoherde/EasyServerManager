@@ -2,13 +2,16 @@ package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
 import io.mysticalshadow.easyservermanager.manager.JailManager;
+import io.mysticalshadow.easyservermanager.manager.WarpManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +42,7 @@ public class CMD_Jail implements CommandExecutor {
                         } catch (InvalidConfigurationException e) {
                             throw new RuntimeException(e);
                         }
-                        if (jailConfig.isSet("SiedlerManager" + "." + jailName + ".")) {
+                        if (jailConfig.isSet(plugin.ServerName + "." + jailName + ".")) {
                             JailManager.teleportToJail(target, jailName);
                             try {
                                 configTarget.load(fileTarget);
@@ -68,18 +71,26 @@ public class CMD_Jail implements CommandExecutor {
                                 } catch (IOException e) {
                                     throw new RuntimeException(e);
                                 }
-                                sender.sendMessage(plugin.Prefix + "§3You successfully jailed the player §2" + target.getName());
-                                target.sendMessage(plugin.Prefix + "§3You was jailed!");
+                                String jailedMessageAPlayer = plugin.YouJailedAPlayerMSG;
+                                jailedMessageAPlayer = jailedMessageAPlayer.replace("%player%", target.getDisplayName());
+                                sender.sendMessage(plugin.Prefix + jailedMessageAPlayer);
+                                String jailedMessageFromPlayer = plugin.YouJailedFromPlayer;
+                                jailedMessageFromPlayer = jailedMessageFromPlayer.replace("%player%", sender.getName());
+                                target.sendMessage(plugin.Prefix + jailedMessageFromPlayer);
                                 JailManager.teleportToJail(target, jailName);
                                 return true;
                             } else {
-                                sender.sendMessage(plugin.Prefix + "§4The player §c" + target.getName() + " §4already jailed!");
+                                String alreadyJailed = plugin.PlayerAlreadyJailedMSG;
+                                alreadyJailed = alreadyJailed.replace("%player%", target.getDisplayName());
+                                sender.sendMessage(plugin.Prefix + alreadyJailed);
                             }
                         } else {
-                            sender.sendMessage(plugin.Prefix + "§4The jail §c" + jailName + " §4does not exist!");
+                            String jailNotExist = plugin.JailNotExistMSG;
+                            jailNotExist = jailNotExist.replace("%jail%", jailName);
+                            target.sendMessage(plugin.Prefix + jailNotExist);
                         }
                     } else {
-                        sender.sendMessage(plugin.Prefix + "§4The player §c" + args[1] + " §4does not exist!");
+                        sender.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 }
             }
@@ -107,22 +118,48 @@ public class CMD_Jail implements CommandExecutor {
                                 } catch (IOException e) {
                                     throw new RuntimeException(e);
                                 }
-                                sender.sendMessage(plugin.Prefix + "§3You successfully unjailed the player §2" + target.getName());
-                                target.sendMessage(plugin.Prefix + "§3You was unjailed!");
-                                target.teleport(Bukkit.getWorld("world").getSpawnLocation());
-                                return true;
+                                String unjailedThePlayer = plugin.PlayerUnjailedMSG;
+                                unjailedThePlayer = unjailedThePlayer.replace("%player%", target.getDisplayName());
+                                sender.sendMessage(plugin.Prefix + unjailedThePlayer);
+                                String unjailedFromPlayer = plugin.PlayerUnjailedFromMSG;
+                                unjailedFromPlayer = unjailedFromPlayer.replace("%player%", sender.getName());
+                                target.sendMessage(plugin.Prefix + unjailedFromPlayer);
+                                try {
+                                    WarpManager.config.load(WarpManager.file);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                } catch (InvalidConfigurationException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                if (WarpManager.config.isSet(plugin.ServerName + ".WarpManager.Spawn")) {
+                                    String world = WarpManager.config.getString(plugin.ServerName + ".WarpManager.Spawn.World");
+                                    double x = WarpManager.config.getDouble(plugin.ServerName + ".WarpManager.Spawn.X");
+                                    double y = WarpManager.config.getDouble(plugin.ServerName + ".WarpManager.Spawn.Y");
+                                    double z = WarpManager.config.getDouble(plugin.ServerName + ".WarpManager.Spawn.Z");
+                                    float yaw = (float) WarpManager.config.getDouble(plugin.ServerName + ".WarpManager.Spawn.Yaw");
+                                    float pitch = (float) WarpManager.config.getDouble(plugin.ServerName + ".WarpManager.Spawn.Pitch");
+                                    Location location = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
+                                    target.teleport(location);
+                                    return true;
+                                } else {
+                                    target.sendMessage(plugin.Prefix + plugin.WarpSpawnNotFoundMSG);
+                                    target.teleport(Bukkit.getWorld("world").getSpawnLocation());
+                                    return true;
+                                }
                             } else {
-                                sender.sendMessage(plugin.Prefix + "§4The player §c" + args[0] + " §4is not Jailed!");
+                                String playerIsNotJailed = plugin.PlayerIsNotJailedMSG;
+                                playerIsNotJailed = playerIsNotJailed.replace("%player%", args[0]);
+                                sender.sendMessage(plugin.Prefix + playerIsNotJailed);
                             }
                         } else {
-                            sender.sendMessage(plugin.Prefix + "§4The path does not exist!");
+                            sender.sendMessage(plugin.Prefix + plugin.ThePathNotFoundMSG);
                             configTarget.set(target.getName() + ".Jail.Satus", false);
                         }
                     } else {
-                        sender.sendMessage(plugin.Prefix + "§4You cannot unjailed yourself!");
+                        sender.sendMessage(plugin.Prefix + plugin.UnjailedYourselfMSG);
                     }
                 } else {
-                    sender.sendMessage(plugin.Prefix + "§4The player §c" + args[1] + " §4does not exist!");
+                    sender.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             }
         }
