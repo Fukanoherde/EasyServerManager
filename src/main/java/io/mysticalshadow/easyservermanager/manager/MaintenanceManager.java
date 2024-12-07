@@ -12,7 +12,7 @@ public class MaintenanceManager {
     public static YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
     public static void loadFile () throws IOException {
-        String path = "SiedlerManager" + ".";
+        String path = EasyServerManager.getInstance().ServerName + ".";
 
         Boolean maintenance = Boolean.valueOf(false);
 

@@ -16,7 +16,7 @@ public class ServerManager implements Listener {
     }
     @EventHandler
     public void onMOTD (ServerListPingEvent e) {
-        String path = "SiedlerManager" + ".";
+        String path = plugin.ServerName + ".";
         if (MaintenanceManager.config.getBoolean(path + "Maintenance", true)) {
             e.setMotd(plugin.MOTDHeader + "\n" + plugin.MOTDMaintenance);
         } else {

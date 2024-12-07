@@ -39,12 +39,12 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onLogin(PlayerLoginEvent e) {
         Player p = e.getPlayer();
-        String path = "SiedlerManager" + ".";
+        String path = plugin.ServerName + ".";
         if (MaintenanceManager.config.getBoolean(path + "Maintenance", Boolean.valueOf(true))) {
-            if (p.hasPermission("siedlermanager.maintenance") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermMaintenanceJoin) || p.hasPermission(plugin.PermSternchen)) {
                 return;
             } else {
-                e.disallow(PlayerLoginEvent.Result.KICK_OTHER, "§3SiedlerMC\n§aDu wurdest gekickt\n§4GRUND: §cWartungsarbeiten\n§3gekickt worden vom: §4System");
+                e.disallow(PlayerLoginEvent.Result.KICK_OTHER, plugin.KickPlayerWhenActivateMaintenance);
             }
         }
     }
