@@ -68,6 +68,8 @@ public class CMD_GodMode implements CommandExecutor {
                     p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             }
+        } else {
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
