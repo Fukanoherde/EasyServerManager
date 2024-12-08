@@ -343,7 +343,6 @@ public class EasyServerManager extends JavaPlugin {
     public int NineteenAmount = getConfig().getInt("Reward.Nineteen.Amount");
 
     // Tablist \\
-
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));
     public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
 
