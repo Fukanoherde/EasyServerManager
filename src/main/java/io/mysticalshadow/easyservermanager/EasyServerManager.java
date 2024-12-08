@@ -295,6 +295,9 @@ public class EasyServerManager extends JavaPlugin {
     public String DeniedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeniedRequestMSG"));
     public String ReceivedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReceivedRequestMSG"));
     public String TpherePlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TpherePlayerMSG"));
+    public String WeatherChangedSunMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedSunMSG"));
+    public String WeatherChangedRainMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedRainMSG"));
+    public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedThunderMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -402,4 +405,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermMaintenanceJoin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceJoin"));
     public String PermMaintenanceActivate = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceActivate"));
     public String PermSetJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSetJail"));
+    public String PermWeather = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermWeather"));
 }

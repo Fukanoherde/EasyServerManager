@@ -17,53 +17,39 @@ public class CMD_Wetter implements CommandExecutor {
 
         @Override
         public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-            // Prüft, ob der Sender ein Spieler ist
             if (sender instanceof Player) {
                 Player p = (Player) sender;
-
-                // Prüft, ob der Spieler die Berechtigung zum Ändern des Wetters hat
-                if (p.hasPermission("siedlermanager.weather") || p.hasPermission("siedlermanager.*")) {
-
-                    // Prüft, ob ein Wettertyp als Argument angegeben wurde
+                if (p.hasPermission(plugin.PermWeather) || p.hasPermission(plugin.PermSternchen)) {
                     if (args.length == 1) {
                         String wetterTyp = args[0].toLowerCase();
-
                         switch (wetterTyp) {
                             case "sun":
-                                // Setzt das Wetter auf klar
                                 Bukkit.getWorld(p.getLocation().getWorld().getName()).setStorm(false);
-                                p.sendMessage(plugin.Prefix + "§3The weather change to sun");
+                                p.sendMessage(plugin.Prefix + plugin.WeatherChangedSunMSG);
                                 break;
-
                             case "rain":
-                                // Setzt das Wetter auf Regen
                                 Bukkit.getWorld(p.getLocation().getWorld().getName()).setStorm(true);
-                                p.sendMessage(plugin.Prefix + "§3The weather change to rain!");
+                                p.sendMessage(plugin.Prefix + plugin.WeatherChangedRainMSG);
                                 break;
-
                             case "thunder":
-                                // Setzt das Wetter auf Gewitter
                                 Bukkit.getWorld(p.getLocation().getWorld().getName()).setStorm(true);
                                 Bukkit.getWorld(p.getLocation().getWorld().getName()).setThundering(true);
-                                p.sendMessage(plugin.Prefix + "§3The weather change to thunder!");
+                                p.sendMessage(plugin.Prefix + plugin.WeatherChangedThunderMSG);
                                 break;
-
                             default:
-                                p.sendMessage(plugin.Prefix + "§bUse command §8/weather <sun, rain, thunder>");
+                                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "weather <sun, rain, thunder>");
                                 return false;
                         }
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§c§bUse command §8/weather <sun, rain, thunder>");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "weather <sun, rain, thunder>");
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                    p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
                 }
             } else {
-                sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+                sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
             }
-
             return false;
         }
 }
