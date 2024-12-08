@@ -152,6 +152,16 @@ Messages:
   SuccessSetDayMSG: "&2You have successfully set the time to day!"
   SuccessSetNightMSG: "&2You have successfully set the time to night!"
   SuccessSetMidnightMSG: "&2You have successfully set the time to midnight!"
+  YouDontTPARequestMSG: "&4You don't have a tpa request"
+  DenyTPAMSG: "&2You successfully denied a tpa request!"
+  AcceptTPAMSG: "&2You successfully accept a tpa request!"
+  PlayerAcceptTPAMSG: "&2The player &3%player% &2successfully teleported to you!"
+  PlayerDeniedTPAMSG: "&4The player &c%player% &4denied your tpa request!"
+  SendPlayerTPAMSG: "&2You successfully send a tpa request. To the player &2%player%&2!"
+  ReceivedRequestMSG: "&2You have a tpa request from &3%player%&2!"
+  AcceptRequestMSG: "&2Accept: /tpa accept &3%player%&2!"
+  DeniedRequestMSG: "&2Deny: /tpa deny &3%player%&2!"
+  TpherePlayerMSG: "&2You have successfully teleported the player &3%%player &2to you!"
 ##############################################################
 #                  Setting the RewardItems                   #
 ##############################################################
@@ -289,3 +299,4 @@ Perms:
   PermSetJail: "easyservermanager.setjail"
   PermTeleport: "easyservermanager.teleport"
   PermTime: "easyservermanager.time"
+  PermTPHERE: "easyservermanager.time"

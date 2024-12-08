@@ -20,23 +20,25 @@ public class CMD_TPHere implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             Player target = Bukkit.getPlayer(args[0]);
-            if (p.hasPermission("siedlermanager.tphere") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermTPHERE) || p.hasPermission(plugin.PermSternchen)) {
                 if (target != null) {
                     if (target.getName() != p.getName()) {
                         target.teleport(p);
-                        p.sendMessage(plugin.Prefix + "§3You have successfully teleported the player §2" + target.getDisplayName() + " §3to you");
+                        String tphereMessage = plugin.TpherePlayerMSG;
+                        tphereMessage = tphereMessage.replace("%player%", target.getDisplayName());
+                        p.sendMessage(plugin.Prefix + tphereMessage);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cYou cannot teleport to yourself!");
+                        p.sendMessage(plugin.Prefix + plugin.TeleportYourselfMSG);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cPlayer does not exist");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou do not have permission to use this command");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

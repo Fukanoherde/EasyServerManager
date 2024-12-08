@@ -283,8 +283,18 @@ public class EasyServerManager extends JavaPlugin {
     public String KickPlayerWhenActivateMaintenance = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KickPlayerWhenActivateMaintenanceMSG"));
     public String DeactivateMaintenanceModeMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivateMaintenanceModeMSG"));
     public String SuccessSetDayMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessSetDayMSG"));
+    public String YouDontTPARequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouDontTPARequestMSG"));
     public String SuccessSetNightMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessSetNightMSG"));
+    public String DenyTPAMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DenyTPAMSG"));
+    public String AcceptTPAMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AcceptTPAMSG"));
+    public String PlayerAcceptTPAMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerAcceptTPAMSG"));
+    public String PlayerDeniedTPAMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerDeniedTPAMSG"));
+    public String SendPlayerTPAMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SendPlayerTPAMSG"));
     public String SuccessSetMidnightMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessSetMidnightMSG"));
+    public String AcceptRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AcceptRequestMSG"));
+    public String DeniedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeniedRequestMSG"));
+    public String ReceivedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReceivedRequestMSG"));
+    public String TpherePlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TpherePlayerMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
@@ -381,6 +391,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PermHeal = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHeal"));
     public String PermAnnotherPing = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAnnotherPing"));
     public String PermInvsee = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermInvsee"));
+    public String PermTPHERE = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTPHERE"));
     public String PermJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermJail"));
     public String PermHealAnnotherPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermHealAnnotherPlayer"));
     public String PermKick = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermKick"));

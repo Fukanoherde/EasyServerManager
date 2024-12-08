@@ -33,17 +33,25 @@ public class CMD_TPA implements CommandExecutor {
                             req.add(p);
                             request.put(target, req);
                         }
-                        p.sendMessage(plugin.Prefix + "§3You successfully a tpa request. To the player §2" + target.getName());
+                        String successfullySendRequest = plugin.SendPlayerTPAMSG;
+                        successfullySendRequest = successfullySendRequest.replace("%player%", target.getDisplayName());
+                        p.sendMessage(plugin.Prefix + successfullySendRequest);
                         String pName = p.getName();
-                        target.sendMessage(plugin.Prefix + "§3You have a tpa request from " + pName);
-                        target.sendMessage(plugin.Prefix + "§3Accept: /tpa accept " + pName);
-                        target.sendMessage(plugin.Prefix + "§3Deny: /tpa deny " + pName);
+                        String receivedRequest = plugin.ReceivedRequestMSG;
+                        receivedRequest = receivedRequest.replace("%player%", pName);
+                        target.sendMessage(plugin.Prefix + receivedRequest);
+                        String acceptRequest = plugin.AcceptRequestMSG;
+                        acceptRequest = acceptRequest.replace("%player%", pName);
+                        String denyRequest = plugin.DeniedRequestMSG;
+                        denyRequest = denyRequest.replace("%player%", pName);
+                        target.sendMessage(plugin.Prefix + acceptRequest);
+                        target.sendMessage(plugin.Prefix + denyRequest);
                     } else {
-                    p.sendMessage(plugin.Prefix + "§cPlayer does not exist.");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
                 return true;
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/tpa <player>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "tpa <player>");
             }
             if (args.length == 2) {
                 if (args[0].equalsIgnoreCase("accept")) {
@@ -53,17 +61,19 @@ public class CMD_TPA implements CommandExecutor {
                             if (request.get(p).contains(target)) {
                                 request.get(p).remove(target);
                                 target.teleport(p.getLocation());
-                                p.sendMessage(plugin.Prefix + "§3You successfully accepted a tpa request.");
-                                target.sendMessage(plugin.Prefix + "§3The player §2" + p.getName() + " §3successfully teleported to you");
+                                p.sendMessage(plugin.Prefix + plugin.AcceptTPAMSG);
+                                String acceptedTPA = plugin.PlayerAcceptTPAMSG;
+                                acceptedTPA = acceptedTPA.replace("%player%", p.getDisplayName());
+                                target.sendMessage(plugin.Prefix + acceptedTPA);
                                 return true;
                             } else {
-                                p.sendMessage(plugin.Prefix + "§cYou dont have a tpa request");
+                                p.sendMessage(plugin.Prefix + plugin.YouDontTPARequestMSG);
                             }
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou dont have a tpa request");
+                            p.sendMessage(plugin.Prefix + plugin.YouDontTPARequestMSG);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlayer does not exist.");
+                        p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 }
                 if (args[0].equalsIgnoreCase("deny")) {
@@ -72,24 +82,26 @@ public class CMD_TPA implements CommandExecutor {
                         if (request.containsKey(p)) {
                             if (request.get(p).contains(target)) {
                                 request.get(p).remove(target);
-                                p.sendMessage(plugin.Prefix + "§3You successfully denied a tpa request.");
-                                target.sendMessage(plugin.Prefix + "§cThe player §4" + p.getName() + " §cdenied your tpa request");
+                                p.sendMessage(plugin.Prefix + plugin.PlayerDeniedTPAMSG);
+                                String deniedTPA = plugin.DenyTPAMSG;
+                                deniedTPA = deniedTPA.replace("%player%", p.getDisplayName());
+                                target.sendMessage(plugin.Prefix + deniedTPA);
                                 return true;
                             } else {
-                                p.sendMessage(plugin.Prefix + "§cYou dont have a tpa request");
+                                p.sendMessage(plugin.Prefix + plugin.YouDontTPARequestMSG);
                             }
                         } else {
-                            p.sendMessage(plugin.Prefix + "§cYou dont have a tpa request");
+                            p.sendMessage(plugin.Prefix + plugin.YouDontTPARequestMSG);
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cPlayer does not exist.");
+                        p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§bUse command §8/tpa accept <player> or tpa deny <player>");
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "tpa accept <player> or tpa deny <player>");
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
