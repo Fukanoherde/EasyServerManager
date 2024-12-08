@@ -283,6 +283,65 @@ public class EasyServerManager extends JavaPlugin {
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
 
+    // RewardSettings \\
+    public String OneItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.One.Item"));
+    public String OneName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.One.Name"));
+    public int OneAmount = getConfig().getInt("Reward.One.Amount");
+    public String TwoItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Two.Item"));
+    public String TwoName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Two.Name"));
+    public int TwoAmount = getConfig().getInt("Reward.Two.Amount");
+    public String ThreeItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Three.Item"));
+    public String ThreeName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Three.Name"));
+    public int ThreeAmount = getConfig().getInt("Reward.Three.Amount");
+    public String FourItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Four.Item"));
+    public String FourName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Four.Name"));
+    public int FourAmount = getConfig().getInt("Reward.Four.Amount");
+    public String FiveItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Five.Item"));
+    public String FiveName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Five.Name"));
+    public int FiveAmount = getConfig().getInt("Reward.Five.Amount");
+    public String SixItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Six.Item"));
+    public String SixName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Six.Name"));
+    public int SixAmount = getConfig().getInt("Reward.Six.Amount");
+    public String SevenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Seven.Item"));
+    public String SevenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Seven.Name"));
+    public int SevenAmount = getConfig().getInt("Reward.Seven.Amount");
+    public String EightItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eight.Item"));
+    public String EightName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eight.Name"));
+    public int EightAmount = getConfig().getInt("Reward.Eight.Amount");
+    public String NineItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Nine.Item"));
+    public String NineName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Nine.Name"));
+    public int NineAmount = getConfig().getInt("Reward.Nine.Amount");
+    public String TenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Ten.Item"));
+    public String TenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Ten.Name"));
+    public int TenAmount = getConfig().getInt("Reward.Ten.Amount");
+    public String ElevenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eleven.Item"));
+    public String ElevenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eleven.Name"));
+    public int ElevenAmount = getConfig().getInt("Reward.Eleven.Amount");
+    public String TwelveItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Twelve.Item"));
+    public String TwelveName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Twelve.Name"));
+    public int TwelveAmount = getConfig().getInt("Reward.Twelve.Amount");
+    public String ThirteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Thirteen.Item"));
+    public String ThirteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Thirteen.Name"));
+    public int ThirteenAmount = getConfig().getInt("Reward.Thirteen.Amount");
+    public String FourteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Fourteen.Item"));
+    public String FourteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Fourteen.Name"));
+    public int FourteenAmount = getConfig().getInt("Reward.Fourteen.Amount");
+    public String FifteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Fifteen.Item"));
+    public String FifteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Fifteen.Name"));
+    public int FifteenAmount = getConfig().getInt("Reward.Fifteen.Amount");
+    public String SixteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Sixteen.Item"));
+    public String SixteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Sixteen.Name"));
+    public int SixteenAmount = getConfig().getInt("Reward.Sixteen.Amount");
+    public String SeventeenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Seventeen.Item"));
+    public String SeventeenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Seventeen.Name"));
+    public int SeventeenAmount = getConfig().getInt("Reward.Seventeen.Amount");
+    public String EighteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eighteen.Item"));
+    public String EighteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Eighteen.Name"));
+    public int EighteenAmount = getConfig().getInt("Reward.Eighteen.Amount");
+    public String NineteenItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Nineteen.Item"));
+    public String NineteenName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.Nineteen.Name"));
+    public int NineteenAmount = getConfig().getInt("Reward.Nineteen.Amount");
+
     // Tablist \\
 
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));

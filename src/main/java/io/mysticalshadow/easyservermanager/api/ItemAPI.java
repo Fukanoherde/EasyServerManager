@@ -1,4 +1,4 @@
-package io.siedlermc.easysiedlermanager.api;
+package io.mysticalshadow.easyservermanager.api;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

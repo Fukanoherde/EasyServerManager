@@ -146,6 +146,86 @@ Messages:
   GotPlayerRewardNotify: "&2The player &3%player% &2Collected his reward!"
   AlreadyPickupRewardMSG: "&4you already picked up your reward today!"
 ##############################################################
+#                  Setting the RewardItems                   #
+##############################################################
+Reward:
+  One:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Two:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Three:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Four:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Five:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Six:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Seven:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Eight:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Nine:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Ten:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Eleven:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Twelve:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Thirteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Fourteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Fifteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Sixteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Seventeen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Eighteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+  Nineteen:
+    Item: "NETHERITE_BLOCK"
+    Name: "Test"
+    Amount: 50
+##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:

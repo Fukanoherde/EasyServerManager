@@ -1,6 +1,7 @@
 package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.api.ItemAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -42,52 +43,67 @@ public class CMD_Reward implements CommandExecutor {
                         }
                         ItemStack random = null;
                         Random r = new Random();
-                        int zufall = r.nextInt(15);
+                        int zufall = r.nextInt(20);
                         switch (zufall) {
                             case 0:
-                                random = new ItemStack(Material.ANVIL, 1);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.OneItem), plugin.OneAmount, 0, plugin.OneName);
                                 break;
                             case 1:
-                                random = new ItemStack(Material.NETHERITE_BLOCK, 4);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.TwoItem), plugin.TwoAmount, 0, plugin.TwoName);
                                 break;
                             case 2:
-                                random = new ItemStack(Material.DIAMOND, 16);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.ThreeItem), plugin.ThreeAmount, 0, plugin.ThreeName);
                                 break;
                             case 3:
-                                random = new ItemStack(Material.COOKED_BEEF, 16);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.ThreeItem), plugin.ThreeAmount, 0, plugin.ThreeName);
                                 break;
                             case 4:
-                                random = new ItemStack(Material.ROTTEN_FLESH, 32);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.FourItem), plugin.FourAmount, 0, plugin.FourName);
                                 break;
                             case 5:
-                                random = new ItemStack(Material.RAW_GOLD_BLOCK, 8);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.FiveItem), plugin.FiveAmount, 0, plugin.FiveName);
                                 break;
                             case 6:
-                                random = new ItemStack(Material.EXPERIENCE_BOTTLE, 32);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.SixItem), plugin.SixAmount, 0, plugin.SixName);
                                 break;
                             case 7:
-                                random = new ItemStack(Material.ENDER_PEARL, 8);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.SevenItem), plugin.SevenAmount, 0, plugin.SevenName);
                                 break;
                             case 8:
-                                random = new ItemStack(Material.BEACON, 1);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.EightItem), plugin.EightAmount, 0, plugin.EighteenName);
                                 break;
                             case 9:
-                                random = new ItemStack(Material.DIRT, 64);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.NineItem), plugin.NineAmount, 0, plugin.NineName);
                                 break;
                             case 10:
-                                random = new ItemStack(Material.VILLAGER_SPAWN_EGG, 2);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.TenItem), plugin.TenAmount, 0, plugin.TenName);
                                 break;
                             case 11:
-                                random = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 8);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.ElevenItem), plugin.ElevenAmount, 0, plugin.ElevenName);
                                 break;
                             case 12:
-                                random = new ItemStack(Material.ENDER_CHEST, 1);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.TwelveItem), plugin.TwelveAmount, 0, plugin.TwelveName);
                                 break;
                             case 13:
-                                random = new ItemStack(Material.LEATHER, 64);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.ThirteenItem), plugin.ThirteenAmount, 0, plugin.ThirteenName);
                                 break;
                             case 14:
-                                random = new ItemStack(Material.RAW_IRON_BLOCK, 8);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.FourteenItem), plugin.FourteenAmount, 0, plugin.FourteenName);
+                                break;
+                            case 15:
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.FifteenItem), plugin.FifteenAmount, 0, plugin.FifteenName);
+                                break;
+                            case 16:
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.SixteenItem), plugin.SixteenAmount, 0, plugin.SixteenName);
+                                break;
+                            case 17:
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.SeventeenItem), plugin.SeventeenAmount, 0, plugin.SeventeenName);
+                                break;
+                            case 18:
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.EighteenItem), plugin.EighteenAmount, 0, plugin.EighteenName);
+                                break;
+                            case 19:
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.NineteenItem), plugin.NineteenAmount, 0, plugin.NineteenName);
                                 break;
                         }
                         p.getInventory().addItem(random);
