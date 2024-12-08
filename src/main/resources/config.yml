@@ -54,7 +54,7 @@ Messages:
   ReachMaxLevelMSG: "&4You reached the Maximum save Level!"
   OpenEnderchestMSG: "&3Your open the enderchest from the player!"
   OpenYourselfEnderchestMSG: "&cYou cannot open your enderchest!"
-  TeleportToFarmMSG: "&3You successfully teleport to the Farmworld"
+  TeleportToFarmMSG: "&2You successfully teleport to the Farmworld"
   CannotFindFarmworldMSG: "&4Cannot find the farmworld. &cPlease contact the server Administration"
   DeactivatedFlyMSG: "&cYou cannot flying"
   ActivatedFlyMSG: "&3You can now flying"
@@ -145,6 +145,13 @@ Messages:
   YouGotRewardMSG: "&2got today's reward!"
   GotPlayerRewardNotify: "&2The player &3%player% &2Collected his reward!"
   AlreadyPickupRewardMSG: "&4you already picked up your reward today!"
+  SetJailMSG: "&2You successfully created the Jail!"
+  TeleportToSpawnMSG: "&2You successfully teleport to the Spawn!"
+  TeleportToThePlayerMSG: "&2You teleport to the player &3%player%&2!"
+  TeleportYourselfMSG: "&4You cannot to teleport yourself!"
+  SuccessSetDayMSG: "&2You have successfully set the time to day!"
+  SuccessSetNightMSG: "&2You have successfully set the time to night!"
+  SuccessSetMidnightMSG: "&2You have successfully set the time to midnight!"
 ##############################################################
 #                  Setting the RewardItems                   #
 ##############################################################
@@ -279,3 +286,6 @@ Perms:
   PermMaintenanceActivate: "easyservermanager.maintenance.activate"
   PermAnnotherPing: "easyservermanager.ping"
   PermRewardNotify: "easyservermanager.notify"
+  PermSetJail: "easyservermanager.setjail"
+  PermTeleport: "easyservermanager.teleport"
+  PermTime: "easyservermanager.time"

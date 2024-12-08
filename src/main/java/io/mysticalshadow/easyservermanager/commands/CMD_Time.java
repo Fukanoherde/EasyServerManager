@@ -19,37 +19,37 @@ public class CMD_Time implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("easysiedler.time") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermTime) || p.hasPermission(plugin.PermSternchen)) {
                 if (args[0].equalsIgnoreCase("day")) {
                     if (args.length == 1) {
                         p.getWorld().setTime(1000);
-                        p.sendMessage(plugin.Prefix + "§3You have successfully set the time to day");
+                        p.sendMessage(plugin.Prefix + plugin.SuccessSetDayMSG);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§bUse Command §8/time <day, night, midnight>");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "time <day, night, midnight>");
                     }
                 } else if (args[0].equalsIgnoreCase("night")) {
                     if (args.length == 1) {
                         p.getWorld().setTime(13000);
-                        p.sendMessage(plugin.Prefix + "§3You have successfully set the time to night");
+                        p.sendMessage(plugin.Prefix + plugin.SuccessSetNightMSG);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§bUse Command §8/time <day, night, midnight>");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "time <day, night, midnight>");
                     }
                 } else if (args[0].equalsIgnoreCase("midnight")) {
                     if (args.length == 1) {
                         p.getWorld().setTime(20000);
-                        p.sendMessage(plugin.Prefix + "§3You have successfully set the time to midnight");
+                        p.sendMessage(plugin.Prefix + plugin.SuccessSetMidnightMSG);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + "§bUse Command §8/time <day, night, midnight>");
+                        p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "time <day, night, midnight>");
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

@@ -19,26 +19,28 @@ public class CMD_Teleport implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.teleport") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermTeleport) || p.hasPermission(plugin.PermSternchen)) {
             if (args.length == 1) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
                     if (p.getName() != target.getName()) {
                             p.teleport(target.getLocation());
-                            p.sendMessage(plugin.Prefix + "§3You teleport to the Player: §2" + target.getName());
+                            String teleportToPlayer = plugin.TeleportToThePlayerMSG;
+                            teleportToPlayer = teleportToPlayer.replace("%player%", target.getDisplayName());
+                            p.sendMessage(plugin.Prefix + teleportToPlayer);
                             return true;
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§cYou cannot to teleport yourself!");
+                        p.sendMessage(plugin.Prefix + plugin.TeleportYourselfMSG);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§cPlayer does not exist.");
+                    p.sendMessage(plugin.Prefix + plugin.PlayerNotExist);
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }

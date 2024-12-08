@@ -70,7 +70,7 @@ public class CMD_Reward implements CommandExecutor {
                                 random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.SevenItem), plugin.SevenAmount, 0, plugin.SevenName);
                                 break;
                             case 8:
-                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.EightItem), plugin.EightAmount, 0, plugin.EighteenName);
+                                random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.EightItem), plugin.EightAmount, 0, plugin.EightName);
                                 break;
                             case 9:
                                 random = ItemAPI.createItemNoEnch(Material.valueOf(plugin.NineItem), plugin.NineAmount, 0, plugin.NineName);

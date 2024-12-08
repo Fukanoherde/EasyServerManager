@@ -22,7 +22,7 @@ public class CMD_SetJail implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("siedlermanager.setjail") || p.hasPermission("siedlermanager.*")) {
+            if (p.hasPermission(plugin.PermSetJail) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
                     String jailname = args[0];
                     String path = plugin.ServerName + "." + jailname + ".";
@@ -47,14 +47,14 @@ public class CMD_SetJail implements CommandExecutor {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    p.sendMessage(plugin.Prefix + "§3You successfully created the Jail!");
+                    p.sendMessage(plugin.Prefix + plugin.SetJailMSG);
                     return true;
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cYou don't have permission to use this command!");
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         } else {
-            sender.sendMessage(plugin.Prefix + "§4Error: §cThis command cannot be used");
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
         }
         return false;
     }
