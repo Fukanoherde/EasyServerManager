@@ -2,7 +2,6 @@ package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
 import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
-import io.mysticalshadow.easyservermanager.manager.JailManager;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
@@ -69,7 +68,6 @@ public class PlayerManager implements Listener {
             config.set(p.getName() + ".Level", 0);
             config.set(p.getName() + ".Jail.Status", false);
             config.set(p.getName() + ".PvP.Activated", false);
-            config.set(p.getName() + ".LastLogin", null);
             config.set(p.getName() + ".LastLogin", null);
             config.set(p.getName() + ".Homes", null);
             try {
@@ -192,7 +190,7 @@ public class PlayerManager implements Listener {
         if (config.isSet(p.getName() + ".Jail.Status")) {
             if (config.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
                 e.setCancelled(true);
-                p.sendMessage(plugin.Prefix + "§4Your jailed. you cannot break this Block!");
+                p.sendMessage(plugin.Prefix + plugin.CurrentlyJailed);
             } else {
                 return;
             }
@@ -215,7 +213,7 @@ public class PlayerManager implements Listener {
         if (config.isSet(p.getName() + ".Jail.Status")) {
             if (config.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
                 e.setCancelled(true);
-                p.sendMessage(plugin.Prefix + "§4Your jailed. you cannot place this Block!");
+                p.sendMessage(plugin.Prefix + plugin.CurrentlyJailed);
             } else {
                 return;
             }
@@ -354,6 +352,19 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onBlockCommand (PlayerCommandPreprocessEvent e) {
         Player p = e.getPlayer();
+        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+        try {
+            config.load(file);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        } catch (InvalidConfigurationException ex) {
+            throw new RuntimeException(ex);
+        }
+        if (config.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
+            e.setCancelled(true);
+            p.sendMessage(plugin.Prefix + plugin.CurrentlyJailed);
+        }
         if (e.getMessage().equalsIgnoreCase("/pl") || e.getMessage().equalsIgnoreCase("/plugins")
                 || e.getMessage().equalsIgnoreCase("/help") || e.getMessage().equalsIgnoreCase("/version")
                 || e.getMessage().equalsIgnoreCase("/bukkit:pl") || e.getMessage().equalsIgnoreCase("/bukkit:plugins")
