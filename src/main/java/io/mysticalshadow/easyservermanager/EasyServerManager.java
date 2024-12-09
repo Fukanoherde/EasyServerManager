@@ -304,6 +304,31 @@ public class EasyServerManager extends JavaPlugin {
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
 
+    // Ranks \\
+    public String PrefixOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Owner"));
+    public String PrefixCoOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.CoOwner"));
+    public String PrefixSrAdmin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.SrAdmin"));
+    public String PrefixAdmin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Admin"));
+    public String PrefixSrDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.SrDeveloper"));
+    public String PrefixDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Developer"));
+    public String PrefixTestDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.TestDeveloper"));
+    public String PrefixSrModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.SrModerator"));
+    public String PrefixModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Moderator"));
+    public String PrefixTestModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.TestModerator"));
+    public String PrefixSrSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.SrSupporter"));
+    public String PrefixSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Supporter"));
+    public String PrefixTestSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.TestSupporter"));
+    public String PrefixSrBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.SrBuilder"));
+    public String PrefixBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Builder"));
+    public String PrefixTestBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.TestBuilder"));
+    public String PrefixFriend = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Friend"));
+    public String PrefixYouTuber = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.YouTuber"));
+    public String PrefixStreamer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Streamer"));
+    public String PrefixPremiumThree = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.PremiumThree"));
+    public String PrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.PremiumTwo"));
+    public String PrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.PremiumOne"));
+    public String PrefixPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Player"));
+
     // RewardSettings \\
     public String OneItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.One.Item"));
     public String OneName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Reward.One.Name"));
@@ -407,4 +432,26 @@ public class EasyServerManager extends JavaPlugin {
     public String PermMaintenanceActivate = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceActivate"));
     public String PermSetJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSetJail"));
     public String PermWeather = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermWeather"));
+    public String PermPrefixOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermOwnerPrefix"));
+    public String PermPrefixCoOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermCoOwnerPrefix"));
+    public String PermPrefixSrAdmin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrAdminPrefix"));
+    public String PermPrefixAdmin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAdminPrefix"));
+    public String PermPrefixSrDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrDeveloperPrefix"));
+    public String PermPrefixDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermDeveloperPrefix"));
+    public String PermPrefixTestDeveloper = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTestDeveloperPrefix"));
+    public String PermPrefixSrModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrModeratorPrefix"));
+    public String PermPrefixModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermModeratorPrefix"));
+    public String PermPrefixTestModerator = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTestModeratorPrefix"));
+    public String PermPrefixSrSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrSupporterPrefix"));
+    public String PermPrefixSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSupporterPrefix"));
+    public String PermPrefixTestSupporter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTestSupporterPrefix"));
+    public String PermPrefixSrBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrBuilderPrefix"));
+    public String PermPrefixBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermBuilderPrefix"));
+    public String PermPrefixTestBuilder = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTestBuilderPrefix"));
+    public String PermPrefixFriend = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermFriendPrefix"));
+    public String PermPrefixYouTuber = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermYouTuberPrefix"));
+    public String PermPrefixStreamer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermStreamerPrefix"));
+    public String PermPrefixPremiumThree = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumThreePrefix"));
+    public String PermPrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumTwoPrefix"));
+    public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumOnePrefix"));
 }
