@@ -31,12 +31,8 @@ public class JailManager {
         config.set(path + "Yaw", Float.valueOf(yaw));
         config.set(path + "Pitch", Float.valueOf(pitch));
         config.set(path + "SetFrom", p.getUniqueId() + " : " + p.getName());
-
-        config.options().header("SiedlerManager" + " JailManager");
-        config.options().copyHeader(true);
-
         savecfg();
-    }
+    }/*
     public static Location teleportToJail(Player player, String jailname) {
         String path = EasyServerManager.getInstance().ServerName + "." + jailname + ".";
         String world = config.getString(path + "Welt");
@@ -48,7 +44,7 @@ public class JailManager {
         Location location = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
         player.teleport(location);
         return location;
-    }
+    }*/
     public static void savecfg() throws IOException {
         config.save(file);
     }

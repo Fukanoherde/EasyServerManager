@@ -43,7 +43,12 @@ public class CMD_Jail implements CommandExecutor {
                             throw new RuntimeException(e);
                         }
                         if (jailConfig.isSet(plugin.ServerName + "." + jailName + ".")) {
-                            JailManager.teleportToJail(target, jailName);
+                            String world = JailManager.config.getString(plugin.ServerName + "." + jailName + ".Welt");
+                            double x = JailManager.config.getDouble(plugin.ServerName + "." + jailName + ".X");
+                            double y = JailManager.config.getDouble(plugin.ServerName + "." + jailName + ".Y");
+                            double z = JailManager.config.getDouble(plugin.ServerName + "." + jailName + ".Z");
+                            float yaw = (float) JailManager.config.getDouble(plugin.ServerName + "." + jailName + ".Yaw");
+                            float pitch = (float) JailManager.config.getDouble(plugin.ServerName + "." + jailName + ".Pitch");
                             try {
                                 configTarget.load(fileTarget);
                             } catch (IOException e) {
@@ -53,12 +58,6 @@ public class CMD_Jail implements CommandExecutor {
                             }
                             if (configTarget.getBoolean(target.getName() + ".Jail.Status") != true) {
                                 configTarget.set(target.getName() + ".Jail.Status", true);
-                                String world = JailManager.config.getString("SiedlerManager" + "." + jailName + ".Welt");
-                                double x = JailManager.config.getDouble("SiedlerManager" + "." + jailName + ".X");
-                                double y = JailManager.config.getDouble("SiedlerManager" + "." + jailName + ".Y");
-                                double z = JailManager.config.getDouble("SiedlerManager" + "." + jailName + ".Z");
-                                float yaw = (float) JailManager.config.getDouble("SiedlerManager" + "." + jailName + ".Yaw");
-                                float pitch = (float) JailManager.config.getDouble("SiedlerManager" + "." + jailName + ".Pitch");
                                 configTarget.set(target.getName() + ".Jail.Location.Name", jailName);
                                 configTarget.set(target.getName() + ".Jail.Location.Welt", world);
                                 configTarget.set(target.getName() + ".Jail.Location.X", x);
@@ -77,7 +76,8 @@ public class CMD_Jail implements CommandExecutor {
                                 String jailedMessageFromPlayer = plugin.YouJailedFromPlayer;
                                 jailedMessageFromPlayer = jailedMessageFromPlayer.replace("%player%", sender.getName());
                                 target.sendMessage(plugin.Prefix + jailedMessageFromPlayer);
-                                JailManager.teleportToJail(target, jailName);
+                                Location location = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
+                                target.teleport(location);
                                 return true;
                             } else {
                                 String alreadyJailed = plugin.PlayerAlreadyJailedMSG;

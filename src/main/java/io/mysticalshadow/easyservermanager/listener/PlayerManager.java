@@ -2,6 +2,7 @@ package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
 import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
+import io.mysticalshadow.easyservermanager.manager.JailManager;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
@@ -249,53 +250,10 @@ public class PlayerManager implements Listener {
         Player p = event.getEntity();
         Player target = event.getEntity().getKiller();
         event.setDeathMessage("");
-        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-        try {
-            config.load(file);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        } catch (InvalidConfigurationException ex) {
-            throw new RuntimeException(ex);
-        }
-        String world = p.getLastDeathLocation().getWorld().getName();
-        double x = p.getLastDeathLocation().getX();
-        double z = p.getLastDeathLocation().getZ();
-        double y = p.getLastDeathLocation().getY();
-        config.set(p.getName() + ".Death.World", world);
-        config.set(p.getName() + ".Death.X", x);
-        config.set(p.getName() + ".Death.Z", z);
-        config.set(p.getName() + ".Death.Y", y);
-        try {
-            config.save(file);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        if (config.getBoolean(p.getName() + ".Jail.Status", true)) {
-            if (config.isSet(p.getName() + ".Jail.Location")) {
-                String name = config.getString(p.getName() + ".Jail.Location.Name");
-                String worldJail = config.getString(p.getName() + ".Jail.Location.Welt");
-                double xJail = config.getDouble(p.getName() + ".Jail.Location.X");
-                double yJail = config.getDouble(p.getName() + ".Jail.Location.Y");
-                double zJail = config.getDouble(p.getName() + ".Jail.Location.Z");
-                float yaw = (float) config.getDouble(p.getName() + ".Jail.Location.Yaw");
-                float pitch = (float) config.getDouble(p.getName() + ".Jail.Location.Pitch");
-                assert worldJail != null;
-                Location location = new Location(Bukkit.getWorld(worldJail), xJail, yJail, zJail, yaw, pitch);
-                p.setBedSpawnLocation(location);
-            }
-            if (target != null) {
-                Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8has killed by §3" + target.getDisplayName() + "38!");
-            } else {
-                Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8is died!");
-            }
+        if (target != null) {
+            Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8has killed by §3" + target.getDisplayName() + "38!");
         } else {
-            p.setRespawnLocation(p.getBedSpawnLocation());
-            if (target != null) {
-                Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8has killed by §3" + target.getDisplayName() + "38!");
-            } else {
-                Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8is died!");
-            }
+            Bukkit.broadcastMessage("§8the player §3" + p.getDisplayName() + " §8is died!");
         }
     }
     @EventHandler

@@ -295,6 +295,7 @@ public class EasyServerManager extends JavaPlugin {
     public String DeniedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeniedRequestMSG"));
     public String ReceivedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReceivedRequestMSG"));
     public String TpherePlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TpherePlayerMSG"));
+    public String CurrentlyJailed = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.CurrentlyJailed"));
     public String WeatherChangedSunMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedSunMSG"));
     public String WeatherChangedRainMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedRainMSG"));
     public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedThunderMSG"));

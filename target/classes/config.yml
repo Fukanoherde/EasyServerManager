@@ -165,6 +165,7 @@ Messages:
   WeatherChangedSunMSG: "&2The weather change to sun!"
   WeatherChangedRainMSG: "&The weather change to rain!"
   WeatherChangedThunderMSG: "&2The weather change to thunder!"
+  CurrentlyJailed: "&4You are currently Jailed!"
 ##############################################################
 #                  Setting the RewardItems                   #
 ##############################################################
