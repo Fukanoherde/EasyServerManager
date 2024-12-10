@@ -36,7 +36,7 @@ public class CMD_ChatCensor implements CommandExecutor {
                     List<String> blocked = config.getStringList(plugin.ServerName + ".Censor.Words");
                     sender.sendMessage(plugin.Prefix + blocked);
                 } else {
-                    sender.sendMessage(plugin.Prefix + "§4The path not found!");
+                    sender.sendMessage(plugin.Prefix + plugin.NoWordsBlockedMSG);
                 }
             }
             if (args.length == 2) {
@@ -50,25 +50,33 @@ public class CMD_ChatCensor implements CommandExecutor {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        sender.sendMessage(plugin.Prefix + "§2You added the word §3" + args[1] + " §2to the blocked list!");
+                        String addedWords = plugin.AddedWordsBlockedMSG;
+                        addedWords = addedWords.replace("%word%", args[1]);
+                        sender.sendMessage(plugin.Prefix + addedWords);
                         return true;
                     } else {
-                        sender.sendMessage(plugin.Prefix + "§4This words is already blocked!");
+                        sender.sendMessage(plugin.Prefix + plugin.ThisWordIsAlreadyBlocked);
                     }
                 } else if (args[0].equalsIgnoreCase("remove")) {
                     List<String> words = config.getStringList(plugin.ServerName + ".Censor.Words");
                     if (words.contains(args[1])) {
                         words.remove(args[1]);
-                        config.set(plugin.ServerName + ".Censor.Words", words);
+                        if (words.size() == 0) {
+                            config.set(plugin.ServerName + ".Censor", null);
+                        } else {
+                            config.set(plugin.ServerName + ".Censor.Words", words);
+                        }
                         try {
                             config.save(file);
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        sender.sendMessage(plugin.Prefix + "§2You removed the word §3" + args[1] + " §2to the blocked list!");
+                        String removedWords = plugin.RemovedWordsBlockedMSG;
+                        removedWords = removedWords.replace("%word%", args[1]);
+                        sender.sendMessage(plugin.Prefix + removedWords);
                         return true;
                     } else {
-                        sender.sendMessage(plugin.Prefix + "§4This words is not blocked!");
+                        sender.sendMessage(plugin.Prefix + plugin.ThisWordIsNotBlocked);
                     }
                 }
             }

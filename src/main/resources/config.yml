@@ -168,7 +168,12 @@ Messages:
   CurrentlyJailed: "&4You are currently Jailed!"
   PlayerKilledByPlayerMSG: "&8The player &3%player% &8has killed by &3%killer%&8!"
   PlayerDeathMSG: "&8The player &3%player% &8is died!"
-  ChatCensorWords: "test"
+  NoWordsBlockedMSG: "&4No words are blocked on this server!"
+  AddedWordsBlockedMSG: "&2You added the word &3%word% &2to the blacked list!"
+  RemovedWordsBlockedMSG: "&2You removed the word &3%word% &2from the blacked list!"
+  ThisWordIsNotBlocked: "&4This word is not blocked!"
+  ThisWordIsAlreadyBlocked: "&4This word is already blocked!"
+  ThisWordIsBlocked: "&4Pay attention to your choice of words!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -311,7 +316,6 @@ Perms:
   PermTPWarp: "easyservermanager.warp.tp"
   PermListWarp: "easyservermanager.warp.list"
   PermChatClear: "easyservermanager.chatclear"
-  PermAllChatClearMSG: "easyservermanager.chatclear"
   PermClear: "easyservermanager.clear"
   PermEnderchest: "easyservermanager.enderchest"
   PermFly: "easyservermanager.fly"
@@ -359,6 +363,3 @@ Perms:
   PermPremiumThreePrefix: "prefix.premiumone"
   PermPremiumTwoPrefix: "prefix.youtuber"
   PermPremiumOnePrefix: "prefix.streamer"
-##############################################################
-#               Setting the Blocked Messages                 #
-##############################################################

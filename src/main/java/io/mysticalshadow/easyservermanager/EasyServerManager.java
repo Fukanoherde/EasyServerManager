@@ -309,16 +309,20 @@ public class EasyServerManager extends JavaPlugin {
     public String ReceivedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReceivedRequestMSG"));
     public String TpherePlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TpherePlayerMSG"));
     public String CurrentlyJailed = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.CurrentlyJailed"));
+    public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AllChatClearMSG"));
     public String WeatherChangedSunMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedSunMSG"));
     public String WeatherChangedRainMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedRainMSG"));
+    public String NoWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.NoWordsBlockedMSG"));
+    public String ThisWordIsNotBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsNotBlocked"));
+    public String ThisWordIsBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsBlocked"));
+    public String ThisWordIsAlreadyBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsAlreadyBlocked"));
+    public String AddedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedWordsBlockedMSG"));
+    public String RemovedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedWordsBlockedMSG"));
     public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedThunderMSG"));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
-
-    // Title \\
-    public String ChatCensor = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ChatCensorWords"));
 
     // Ranks \\
     public String PrefixOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Owner"));
@@ -423,7 +427,6 @@ public class EasyServerManager extends JavaPlugin {
     public String PermTPWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermTPWarp"));
     public String PermListWarp = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermListWarp"));
     public String PermChatClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermChatClear"));
-    public String AllChatClearMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermAllChatClearMSG"));
     public String PermClear = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermClear"));
     public String PermEnderchest = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermEnderchest"));
     public String PermFly = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermFly"));
