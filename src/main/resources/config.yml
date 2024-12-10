@@ -336,6 +336,7 @@ Perms:
   PermTPHERE: "easyservermanager.time"
   PermWeather: "easyservermanager.weather"
   PermSeePlugins: "easyservermanager.plugins"
+  PermCensor: "easyservermanager.censor.add"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

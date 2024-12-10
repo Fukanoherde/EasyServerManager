@@ -64,6 +64,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Warp cmdWarp;
     private CMD_SetWarp cmdSetWarp;
     private CMD_RemoveWarp cmdRemoveWarp;
+    private CMD_ChatCensor cmdChatCensor;
 
     @Override
     public void onEnable() {
@@ -130,6 +131,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdWarp = new CMD_Warp(this);
         this.cmdSetWarp = new CMD_SetWarp(this);
         this.cmdRemoveWarp = new CMD_RemoveWarp(this);
+        this.cmdChatCensor = new CMD_ChatCensor(this);
 
         // Enable Message \\
 
@@ -437,6 +439,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PermMaintenanceActivate = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermMaintenanceActivate"));
     public String PermSetJail = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSetJail"));
     public String PermWeather = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermWeather"));
+    public String PermCensor = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermCensor"));
     public String PermPrefixOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermOwnerPrefix"));
     public String PermPrefixCoOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermCoOwnerPrefix"));
     public String PermPrefixSrAdmin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSrAdminPrefix"));

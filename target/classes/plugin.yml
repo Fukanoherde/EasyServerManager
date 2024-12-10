@@ -94,3 +94,5 @@ commands:
     description: you can set a public warp point
   warpremove:
     description: you can removed a public warp point
+  censor:
+    description: Added or removed the words from the blocked list

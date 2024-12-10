@@ -316,9 +316,7 @@ public class PlayerManager implements Listener {
             p.sendMessage(plugin.Prefix + plugin.CurrentlyJailed);
         } else {
             String msg = e.getMessage();
-            List<String> blocked = new ArrayList<>();
-            blocked.add(plugin.ChatCensor);
-            for (String block : blocked) {
+            for (String block : plugin.getConfig().getStringList("deniedWords")) {
                 if (msg.contains(block)) {
                     String replace = "";
                     for (int i = 0; i < block.length(); i++) {
@@ -332,98 +330,97 @@ public class PlayerManager implements Listener {
                     } else if (p.hasPermission(plugin.PermPrefixCoOwner)) {
                         String coOwnerPrefix = plugin.PrefixCoOwner;
                         coOwnerPrefix = coOwnerPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(coOwnerPrefix + msg);
+                        e.setFormat(coOwnerPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSrAdmin)) {
                         String srAdminPrefix = plugin.PrefixSrAdmin;
                         srAdminPrefix = srAdminPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(srAdminPrefix + msg);
+                        e.setFormat(srAdminPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixAdmin)) {
                         String adminPrefix = plugin.PrefixAdmin;
                         adminPrefix = adminPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(adminPrefix + msg);
+                        e.setFormat(adminPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSrDeveloper)) {
                         String srDeveloperPrefix = plugin.PrefixSrDeveloper;
                         srDeveloperPrefix = srDeveloperPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(srDeveloperPrefix + msg);
+                        e.setFormat(srDeveloperPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixDeveloper)) {
                         String developerPrefix = plugin.PrefixDeveloper;
                         developerPrefix = developerPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(developerPrefix + msg);
+                        e.setFormat(developerPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixTestDeveloper)) {
                         String testDeveloperPrefix = plugin.PrefixTestDeveloper;
                         testDeveloperPrefix = testDeveloperPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(testDeveloperPrefix + msg);
+                        e.setFormat(testDeveloperPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSrModerator)) {
                         String SrModeratorPrefix = plugin.PrefixSrModerator;
                         SrModeratorPrefix = SrModeratorPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(SrModeratorPrefix + msg);
+                        e.setFormat(SrModeratorPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixModerator)) {
                         String moderatorPrefix = plugin.PrefixModerator;
                         moderatorPrefix = moderatorPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(moderatorPrefix + msg);
+                        e.setFormat(moderatorPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixTestModerator)) {
                         String testModeratorPrefix = plugin.PrefixTestModerator;
                         testModeratorPrefix = testModeratorPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(testModeratorPrefix + msg);
+                        e.setFormat(testModeratorPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSrSupporter)) {
                         String srSupporterPrefix = plugin.PrefixSrSupporter;
                         srSupporterPrefix = srSupporterPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(srSupporterPrefix + msg);
+                        e.setFormat(srSupporterPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSupporter)) {
                         String supporterPrefix = plugin.PrefixSupporter;
                         supporterPrefix = supporterPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(supporterPrefix + msg);
+                        e.setFormat(supporterPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixTestSupporter)) {
                         String testSupporterPrefix = plugin.PrefixTestSupporter;
                         testSupporterPrefix = testSupporterPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(testSupporterPrefix + msg);
+                        e.setFormat(testSupporterPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixSrBuilder)) {
                         String srBuilderPrefix = plugin.PrefixSrBuilder;
                         srBuilderPrefix = srBuilderPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(srBuilderPrefix + msg);
+                        e.setFormat(srBuilderPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixBuilder)) {
                         String builderPrefix = plugin.PrefixBuilder;
                         builderPrefix = builderPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(builderPrefix + msg);
+                        e.setFormat(builderPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixTestBuilder)) {
                         String testBuilderPrefix = plugin.PrefixTestBuilder;
                         testBuilderPrefix = testBuilderPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(testBuilderPrefix + msg);
+                        e.setFormat(testBuilderPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixFriend)) {
                         String friendPrefix = plugin.PrefixFriend;
                         friendPrefix = friendPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(friendPrefix + msg);
+                        e.setFormat(friendPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixYouTuber)) {
                         String youtuberPrefix = plugin.PrefixYouTuber;
                         youtuberPrefix = youtuberPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(youtuberPrefix + msg);
+                        e.setFormat(youtuberPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixStreamer)) {
                         String streamerPrefix = plugin.PrefixStreamer;
                         streamerPrefix = streamerPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(streamerPrefix + msg);
+                        e.setFormat(streamerPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixPremiumThree)) {
                         String premiumThreePrefix = plugin.PrefixPremiumThree;
                         premiumThreePrefix = premiumThreePrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(premiumThreePrefix + msg);
+                        e.setFormat(premiumThreePrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixPremiumTwo)) {
                         String premiumTwoPrefix = plugin.PrefixPremiumTwo;
                         premiumTwoPrefix = premiumTwoPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(premiumTwoPrefix + msg);
+                        e.setFormat(premiumTwoPrefix + newmsg);
                     } else if (p.hasPermission(plugin.PermPrefixPremiumOne)) {
                         String premiumOnePrefix = plugin.PrefixPremiumOne;
                         premiumOnePrefix = premiumOnePrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(premiumOnePrefix + msg);
+                        e.setFormat(premiumOnePrefix + newmsg);
                     } else {
                         String playerPrefix = plugin.PrefixPlayer;
                         playerPrefix = playerPrefix.replace("%player%", p.getDisplayName());
-                        e.setFormat(playerPrefix + msg);
+                        e.setFormat(playerPrefix + newmsg);
                     }
+                    p.sendMessage(plugin.Prefix + "§4Pay attention to your choice of words.");
                     return;
                 }
-                    p.sendMessage(plugin.Prefix + "§4Pay attention to your choice of words.");
-                }
-
             }
+        }
     }
     @EventHandler
     public void onReload(PlayerCommandPreprocessEvent e) {
