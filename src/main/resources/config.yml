@@ -359,3 +359,6 @@ Perms:
   PermPremiumThreePrefix: "prefix.premiumone"
   PermPremiumTwoPrefix: "prefix.youtuber"
   PermPremiumOnePrefix: "prefix.streamer"
+##############################################################
+#               Setting the Blocked Messages                 #
+##############################################################
