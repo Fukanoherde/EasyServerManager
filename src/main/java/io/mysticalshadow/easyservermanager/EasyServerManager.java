@@ -8,6 +8,7 @@ import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -89,7 +90,15 @@ public class EasyServerManager extends JavaPlugin {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+        File file = new File(this.getDataFolder(), "censor.yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(file);
+        if (!file.exists()) {
+            try {
+                configuration.save(file);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         // Listener \\
         this.playerManager = new PlayerManager(this);
         this.serverManager = new ServerManager(this);

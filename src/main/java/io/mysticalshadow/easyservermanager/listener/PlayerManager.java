@@ -302,21 +302,30 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onChat (AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+        File fileJail = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
+        YamlConfiguration configJail = YamlConfiguration.loadConfiguration(fileJail);
         try {
-            config.load(file);
+            configJail.load(fileJail);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         } catch (InvalidConfigurationException ex) {
             throw new RuntimeException(ex);
         }
-        if (config.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
+        if (configJail.getBoolean(p.getName() + ".Jail.Status", Boolean.valueOf(true))) {
             e.setCancelled(true);
             p.sendMessage(plugin.Prefix + plugin.CurrentlyJailed);
         } else {
             String msg = e.getMessage();
-            for (String block : plugin.getConfig().getStringList("deniedWords")) {
+            File fileCensor = new File(plugin.getDataFolder(), "censor.yml");
+            YamlConfiguration configCensor = YamlConfiguration.loadConfiguration(fileCensor);
+            try {
+                configCensor.load(fileCensor);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidConfigurationException ex) {
+                throw new RuntimeException(ex);
+            }
+            for (String block : configCensor.getStringList(plugin.ServerName + ".Censor.Words")) {
                 if (msg.contains(block)) {
                     String replace = "";
                     for (int i = 0; i < block.length(); i++) {
