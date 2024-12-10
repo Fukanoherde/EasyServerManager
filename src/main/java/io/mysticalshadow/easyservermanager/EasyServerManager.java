@@ -293,6 +293,8 @@ public class EasyServerManager extends JavaPlugin {
     public String SuccessSetMidnightMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.SuccessSetMidnightMSG"));
     public String AcceptRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AcceptRequestMSG"));
     public String DeniedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeniedRequestMSG"));
+    public String PlayerDeathMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerDeathMSG"));
+    public String PlayerKilledByPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerKilledByPlayerMSG"));
     public String ReceivedRequestMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ReceivedRequestMSG"));
     public String TpherePlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TpherePlayerMSG"));
     public String CurrentlyJailed = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.CurrentlyJailed"));
@@ -454,4 +456,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermPrefixPremiumThree = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumThreePrefix"));
     public String PermPrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumTwoPrefix"));
     public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumOnePrefix"));
+    public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSeePlugins"));
 }
