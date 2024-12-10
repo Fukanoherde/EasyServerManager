@@ -168,6 +168,7 @@ Messages:
   CurrentlyJailed: "&4You are currently Jailed!"
   PlayerKilledByPlayerMSG: "&8The player &3%player% &8has killed by &3%killer%&8!"
   PlayerDeathMSG: "&8The player &3%player% &8is died!"
+  ChatCensorWords: "test"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################

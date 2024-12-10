@@ -306,6 +306,9 @@ public class EasyServerManager extends JavaPlugin {
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
 
+    // Title \\
+    public String ChatCensor = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ChatCensorWords"));
+
     // Ranks \\
     public String PrefixOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.Owner"));
     public String PrefixCoOwner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Rank.CoOwner"));
