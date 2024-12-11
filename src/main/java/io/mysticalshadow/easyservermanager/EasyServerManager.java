@@ -67,7 +67,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_SetWarp cmdSetWarp;
     private CMD_RemoveWarp cmdRemoveWarp;
     private CMD_ChatCensor cmdChatCensor;
-    private CMD_Reload cmdReload;
+    private CMD_Test cmdTest;
 
     @Override
     public void onEnable() {
@@ -143,7 +143,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdSetWarp = new CMD_SetWarp(this);
         this.cmdRemoveWarp = new CMD_RemoveWarp(this);
         this.cmdChatCensor = new CMD_ChatCensor(this);
-        this.cmdReload = new CMD_Reload(this);
+        this.cmdTest = new CMD_Test(this);
 
         // Enable Message \\
 
