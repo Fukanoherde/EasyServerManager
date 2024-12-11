@@ -68,6 +68,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_ChatCensor cmdChatCensor;
     private CMD_Test cmdTest;
     private CMD_World cmdWorld;
+    private CMD_Burn cmdBurn;
 
     @Override
     public void onEnable() {
@@ -145,6 +146,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdChatCensor = new CMD_ChatCensor(this);
         this.cmdTest = new CMD_Test(this);
         this.cmdWorld = new CMD_World(this);
+        this.cmdBurn = new CMD_Burn(this);
 
         // Enable Message \\
 
@@ -226,6 +228,7 @@ public class EasyServerManager extends JavaPlugin {
     public String EnoughLevelMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.EnoughLevelMSG"));
     public String DeactivatedFlyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyMSG"));
     public String ActivatedFlyMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyMSG"));
+    public String BurnPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.BurnPlayerMSG"));
     public String ActivatedFlyByPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyByPlayerMSG"));
     public String DeactivatedFlyByPlayerMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.DeactivatedFlyByPlayerMSG"));
     public String ActivatedFlyFromMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ActivatedFlyFromMSG"));
@@ -486,4 +489,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumOnePrefix"));
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSeePlugins"));
     public String PermsWorld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsWorld"));
+    public String PermsBurn = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsBurn"));
 }

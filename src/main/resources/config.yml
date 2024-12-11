@@ -179,6 +179,7 @@ Messages:
   WorldDoesNotExistMSG: "&4The world &c%world% &4does not exist!"
   YourTeleportToTheWorldMSG: "&2Your teleported successfully to the world &3%world%&2!"
   YourRemovedTheWorldMSG: "&2You successfully removed the world &3%world%&2!"
+  BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -347,6 +348,7 @@ Perms:
   PermWeather: "easyservermanager.weather"
   PermSeePlugins: "easyservermanager.plugins"
   PermCensor: "easyservermanager.censor.add"
+  PermsBurn: "easyservermanager.burn"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

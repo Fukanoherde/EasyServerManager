@@ -100,3 +100,5 @@ commands:
     description: This is a debug command
   world:
     description: You can created a world
+  burn:
+    description: Set a player to burning

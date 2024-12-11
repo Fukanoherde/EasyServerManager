@@ -28,6 +28,12 @@ public class CMD_World implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (p.hasPermission(plugin.PermsWorld) || p.hasPermission(plugin.PermSternchen)) {
+                if (args.length == 0) {
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world create <world> <type>");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world tp <world>");
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world remove <world>");
+                    return true;
+                }
                 if (args.length == 3) {
                     if (args[0].equalsIgnoreCase("create")) {
                         String worldName = args[1];
@@ -57,6 +63,9 @@ public class CMD_World implements CommandExecutor {
                             p.sendMessage(plugin.Prefix + worldAlreadyExist);
                         }
                     }
+                } else if (args[0].equalsIgnoreCase("create")) {
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world create <world> <normal, flat, large>");
+                    return true;
                 }
                 if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("tp")) {
@@ -74,6 +83,9 @@ public class CMD_World implements CommandExecutor {
                             p.sendMessage(plugin.Prefix + worldNotExist);
                         }
                     }
+                } else if (args[0].equalsIgnoreCase("tp")) {
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world tp <world>");
+                    return true;
                 }
                 if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("remove")) {
@@ -92,7 +104,12 @@ public class CMD_World implements CommandExecutor {
                             p.sendMessage(plugin.Prefix + worldNotExist);
                         }
                     }
+                } else if (args[0].equalsIgnoreCase("remove")) {
+                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world remove <world>");
+                    return true;
                 }
+            } else {
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
         }
         return false;
