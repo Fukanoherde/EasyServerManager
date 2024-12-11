@@ -98,3 +98,5 @@ commands:
     description: Added or removed the words from the blocked list
   test:
     description: This is a debug command
+  world:
+    description: You can created a world

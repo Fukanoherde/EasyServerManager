@@ -68,6 +68,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_RemoveWarp cmdRemoveWarp;
     private CMD_ChatCensor cmdChatCensor;
     private CMD_Test cmdTest;
+    private CMD_World cmdWorld;
 
     @Override
     public void onEnable() {
@@ -144,6 +145,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdRemoveWarp = new CMD_RemoveWarp(this);
         this.cmdChatCensor = new CMD_ChatCensor(this);
         this.cmdTest = new CMD_Test(this);
+        this.cmdWorld = new CMD_World(this);
 
         // Enable Message \\
 
@@ -210,6 +212,11 @@ public class EasyServerManager extends JavaPlugin {
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
     public String UseCommandMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.UseCommandMSG"));
     public String OnlyRealPlayer = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.OnlyRealPlayer"));
+    public String WorldCreatedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WorldCreatedMSG"));
+    public String WorldAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WorldAlreadyExistMSG"));
+    public String WorldDoesNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WorldDoesNotExistMSG"));
+    public String YourRemovedTheWorldMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourRemovedTheWorldMSG"));
+    public String YourTeleportToTheWorldMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YourTeleportToTheWorldMSG"));
     public String RemoveWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemoveWarpMSG"));
     public String PlayerNotExist = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.PlayerNotExist"));
     public String TeleportToWarpMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.TeleportToWarpMSG"));

@@ -33,24 +33,28 @@ public class CMD_World implements CommandExecutor {
                         String worldName = args[1];
                         World w = Bukkit.getWorld(worldName);
                         if (w == null) {
+                            String worldCreated = plugin.WorldCreatedMSG;
+                            worldCreated = worldCreated.replace("%world%", worldName);
                             if (args[2].equalsIgnoreCase("normal")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.NORMAL));
-                                p.sendMessage(plugin.Prefix + "§2The world generation was successfully!");
+                                p.sendMessage(plugin.Prefix + worldCreated);
                                 p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
                                 return true;
                             } else if (args[2].equalsIgnoreCase("flat")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.FLAT));
-                                p.sendMessage(plugin.Prefix + "§2The world generation was successfully!");
+                                p.sendMessage(plugin.Prefix + worldCreated);
                                 p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
                                 return true;
                             } else if (args[2].equalsIgnoreCase("large")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.LARGE_BIOMES));
-                                p.sendMessage(plugin.Prefix + "§2The world generation was successfully!");
+                                p.sendMessage(plugin.Prefix + worldCreated);
                                 p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
                                 return true;
                             }
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4This world already exist!");
+                            String worldAlreadyExist = plugin.WorldAlreadyExistMSG;
+                            worldAlreadyExist = worldAlreadyExist.replace("%world%", worldName);
+                            p.sendMessage(plugin.Prefix + worldAlreadyExist);
                         }
                     }
                 }
@@ -60,10 +64,14 @@ public class CMD_World implements CommandExecutor {
                         World w = Bukkit.getWorld(worldName);
                         if (w != null) {
                             p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
-                            p.sendMessage(plugin.Prefix + "§2You successfully teleported to the world §3" + worldName + "§2!");
+                            String worldTeleported = plugin.YourTeleportToTheWorldMSG;
+                            worldTeleported = worldTeleported.replace("%world%", worldName);
+                            p.sendMessage(plugin.Prefix + worldTeleported);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4This world does not exist!");
+                            String worldNotExist = plugin.WorldDoesNotExistMSG;
+                            worldNotExist = worldNotExist.replace("%world%", worldName);
+                            p.sendMessage(plugin.Prefix + worldNotExist);
                         }
                     }
                 }
@@ -74,10 +82,14 @@ public class CMD_World implements CommandExecutor {
                         if (w != null) {
                             Bukkit.unloadWorld(worldName, true);
                             deleteFolder(w.getWorldFolder().toPath());
-                            p.sendMessage(plugin.Prefix + "§2You successfully deleted the World §3" + worldName + "§2!");
+                            String worldRemoved = plugin.YourRemovedTheWorldMSG;
+                            worldRemoved = worldRemoved.replace("%world%", worldName);
+                            p.sendMessage(plugin.Prefix + worldRemoved);
                             return true;
                         } else {
-                            p.sendMessage(plugin.Prefix + "§4The world §c" + worldName + " §4does not exist!");
+                            String worldNotExist = plugin.WorldDoesNotExistMSG;
+                            worldNotExist = worldNotExist.replace("%world%", worldName);
+                            p.sendMessage(plugin.Prefix + worldNotExist);
                         }
                     }
                 }
