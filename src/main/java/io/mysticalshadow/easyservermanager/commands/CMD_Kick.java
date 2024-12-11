@@ -33,7 +33,7 @@ public class CMD_Kick implements CommandExecutor {
                         kickReason = kickReason.replace("%reason%", msg);
                         String kickSender = plugin.KickPlayer;
                         kickSender = kickSender.replace("%player%", sender.getName());
-                        target.kickPlayer(plugin.ServerName + kickReason + kickSender);
+                        target.kickPlayer(kickReason + kickSender);
                         return true;
                     } else {
                         sender.sendMessage(plugin.Prefix + plugin.PlayerNotExist);

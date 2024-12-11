@@ -115,8 +115,8 @@ Messages:
   WarpSpawnNotFoundMSG: "&4Cannot find the spawn. &cPlease contact the server Administration"
   ThePathNotFoundMSG: "&4The path does not exist!"
   UnjailedYourselfMSG: "&4You cannot unjailed yourself!"
-  KickMSG: "\n\n&bDu wurdest vom Server gekickt!\n&cGrund: &4%reason%"
-  KickPlayerMSG: "&8gekickt wurdest du von: §7%player%"
+  KickMSG: "&b&lYourServer\n\n&bYou was kicked from the Server\n&4&lReason: &4%reason%"
+  KickPlayerMSG: "\n&8you were kicked by: §7%player%"
   KickYourselfMSG: "&4Why do you kick yourself?!"
   SuccessfullyKickPlayerMSG: "&2You successfully kicked the player &3%player% &2from the Server!"
   AddedPlayerLevelMSG: "&2Successfully given the player &3%player% &2the specified level!"
@@ -179,6 +179,7 @@ Messages:
   WorldDoesNotExistMSG: "&4The world &c%world% &4does not exist!"
   YourTeleportToTheWorldMSG: "&2Your teleported successfully to the world &3%world%&2!"
   YourRemovedTheWorldMSG: "&2You successfully removed the world &3%world%&2!"
+  BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
