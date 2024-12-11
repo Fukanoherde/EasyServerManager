@@ -23,6 +23,7 @@ public class EasyServerManager extends JavaPlugin {
     public static EasyServerManager instance;
     public static List<Player> vanish = new ArrayList<>();
     public static List<Player> fly = new ArrayList<>();
+    public static List<Player> seeCommands = new ArrayList<>();
     public static List<Player> pvp = new ArrayList<>();
     public HashMap<String, Boolean> titleOnPlayerJoin = new HashMap<>();
     public boolean broadcast;

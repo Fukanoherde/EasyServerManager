@@ -296,26 +296,26 @@ Kit:
     Permission: "easyservermanager.kit.starter"
     Allow: true
     Helmet:
-      Item: "diamond_helmet"
+      Item: "DIAMOND_HELMET"
       Amount: 1
-      Name: "§6>> §3Starter Helmet §6<<"
+      Name: "&6✪ &3Starter Helmet &6✪"
     Chestplate:
-      Item: "diamond_chestplate"
+      Item: "DIAMOND_CHESTPLATE"
       Amount: 1
-      Name: "§6>> §3Starter Chestplate §6<<"
+      Name: "&6✪ &3Starter Chestplate &6✪"
     Leggins:
-      Item: "diamond_leggins"
+      Item: "DIAMOND_LEGGINGS"
       Amount: 1
-      Name: "§6>> §3Starter Leggins §6<<"
+      Name: "&6✪ &3Starter Leggins &6✪"
     Boots:
-      Item: "diamond_boots"
+      Item: "DIAMOND_BOOTS"
       Amount: 1
-      Name: "§6>> §3Starter Boots §6<<"
+      Name: "&6✪ &3Starter Boots &6✪"
 ##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:
-  Header: "&3&lWelcome &2&l%player% &3&lon the"
+  Header: "&6✪ &3&lWelcome &2&l%player% &3&lon the"
   Footer: "&2&lServer: &4&lServerName or Network Name!"
 ##############################################################
 #                   Setting the TabList                      #

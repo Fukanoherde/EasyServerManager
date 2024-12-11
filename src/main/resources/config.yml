@@ -304,7 +304,7 @@ Kit:
       Amount: 1
       Name: "&6✪ &3Starter Chestplate &6✪"
     Leggins:
-      Item: "DIAMOND_LEGGINS"
+      Item: "DIAMOND_LEGGINGS"
       Amount: 1
       Name: "&6✪ &3Starter Leggins &6✪"
     Boots:
@@ -315,7 +315,7 @@ Kit:
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:
-  Header: "&3&lWelcome &2&l%player% &3&lon the"
+  Header: "&6✪ &3&lWelcome &2&l%player% &3&lon the"
   Footer: "&2&lServer: &4&lServerName or Network Name!"
 ##############################################################
 #                   Setting the TabList                      #
