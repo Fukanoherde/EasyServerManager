@@ -8,6 +8,7 @@ import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -66,6 +67,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_SetWarp cmdSetWarp;
     private CMD_RemoveWarp cmdRemoveWarp;
     private CMD_ChatCensor cmdChatCensor;
+    private CMD_Reload cmdReload;
 
     @Override
     public void onEnable() {
@@ -141,6 +143,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdSetWarp = new CMD_SetWarp(this);
         this.cmdRemoveWarp = new CMD_RemoveWarp(this);
         this.cmdChatCensor = new CMD_ChatCensor(this);
+        this.cmdReload = new CMD_Reload(this);
 
         // Enable Message \\
 
@@ -168,6 +171,7 @@ public class EasyServerManager extends JavaPlugin {
     }
     public static EasyServerManager getInstance() {
         return instance;
+
     }
     // Plugin Settings \\
     public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.Prefix"));
@@ -475,4 +479,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermPrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumTwoPrefix"));
     public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumOnePrefix"));
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSeePlugins"));
+    public String PermReload = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermReload"));
 }

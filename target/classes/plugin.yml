@@ -96,3 +96,7 @@ commands:
     description: you can removed a public warp point
   censor:
     description: Added or removed the words from the blocked list
+  easyservermanager:
+    aliases:
+      - esm
+    description: You can reload all plugin configs
