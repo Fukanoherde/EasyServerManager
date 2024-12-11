@@ -27,7 +27,7 @@ public class CMD_World implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("")) {
+            if (p.hasPermission(plugin.PermsWorld) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 3) {
                     if (args[0].equalsIgnoreCase("create")) {
                         String worldName = args[1];
@@ -38,17 +38,17 @@ public class CMD_World implements CommandExecutor {
                             if (args[2].equalsIgnoreCase("normal")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.NORMAL));
                                 p.sendMessage(plugin.Prefix + worldCreated);
-                                p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
+                                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world tp " + worldName);
                                 return true;
                             } else if (args[2].equalsIgnoreCase("flat")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.FLAT));
                                 p.sendMessage(plugin.Prefix + worldCreated);
-                                p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
+                                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world tp " + worldName);
                                 return true;
                             } else if (args[2].equalsIgnoreCase("large")) {
                                 Bukkit.createWorld(WorldCreator.name(worldName).type(WorldType.LARGE_BIOMES));
                                 p.sendMessage(plugin.Prefix + worldCreated);
-                                p.teleport(Bukkit.getWorld(worldName).getSpawnLocation());
+                                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "world tp " + worldName);
                                 return true;
                             }
                         } else {

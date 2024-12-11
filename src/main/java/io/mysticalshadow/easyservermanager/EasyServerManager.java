@@ -485,5 +485,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermPrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumTwoPrefix"));
     public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermPremiumOnePrefix"));
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSeePlugins"));
-    public String PermReload = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermReload"));
+    public String PermsWorld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsWorld"));
 }

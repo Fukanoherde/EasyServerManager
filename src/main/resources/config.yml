@@ -332,7 +332,7 @@ Perms:
   PermInvsee: "easyservermanager.invsee"
   PermJail: "easyservermanager.jail"
   PermHealAnnotherPlayer: "easyservermanager.heal.other"
-  PermReload: "easyservermanager.reload"
+  PermsWorld: "easyservermanager.world"
   PermKick: "easyservermanager.kick"
   PermLevel: "easyservermanager.level"
   PermGetOtherHomes: "easyservermanager.gethomes.other"
