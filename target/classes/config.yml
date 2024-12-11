@@ -14,6 +14,7 @@ EasyServerManager:
   AllowJoinMessage: true
   AllowQuitMessage: true
   AllowPlayTeleportSound: true
+  AllowJoinTitle: true
   Farminworld: "farmwelt"
   MaxPlayers: 10
   SaveType: "file"
@@ -291,7 +292,7 @@ Reward:
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:
-  Header: "&3&lWelcome on the"
+  Header: "&3&lWelcome &2&l%player% &3&lon the"
   Footer: "&2&lServer: &4&lServerName or Network Name!"
 ##############################################################
 #                   Setting the TabList                      #

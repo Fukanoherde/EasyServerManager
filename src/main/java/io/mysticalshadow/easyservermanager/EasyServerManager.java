@@ -182,6 +182,7 @@ public class EasyServerManager extends JavaPlugin {
     public boolean AllowJoinMessage = getConfig().getBoolean("EasyServerManager.AllowJoinMessage");
     public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
     public boolean AllowPlayTeleportSound = getConfig().getBoolean("EasyServerManager.AllowPlayTeleportSound");
+    public boolean AllowJoinTitle = getConfig().getBoolean("EasyServerManager.AllowJoinTitle");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
     public int MaxSaveLevel = getConfig().getInt("EasyServerManager.MaxSaveLevel");
     public String SaveType = ChatColor.translateAlternateColorCodes('&', getConfig().getString("EasyServerManager.SaveType"));
@@ -424,6 +425,25 @@ public class EasyServerManager extends JavaPlugin {
     // Tablist \\
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));
     public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
+
+    // starter_Kit \\
+    public String PermStarterKit = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Permission"));
+    public boolean AllowStarterKit = getConfig().getBoolean("Kit.Stater.Allow");
+    public String StarterHelmetItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Helmet.Item"));
+    public int StarterHelmetAmount = getConfig().getInt("Kit.Starter.Helmet.Amount");
+    public String StarterHelmetName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Helmet.Name"));
+
+    public String StarterChestplateItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Chestplate.Item"));
+    public int StarterChestplateAmount = getConfig().getInt("Kit.Starter.Chestplate.Amount");
+    public String StarterChestplateName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Chestplate.Name"));
+
+    public String StarterLegginsItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Leggins.Item"));
+    public int StarterLegginsAmount = getConfig().getInt("Kit.Starter.Leggins.Amount");
+    public String StarterLegginsName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Leggins.Name"));
+
+    public String StarterBootsItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Boots.Item"));
+    public int StarterBootsAmount = getConfig().getInt("Kit.Starter.Boots.Amount");
+    public String StarterBootsName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Boots.Name"));
 
     // MySQL \\
     public String User = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Username"));

@@ -1,6 +1,7 @@
 package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.api.ItemAPI;
 import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
@@ -9,6 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -63,7 +65,13 @@ public class PlayerManager implements Listener {
         String currentDateHeader = plugin.TabHeader;
         currentDateHeader = currentDateHeader.replace("%date%", orginal);
         p.setPlayerListHeaderFooter(currentDateHeader.replaceAll("&", "§"), plugin.TabFooter.replaceAll("&", "§"));
-        p.sendTitle(plugin.TitleHeader.replaceAll("&", "§"), plugin.TitleFooter.replaceAll("&", "§"), 45, 45, 45);
+        if (plugin.AllowJoinTitle == true) {
+            String titleHeader = plugin.TitleHeader;
+            titleHeader = titleHeader.replace("%player%", p.getDisplayName());
+            String titleFooter = plugin.TitleFooter;
+            titleFooter = titleFooter.replace("%player%", p.getDisplayName());
+            p.sendTitle(titleHeader.replaceAll("&", "§"), titleFooter.replaceAll("&", "§"), 45, 45, 45);
+        }
         if (!file.exists()) {
             config.set(p.getName() + ".Rewards.Pickup.Date.", null);
             config.set(p.getName() + ".Level", 0);
@@ -94,6 +102,12 @@ public class PlayerManager implements Listener {
             }
         }.runTaskLater(plugin, 1L);
         if (!p.hasPlayedBefore()) {
+            if (plugin.AllowStarterKit == true) {
+                p.getInventory().setHelmet(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterHelmetItem), plugin.StarterHelmetAmount, 0, plugin.StarterHelmetName));
+                p.getInventory().setChestplate(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterChestplateItem), plugin.StarterChestplateAmount, 0, plugin.StarterChestplateName));
+                p.getInventory().setLeggings(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterLegginsItem), plugin.StarterLegginsAmount, 0, plugin.StarterLegginsName));
+                p.getInventory().setBoots(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterBootsItem), plugin.StarterBootsAmount, 0, plugin.StarterBootsName));
+            }
             ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
             ItemStack leggins = new ItemStack(Material.LEATHER_LEGGINGS);
             ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
