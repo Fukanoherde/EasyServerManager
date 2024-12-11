@@ -108,22 +108,6 @@ public class PlayerManager implements Listener {
                 p.getInventory().setLeggings(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterLegginsItem), plugin.StarterLegginsAmount, 0, plugin.StarterLegginsName));
                 p.getInventory().setBoots(ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterBootsItem), plugin.StarterBootsAmount, 0, plugin.StarterBootsName));
             }
-            ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
-            ItemStack leggins = new ItemStack(Material.LEATHER_LEGGINGS);
-            ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
-            ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
-            ItemStack axe = new ItemStack(Material.WOODEN_AXE, 1);
-            ItemStack sword = new ItemStack(Material.WOODEN_SWORD, 1);
-            ItemStack pickaxe = new ItemStack(Material.WOODEN_PICKAXE, 1);
-            ItemStack steak = new ItemStack(Material.COOKED_BEEF, 64);
-            p.getInventory().setBoots(boots);
-            p.getInventory().setLeggings(leggins);
-            p.getInventory().setChestplate(chestplate);
-            p.getInventory().setHelmet(helmet);
-            p.getInventory().addItem(axe);
-            p.getInventory().addItem(sword);
-            p.getInventory().addItem(pickaxe);
-            p.getInventory().addItem(steak);
         }
         try {
             config.load(file);

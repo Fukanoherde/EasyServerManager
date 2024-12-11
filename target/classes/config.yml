@@ -289,6 +289,29 @@ Reward:
     Name: "Test"
     Amount: 50
 ##############################################################
+#                  Setting the Starterkit!                   #
+##############################################################
+Kit:
+  Starter:
+    Permission: "easyservermanager.kit.starter"
+    Allow: true
+    Helmet:
+      Item: "diamond_helmet"
+      Amount: 1
+      Name: "§6>> §3Starter Helmet §6<<"
+    Chestplate:
+      Item: "diamond_chestplate"
+      Amount: 1
+      Name: "§6>> §3Starter Chestplate §6<<"
+    Leggins:
+      Item: "diamond_leggins"
+      Amount: 1
+      Name: "§6>> §3Starter Leggins §6<<"
+    Boots:
+      Item: "diamond_boots"
+      Amount: 1
+      Name: "§6>> §3Starter Boots §6<<"
+##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:
