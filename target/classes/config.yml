@@ -181,6 +181,8 @@ Messages:
   YourTeleportToTheWorldMSG: "&2Your teleported successfully to the world &3%world%&2!"
   YourRemovedTheWorldMSG: "&2You successfully removed the world &3%world%&2!"
   BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
+  YouCanNowSeeCommandsMSG: "&2You can now see the commands that other players are executing!"
+  YouCannotSeeCommandsMSG: "&4You can no longer see what orders the other players are executing"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -373,6 +375,7 @@ Perms:
   PermSeePlugins: "easyservermanager.plugins"
   PermCensor: "easyservermanager.censor.add"
   PermsBurn: "easyservermanager.burn"
+  PermsEnableSeeCommands: "easyservermanager.seecommands"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

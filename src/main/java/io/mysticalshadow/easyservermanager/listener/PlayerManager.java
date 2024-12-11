@@ -101,7 +101,7 @@ public class PlayerManager implements Listener {
                 }
             }
         }.runTaskLater(plugin, 1L);
-        //if (!p.hasPlayedBefore()) {
+        if (!p.hasPlayedBefore()) {
             if (plugin.getConfig().getBoolean("Kit.Starter.Allow", Boolean.valueOf(true))) {
             ItemStack boots = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterBootsItem), plugin.StarterBootsAmount, 0, plugin.StarterBootsName);
             ItemStack leggins = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterLegginsItem), plugin.StarterLegginsAmount, 0, plugin.StarterLegginsName);
@@ -120,7 +120,7 @@ public class PlayerManager implements Listener {
             p.getInventory().addItem(pickaxe);
             p.getInventory().addItem(steak);
             }
-        //}
+        }
         try {
             config.load(file);
         } catch (IOException ex) {
@@ -555,9 +555,9 @@ public class PlayerManager implements Listener {
         Player p = e.getPlayer();
         if (EasyServerManager.seeCommands.contains(p)) {
             if (e.getMessage().startsWith("/")) {
-                //if (p.getName() != e.getPlayer().getName()) {
+                if (p.getName() != e.getPlayer().getName()) {
                     p.sendMessage(plugin.Prefix + "§2The player §3" + e.getPlayer().getName() + " §2Executed the following command §3" + e.getMessage());
-                //}
+                }
             }
         }
         File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");

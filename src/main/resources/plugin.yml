@@ -102,3 +102,5 @@ commands:
     description: You can created a world
   burn:
     description: Set a player to burning
+  log:
+    description: You can activate or deactivate see commands

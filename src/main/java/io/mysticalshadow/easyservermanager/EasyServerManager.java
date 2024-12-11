@@ -70,6 +70,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Test cmdTest;
     private CMD_World cmdWorld;
     private CMD_Burn cmdBurn;
+    private CMD_CommandSee cmdCommandSee;
 
     @Override
     public void onEnable() {
@@ -148,6 +149,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdTest = new CMD_Test(this);
         this.cmdWorld = new CMD_World(this);
         this.cmdBurn = new CMD_Burn(this);
+        this.cmdCommandSee = new CMD_CommandSee(this);
 
         // Enable Message \\
 
@@ -333,6 +335,8 @@ public class EasyServerManager extends JavaPlugin {
     public String ThisWordIsAlreadyBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsAlreadyBlocked"));
     public String AddedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedWordsBlockedMSG"));
     public String RemovedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedWordsBlockedMSG"));
+    public String YouCanNowSeeCommandsMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouCanNowSeeCommandsMSG"));
+    public String YouCannotSeeCommandsMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouCannotSeeCommandsMSG"));
     public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.WeatherChangedThunderMSG"));
 
     // Title \\
@@ -511,4 +515,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermSeePlugins"));
     public String PermsWorld = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsWorld"));
     public String PermsBurn = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsBurn"));
+    public String PermsEnableSeeCommands = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Perms.PermsEnableSeeCommands"));
 }

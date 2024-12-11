@@ -28,6 +28,7 @@ public class CMD_GameMode implements CommandExecutor {
                             return true;
                         } else {
                             p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInSurvivalSelfMSG);
+                            return true;
                         }
                     } else if (args[0].equalsIgnoreCase("1")) {
                         if (!(p.getGameMode() == GameMode.CREATIVE)) {
@@ -36,6 +37,7 @@ public class CMD_GameMode implements CommandExecutor {
                             return true;
                         } else {
                             p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInCreativeSelfMSG);
+                            return true;
                         }
                     } else if (args[0].equalsIgnoreCase("2")) {
                         if (!(p.getGameMode() == GameMode.ADVENTURE)) {
@@ -44,6 +46,7 @@ public class CMD_GameMode implements CommandExecutor {
                             return true;
                         } else {
                             p.sendMessage(plugin.Prefix + plugin.GameModeAlreadyInAdventureSelfMSG);
+                            return true;
                         }
                     } else if (args[0].equalsIgnoreCase("3")) {
                         if (!(p.getGameMode() == GameMode.SPECTATOR)) {
@@ -80,6 +83,7 @@ public class CMD_GameMode implements CommandExecutor {
                                     String playerIsAlreadyInSurvival = plugin.GameModeAlreadyPlayerInSurvivalMSG;
                                     playerIsAlreadyInSurvival = playerIsAlreadyInSurvival.replace("%player%", target.getDisplayName());
                                     p.sendMessage(plugin.Prefix + playerIsAlreadyInSurvival);
+                                    return true;
                                 }
                             } else if (args[0].equalsIgnoreCase("1")) {
                                 if (target.getGameMode() != GameMode.CREATIVE) {
@@ -95,6 +99,7 @@ public class CMD_GameMode implements CommandExecutor {
                                     String playerIsAlreadyInCreative = plugin.GameModeAlreadyPlayerInCreativeMSG;
                                     playerIsAlreadyInCreative = playerIsAlreadyInCreative.replace("%player%", target.getDisplayName());
                                     p.sendMessage(plugin.Prefix + playerIsAlreadyInCreative);
+                                    return true;
                                 }
                             } else if (args[0].equalsIgnoreCase("2")) {
                                 if (target.getGameMode() != GameMode.ADVENTURE) {
@@ -110,6 +115,7 @@ public class CMD_GameMode implements CommandExecutor {
                                     String playerIsAlreadyInAdventure = plugin.GameModeAlreadyPlayerInAdventureMSG;
                                     playerIsAlreadyInAdventure = playerIsAlreadyInAdventure.replace("%player%", target.getDisplayName());
                                     p.sendMessage(plugin.Prefix + playerIsAlreadyInAdventure);
+                                    return true;
                                 }
                             } else if (args[0].equalsIgnoreCase("3")) {
                                 if (target.getGameMode() != GameMode.SPECTATOR) {
@@ -125,6 +131,7 @@ public class CMD_GameMode implements CommandExecutor {
                                     String playerIsAlreadyInSpectator = plugin.GameModeAlreadyPlayerInSpectatorMSG;
                                     playerIsAlreadyInSpectator = playerIsAlreadyInSpectator.replace("%player%", target.getDisplayName());
                                     p.sendMessage(plugin.Prefix + playerIsAlreadyInSpectator);
+                                    return true;
                                 }
                             }
                         }
