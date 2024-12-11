@@ -8,7 +8,6 @@ import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import io.mysticalshadow.easyservermanager.manager.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
