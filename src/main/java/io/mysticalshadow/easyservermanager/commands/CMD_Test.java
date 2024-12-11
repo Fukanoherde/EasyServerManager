@@ -13,11 +13,9 @@ public class CMD_Test implements CommandExecutor {
         this.plugin = plugin;
         Bukkit.getPluginCommand("test").setExecutor(this);
     }
+
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (args.length == 0) {
-            sender.sendMessage("ERFOLGREICH!!!!");
-        }
+    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         return false;
     }
 }
