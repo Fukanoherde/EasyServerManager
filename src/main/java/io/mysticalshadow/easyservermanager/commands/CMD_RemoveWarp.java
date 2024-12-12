@@ -10,6 +10,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.Player;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CMD_RemoveWarp implements CommandExecutor {
 
@@ -24,7 +25,6 @@ public class CMD_RemoveWarp implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission(plugin.PermRemoveWarp) || p.hasPermission(plugin.PermSternchen)) {
                 if (args.length == 1) {
-                    String warpname = args[0];
                     try {
                         WarpManager.config.load(WarpManager.file);
                     } catch (IOException e) {
@@ -32,8 +32,14 @@ public class CMD_RemoveWarp implements CommandExecutor {
                     } catch (InvalidConfigurationException e) {
                         throw new RuntimeException(e);
                     }
-                    String path = plugin.ServerName + "." + "WarpManager" + "." + warpname;
+                    String path = plugin.ServerName + "." + "WarpManager" + "." + args[0];
                     if (WarpManager.config.isSet(path)) {
+                        List<String> warps = WarpManager.config.getStringList(plugin.ServerName + ".ListWarps");
+                        warps.remove(args[0]);
+                        WarpManager.config.set(plugin.ServerName + ".ListWarps", warps);
+                        if (warps.isEmpty()) {
+                            WarpManager.config.set(plugin.ServerName + ".WarpManager", null);
+                        }
                         WarpManager.config.set(path, null);
                         try {
                             WarpManager.config.save(WarpManager.file);
@@ -41,7 +47,7 @@ public class CMD_RemoveWarp implements CommandExecutor {
                             throw new RuntimeException(e);
                         }
                         String warpRemove = plugin.RemoveWarpMSG;
-                        warpRemove = warpRemove.replace("%warp%", warpname);
+                        warpRemove = warpRemove.replace("%warp%", args[0]);
                         p.sendMessage(plugin.Prefix + warpRemove);
                         return true;
                     } else {

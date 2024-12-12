@@ -15,7 +15,6 @@ EasyServerManager:
   AllowQuitMessage: true
   AllowPlayTeleportSound: true
   AllowJoinTitle: true
-  Farminworld: "farmwelt"
   MaxPlayers: 10
   SaveType: "file"
   ServerName: "SiedlerMC"
@@ -38,7 +37,9 @@ Messages:
   MOTDMaintenance: "&4The server is currently undergoing maintenance work"
   SetWarpMSG: "&2You successfully set the Warp &2%warp%"
   RemoveWarpMSG: "&4You successfully removed the Warp &c%warp%"
+  WarpListMSG: "&2Server Warps: &3"
   WarpAlreadyExistMSG: "&4The warp &c%warp% &4already exist!"
+  WarpsNotExistOnServerMSG: "&4There are no warps on the server!"
   WarpDoesNotExistMSG: "&4The warp &c%warp% &4does not exist!"
   UseCommandMSG: "&bUse command &8/"
   TeleportToWarpMSG: "&2You teleport successfully teleport to the Warp §3%warp% &2!"
@@ -294,8 +295,8 @@ Reward:
 #                   Setting the JoinTitle                    #
 ##############################################################
 Title:
-  Header: "&6✪ &3&lWelcome &2&l%player% &3&lon the"
-  Footer: "&2&lServer: &4&lServerName or Network Name!"
+  Header: "&3Welcome &2&l%player%"
+  Footer: "&3on the &2Server: &4ServerName or Network Name!"
 ##############################################################
 #                   Setting the TabList                      #
 #         %date% set the current date. In TabHeader          #

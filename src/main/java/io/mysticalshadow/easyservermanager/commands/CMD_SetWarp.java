@@ -10,6 +10,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.Player;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CMD_SetWarp implements CommandExecutor {
 
@@ -34,6 +35,9 @@ public class CMD_SetWarp implements CommandExecutor {
                     String warpname = args[0];
                     String path = plugin.ServerName + "." + "WarpManager" + "." + warpname;
                     if (!WarpManager.config.isSet(path)) {
+                        List<String> warps = WarpManager.config.getStringList(plugin.ServerName + ".ListWarps");
+                        warps.add(args[0]);
+                        WarpManager.config.set(plugin.ServerName + ".ListWarps", warps);
                         String world = p.getWorld().getName();
                         double x = p.getLocation().getX();
                         double y = p.getLocation().getY();
