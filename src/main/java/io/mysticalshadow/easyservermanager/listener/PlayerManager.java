@@ -1,16 +1,12 @@
 package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
-import io.mysticalshadow.easyservermanager.api.ItemAPI;
 import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
-import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,15 +17,11 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class PlayerManager implements Listener {
 
@@ -77,7 +69,6 @@ public class PlayerManager implements Listener {
             config.set(p.getName() + ".Level", 0);
             config.set(p.getName() + ".Jail.Status", false);
             config.set(p.getName() + ".PvP.Activated", false);
-            config.set(p.getName() + ".LastLogin", null);
             config.set(p.getName() + ".Homes", null);
             try {
                 config.save(file);
@@ -85,22 +76,6 @@ public class PlayerManager implements Listener {
                 throw new RuntimeException(ex);
             }
         }
-        config.set(p.getName() + ".LastLogin.Date", null);
-        config.set(p.getName() + ".LastLogin.Clock", null);
-        try {
-            config.save(file);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                for (Player all : Bukkit.getOnlinePlayers()) {
-                    ScoreboardManager.setBoard(all);
-                    ScoreboardManager.updateBoard(all);
-                }
-            }
-        }.runTaskLater(plugin, 1L);
         try {
             config.load(file);
         } catch (IOException ex) {
@@ -135,28 +110,6 @@ public class PlayerManager implements Listener {
     }
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                for (Player all : Bukkit.getOnlinePlayers()) {
-                    ScoreboardManager.setBoard(all);
-                    ScoreboardManager.updateBoard(all);
-                }
-            }
-        }.runTaskLater(plugin, 1L);
-        File file = new File("plugins//EasyServerManager//Players", e.getPlayer().getUniqueId() + ".yml");
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-        String orginalDate = date.format(new Date());
-        SimpleDateFormat hour = new SimpleDateFormat("dd/MM/yyyy");
-        String clock = hour.format(new Date());
-        config.set(e.getPlayer().getName() + ".LastLogin.Date", orginalDate);
-        config.set(e.getPlayer().getName() + ".LastLogin.Clock", clock);
-        try {
-            config.save(file);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
         if (plugin.AllowQuitMessage == true) {
             String quit = plugin.QuitMessage;
             quit = quit.replace("%player%", e.getPlayer().getName());

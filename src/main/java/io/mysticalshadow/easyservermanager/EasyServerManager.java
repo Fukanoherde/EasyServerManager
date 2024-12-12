@@ -333,8 +333,6 @@ public class EasyServerManager extends JavaPlugin {
     public String NoWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.NoWordsBlockedMSG"));
     public String ThisWordIsNotBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsNotBlocked"));
     public String ThisWordIsBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsBlocked"));
-    public String YouBecomeTheKitMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouBecomeTheKitMSG"));
-    public String KitNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KitNotExistMSG"));
     public String ThisWordIsAlreadyBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsAlreadyBlocked"));
     public String AddedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedWordsBlockedMSG"));
     public String RemovedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedWordsBlockedMSG"));

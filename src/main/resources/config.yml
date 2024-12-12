@@ -183,8 +183,6 @@ Messages:
   BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
   YouCanNowSeeCommandsMSG: "&2You can now see the commands that other players are executing!"
   YouCannotSeeCommandsMSG: "&4You can no longer see what orders the other players are executing"
-  YouBecomeTheKitMSG: "&2You become successfully the &3%kit% &2Kit!"
-  KitNotExistMSG: "&4This kit is not exist!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -292,30 +290,6 @@ Reward:
     Item: "NETHERITE_BLOCK"
     Name: "Test"
     Amount: 50
-##############################################################
-#                  Setting the Starterkit!                   #
-##############################################################
-Kit:
-  Starter:
-    KitName: "Starter"
-    Permission: "easyservermanager.kit.starter"
-    Allow: true
-    Helmet:
-      Item: "DIAMOND_HELMET"
-      Amount: 1
-      Name: "&6✪ &3Starter Helmet &6✪"
-    Chestplate:
-      Item: "DIAMOND_CHESTPLATE"
-      Amount: 1
-      Name: "&6✪ &3Starter Chestplate &6✪"
-    Leggins:
-      Item: "DIAMOND_LEGGINGS"
-      Amount: 1
-      Name: "&6✪ &3Starter Leggins &6✪"
-    Boots:
-      Item: "DIAMOND_BOOTS"
-      Amount: 1
-      Name: "&6✪ &3Starter Boots &6✪"
 ##############################################################
 #                   Setting the JoinTitle                    #
 ##############################################################

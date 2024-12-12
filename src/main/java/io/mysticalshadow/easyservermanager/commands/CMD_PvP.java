@@ -1,7 +1,6 @@
 package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
-import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -42,10 +41,6 @@ public class CMD_PvP implements CommandExecutor {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            for (Player all : Bukkit.getOnlinePlayers()) {
-                                ScoreboardManager.setBoard(all);
-                                ScoreboardManager.updateBoard(all);
-                            }
                             p.sendMessage(plugin.Prefix + plugin.DeactivatedYourselfPvPMSG);
                             return true;
                         } else {
@@ -75,10 +70,6 @@ public class CMD_PvP implements CommandExecutor {
                                 config.save(file);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
-                            }
-                            for (Player all : Bukkit.getOnlinePlayers()) {
-                                ScoreboardManager.setBoard(all);
-                                ScoreboardManager.updateBoard(all);
                             }
                             p.sendMessage(plugin.Prefix + plugin.ActivatedYourselfPvPMSG);
                             return true;

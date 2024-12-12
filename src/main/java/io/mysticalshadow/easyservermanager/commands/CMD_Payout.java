@@ -1,7 +1,6 @@
 package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
-import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -44,8 +43,6 @@ public class CMD_Payout implements CommandExecutor {
                             throw new RuntimeException(e);
                         }
                         p.setLevel(p.getLevel() + level);
-                        ScoreboardManager.setBoard(p);
-                        ScoreboardManager.updateBoard(p);
                         p.sendMessage(plugin.Prefix + plugin.PayoutSuccessfullyMSG);
                         return true;
                     } else {

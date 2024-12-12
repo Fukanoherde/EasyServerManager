@@ -1,7 +1,6 @@
 package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
-import io.mysticalshadow.easyservermanager.manager.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -62,10 +61,6 @@ public class CMD_Pay implements CommandExecutor {
                                     } catch (IOException e) {
                                         throw new RuntimeException(e);
                                     }
-                                    ScoreboardManager.setBoard(p);
-                                    ScoreboardManager.updateBoard(p);
-                                    ScoreboardManager.setBoard(t);
-                                    ScoreboardManager.updateBoard(t);
                                     p.sendMessage(plugin.Prefix + plugin.PayedLevelMSG);
                                     String becomFromPlayerLevel = plugin.PayedLevelAnnotherPlayerMSG;
                                     becomFromPlayerLevel = becomFromPlayerLevel.replace("%player%", p.getDisplayName());
