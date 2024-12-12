@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class CMD_Home implements CommandExecutor {
 
@@ -73,6 +74,7 @@ public class CMD_Home implements CommandExecutor {
             if (args.length == 2) {
                 if (args[0].equalsIgnoreCase("set")) {
                     if (!config.isSet(p.getName() + ".Homes." + args[1])) {
+                        List<String> homes = config.getStringList(p.getName() + ".ListHomes");
                         String world = p.getWorld().getName();
                         double x = p.getLocation().getX();
                         double y = p.getLocation().getY();
@@ -85,6 +87,8 @@ public class CMD_Home implements CommandExecutor {
                         config.set(p.getName() + ".Homes." + args[1] + ".z", z);
                         config.set(p.getName() + ".Homes." + args[1] + ".yaw", yaw);
                         config.set(p.getName() + ".Homes." + args[1] + ".pitch", pitch);
+                        homes.add(args[1]);
+                        config.set(p.getName() + ".ListHomes", homes);
                         try {
                             config.save(file);
                         } catch (IOException e) {
@@ -114,7 +118,10 @@ public class CMD_Home implements CommandExecutor {
                         } catch (InvalidConfigurationException e) {
                             throw new RuntimeException(e);
                         }
-                        if (config.getBoolean(p.getName() + ".Homes.")) {
+                        List<String> homes = config.getStringList(p.getName() + ".ListHomes");
+                        homes.remove(args[1]);
+                        config.set(p.getName() + ".ListHomes", homes);
+                        if (homes.isEmpty()) {
                             config.set(p.getName() + ".Homes", null);
                             try {
                                 config.save(file);
@@ -123,12 +130,6 @@ public class CMD_Home implements CommandExecutor {
                             }
                         } else {
                             config.set(p.getName() + ".Homes." + args[1], null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".world", null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".x", null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".y", null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".z", null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".yaw", null);
-                            config.set(p.getName() + ".Homes." + args[1] + ".pitch", null);
                             try {
                                 config.save(file);
                             } catch (IOException e) {
