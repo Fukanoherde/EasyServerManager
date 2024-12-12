@@ -101,26 +101,6 @@ public class PlayerManager implements Listener {
                 }
             }
         }.runTaskLater(plugin, 1L);
-        if (!p.hasPlayedBefore()) {
-            if (plugin.getConfig().getBoolean("Kit.Starter.Allow", Boolean.valueOf(true))) {
-            ItemStack boots = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterBootsItem), plugin.StarterBootsAmount, 0, plugin.StarterBootsName);
-            ItemStack leggins = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterLegginsItem), plugin.StarterLegginsAmount, 0, plugin.StarterLegginsName);
-            ItemStack chestplate = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterChestplateItem), plugin.StarterChestplateAmount, 0, plugin.StarterChestplateName);
-            ItemStack helmet = ItemAPI.createItemNoEnch(Material.valueOf(plugin.StarterHelmetItem), plugin.StarterHelmetAmount, 0, plugin.StarterHelmetName);
-            ItemStack axe = new ItemStack(Material.WOODEN_AXE, 1);
-            ItemStack sword = new ItemStack(Material.WOODEN_SWORD, 1);
-            ItemStack pickaxe = new ItemStack(Material.WOODEN_PICKAXE, 1);
-            ItemStack steak = new ItemStack(Material.COOKED_BEEF, 64);
-            p.getInventory().setBoots(boots);
-            p.getInventory().setLeggings(leggins);
-            p.getInventory().setChestplate(chestplate);
-            p.getInventory().setHelmet(helmet);
-            p.getInventory().addItem(axe);
-            p.getInventory().addItem(sword);
-            p.getInventory().addItem(pickaxe);
-            p.getInventory().addItem(steak);
-            }
-        }
         try {
             config.load(file);
         } catch (IOException ex) {

@@ -183,6 +183,8 @@ Messages:
   BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
   YouCanNowSeeCommandsMSG: "&2You can now see the commands that other players are executing!"
   YouCannotSeeCommandsMSG: "&4You can no longer see what orders the other players are executing"
+  YouBecomeTheKitMSG: "&2You become successfully the &3%kit% &2Kit!"
+  KitNotExistMSG: "&4This kit is not exist!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -295,6 +297,7 @@ Reward:
 ##############################################################
 Kit:
   Starter:
+    KitName: "Starter"
     Permission: "easyservermanager.kit.starter"
     Allow: true
     Helmet:

@@ -104,6 +104,7 @@ public class EasyServerManager extends JavaPlugin {
                 throw new RuntimeException(e);
             }
         }
+
         // Listener \\
         this.playerManager = new PlayerManager(this);
         this.serverManager = new ServerManager(this);
@@ -332,6 +333,8 @@ public class EasyServerManager extends JavaPlugin {
     public String NoWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.NoWordsBlockedMSG"));
     public String ThisWordIsNotBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsNotBlocked"));
     public String ThisWordIsBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsBlocked"));
+    public String YouBecomeTheKitMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.YouBecomeTheKitMSG"));
+    public String KitNotExistMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.KitNotExistMSG"));
     public String ThisWordIsAlreadyBlocked = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.ThisWordIsAlreadyBlocked"));
     public String AddedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.AddedWordsBlockedMSG"));
     public String RemovedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.RemovedWordsBlockedMSG"));
@@ -430,25 +433,6 @@ public class EasyServerManager extends JavaPlugin {
     // Tablist \\
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Header"));
     public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("TabList.Footer"));
-
-    // starter_Kit \\
-    public String PermStarterKit = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Permission"));
-    public boolean AllowStarterKit = getConfig().getBoolean("Kit.Stater.Allow");
-    public String StarterHelmetItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Helmet.Item"));
-    public int StarterHelmetAmount = getConfig().getInt("Kit.Starter.Helmet.Amount");
-    public String StarterHelmetName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Helmet.Name"));
-
-    public String StarterChestplateItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Chestplate.Item"));
-    public int StarterChestplateAmount = getConfig().getInt("Kit.Starter.Chestplate.Amount");
-    public String StarterChestplateName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Chestplate.Name"));
-
-    public String StarterLegginsItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Leggins.Item"));
-    public int StarterLegginsAmount = getConfig().getInt("Kit.Starter.Leggins.Amount");
-    public String StarterLegginsName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Leggins.Name"));
-
-    public String StarterBootsItem = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Boots.Item"));
-    public int StarterBootsAmount = getConfig().getInt("Kit.Starter.Boots.Amount");
-    public String StarterBootsName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Kit.Starter.Boots.Name"));
 
     // MySQL \\
     public String User = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MySQL.Username"));
