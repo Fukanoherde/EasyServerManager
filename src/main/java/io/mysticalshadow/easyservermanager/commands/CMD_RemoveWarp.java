@@ -51,14 +51,19 @@ public class CMD_RemoveWarp implements CommandExecutor {
                         p.sendMessage(plugin.Prefix + warpRemove);
                         return true;
                     } else {
-                        p.sendMessage(plugin.Prefix + plugin.WarpDoesNotExistMSG);
+                        String warpDoesNotRemove = plugin.WarpDoesNotExistMSG;
+                        warpDoesNotRemove = warpDoesNotRemove.replace("%warp%", args[0]);
+                        p.sendMessage(plugin.Prefix + warpDoesNotRemove);
+                        return true;
                     }
                 }
             } else {
                 p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
+                return true;
             }
         } else {
             sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
+            return true;
         }
         return false;
     }
