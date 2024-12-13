@@ -341,9 +341,17 @@ public class EasyServerManager extends JavaPlugin {
     public String ThisWordIsAlreadyBlocked = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.ThisWordIsAlreadyBlocked"))));
     public String AddedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.AddedWordsBlockedMSG"))));
     public String RemovedWordsBlockedMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RemovedWordsBlockedMSG"))));
+    public String AnnotherPlayerWarnsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.AnnotherPlayerWarnsMSG"))));
     public String YouCanNowSeeCommandsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.YouCanNowSeeCommandsMSG"))));
+    public String YourWarnedThePlayerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.YourWarnedThePlayerMSG"))));
     public String YouCannotSeeCommandsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.YouCannotSeeCommandsMSG"))));
+    public String WarnReasonAlreadyListedMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WarnReasonAlreadyListedMSG"))));
+    public String SuccessfullyRemoveWarnMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.SuccessfullyRemoveWarnMSG"))));
     public String WarpListMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WarpListMSG"))));
+    public String PlayerHasNoWarnWithThisReasonMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerHasNoWarnWithThisReasonMSG"))));
+    public String PlayerKickedWarnMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerKickedWarnMSG"))));
+    public String PlayerWarnKickMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerWarnKickMSG"))));
+    public String PlayerHaveNoWarnsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerHaveNoWarnsMSG"))));
     public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WeatherChangedThunderMSG"))));
     public String WarpsNotExistOnServerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WarpsNotExistOnServerMSG"))));
 
@@ -505,5 +513,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PermsWorld = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorld")));
     public String PermsBurn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsBurn")));
     public String PermsWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWarn")));
+    public String PermsNotifyWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsNotifyWarn")));
+    public String PermsGetWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsGetWarn")));
+    public String PermsRemoveWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsRemoveWarn")));
     public String PermsEnableSeeCommands = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsEnableSeeCommands")));
 }
