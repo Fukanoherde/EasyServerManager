@@ -19,6 +19,7 @@ EasyServerManager:
   SaveType: "file"
   ServerName: "SiedlerMC"
   MaxSaveLevel: 2500
+  MaxWarnsBeforeKick: 4
 ####################################################################
 #                        Setting Messages                          #
 #  Alias "%player%" define the Player on the Join or Quit message  #
@@ -354,6 +355,7 @@ Perms:
   PermCensor: "easyservermanager.censor.add"
   PermsBurn: "easyservermanager.burn"
   PermsEnableSeeCommands: "easyservermanager.seecommands"
+  PermsWarn: "easyservermanager.warn"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

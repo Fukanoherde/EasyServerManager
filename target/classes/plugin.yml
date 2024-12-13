@@ -56,12 +56,8 @@ commands:
     description: You can youre level from the database payout
   bank:
     description: You can see amount level on your bank
-  strike:
+  warn:
     description: You can Warning a annother player
-  strikes:
-    description: You can see Strikes on the Player
-  removestrike:
-    description: You can remove strike from the player
   god:
     description: Make players god mode
   maintenance:

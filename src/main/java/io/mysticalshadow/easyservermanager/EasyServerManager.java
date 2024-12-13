@@ -73,6 +73,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Burn cmdBurn;
     private CMD_CommandSee cmdCommandSee;
     private CMD_ListWarps cmdListWarps;
+    private CMD_Warn cmdWarn;
 
     @Override
     public void onEnable() {
@@ -154,6 +155,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdBurn = new CMD_Burn(this);
         this.cmdCommandSee = new CMD_CommandSee(this);
         this.cmdListWarps = new CMD_ListWarps(this);
+        this.cmdWarn = new CMD_Warn(this);
 
         // Enable Message \\
 
@@ -190,6 +192,7 @@ public class EasyServerManager extends JavaPlugin {
     public boolean AllowPlayTeleportSound = getConfig().getBoolean("EasyServerManager.AllowPlayTeleportSound");
     public boolean AllowJoinTitle = getConfig().getBoolean("EasyServerManager.AllowJoinTitle");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
+    public int MaxWarnsBeforeKick = getConfig().getInt("EasyServerManager.MaxWarnsBeforeKick");
     public int MaxSaveLevel = getConfig().getInt("EasyServerManager.MaxSaveLevel");
     public String SaveType = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("EasyServerManager.SaveType")));
     public String ServerName = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("EasyServerManager.ServerName")));
@@ -501,5 +504,6 @@ public class EasyServerManager extends JavaPlugin {
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermSeePlugins")));
     public String PermsWorld = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorld")));
     public String PermsBurn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsBurn")));
+    public String PermsWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWarn")));
     public String PermsEnableSeeCommands = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsEnableSeeCommands")));
 }
