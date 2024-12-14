@@ -207,7 +207,6 @@ Messages:
   YouCloseReportMSG: "&2Your successfully closed this report §3%player% %reason%&2!"
   ReportsFromThePlayerMSG: "&2Reports from the player &3%player% &2"
   ThePlayerClosedReportMSG: "&2The player &3%player% &2has closed the following report. &3%reason%"
-  YouGiveThePlayerHeadMSG: "&2Your successfully given the player head from &3%player%&2!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################

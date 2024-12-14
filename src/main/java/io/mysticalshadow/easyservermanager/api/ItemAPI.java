@@ -19,12 +19,11 @@ public class ItemAPI {
     public static ItemStack createItemEnch(Material mat, int amount, String DisplayName, int shortid, Enchantment ench, int level) {
         return null;
     }
-    public static ItemStack createPlayerHead(String Owner, String name, int amount, int shortId, String DisplayName) {
-        ItemStack skull = new ItemStack(Material.LEGACY_SKULL_ITEM, amount);
+    public static ItemStack createPlayerHead(String Owner, int amount, int shortId, String DisplayName) {
+        ItemStack skull = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta skullmeta = (SkullMeta) skull.getItemMeta();
         skullmeta.setOwner(Owner);
         skullmeta.setDisplayName(DisplayName);
-        skullmeta.setDisplayName(name);
         return skull;
     }
 }

@@ -1,12 +1,14 @@
 package io.mysticalshadow.easyservermanager.listener;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
+import io.mysticalshadow.easyservermanager.api.ItemAPI;
 import io.mysticalshadow.easyservermanager.commands.CMD_GodMode;
 import io.mysticalshadow.easyservermanager.manager.MaintenanceManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -99,6 +101,7 @@ public class PlayerManager implements Listener {
                 p.sendMessage(plugin.Prefix + "§4The jail Location does not Found!");
             }
         }
+        p.getInventory().addItem(ItemAPI.createPlayerHead(p.getName(),1, 0, "Test"));
         if (plugin.AllowJoinMessage == true) {
             String join = plugin.JoinMessage;
             join = join.replace("%player%", e.getPlayer().getName());

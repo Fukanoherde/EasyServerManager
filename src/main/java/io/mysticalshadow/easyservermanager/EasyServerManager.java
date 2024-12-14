@@ -75,7 +75,6 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_ListWarps cmdListWarps;
     private CMD_Warn cmdWarn;
     private CMD_Report cmdReport;
-    private CMD_Skull cmdSkull;
 
     @Override
     public void onEnable() {
@@ -168,7 +167,6 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdListWarps = new CMD_ListWarps(this);
         this.cmdWarn = new CMD_Warn(this);
         this.cmdReport = new CMD_Report(this);
-        this.cmdSkull = new CMD_Skull(this);
 
         // Enable Message \\
 
@@ -231,7 +229,6 @@ public class EasyServerManager extends JavaPlugin {
     public String WorldNotExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.WorldNotExistMSG")));
     public String FinishReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.FinishReportMSG")));
     public String ReportsFromThePlayerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportsFromThePlayerMSG")));
-    public String YouGiveThePlayerHeadMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouGiveThePlayerHeadMSG")));
     public String ThePlayerClosedReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ThePlayerClosedReportMSG")));
     public String YouCloseReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouCloseReportMSG")));
     public String ReportEditorFromThisReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportEditorFromThisReportMSG")));

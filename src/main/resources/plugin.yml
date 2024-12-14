@@ -104,5 +104,3 @@ commands:
     description: You can activate or deactivate see commands
   report:
     description: You can reporting a player
-  skull:
-    description: Give yourself a player head
