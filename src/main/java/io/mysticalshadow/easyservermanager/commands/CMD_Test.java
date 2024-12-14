@@ -2,6 +2,7 @@ package io.mysticalshadow.easyservermanager.commands;
 
 import io.mysticalshadow.easyservermanager.EasyServerManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,6 +23,14 @@ public class CMD_Test implements CommandExecutor {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (sender instanceof Player) {
+            Player p = (Player) sender;
+            File file = new File(plugin.getDataFolder(), "reports.yml");
+            YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+        } else {
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
+            return true;
+        }
         return false;
     }
 }

@@ -102,5 +102,5 @@ commands:
     description: Set a player to burning
   log:
     description: You can activate or deactivate see commands
-  kit:
-    description: You can activate or deactivate see commands
+  report:
+    description: You can reporting a player

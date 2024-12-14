@@ -74,6 +74,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_CommandSee cmdCommandSee;
     private CMD_ListWarps cmdListWarps;
     private CMD_Warn cmdWarn;
+    private CMD_Report cmdReport;
 
     @Override
     public void onEnable() {
@@ -82,6 +83,15 @@ public class EasyServerManager extends JavaPlugin {
         instance = this;
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveResource("config.yml", true);
+        }
+        File fileReports = new File(getDataFolder(), "reports.yml");
+        YamlConfiguration configReports = YamlConfiguration.loadConfiguration(fileReports);
+        if (!fileReports.exists()) {
+            try {
+                configReports.save(fileReports);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         try {
             MaintenanceManager.savecfg();
@@ -156,6 +166,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdCommandSee = new CMD_CommandSee(this);
         this.cmdListWarps = new CMD_ListWarps(this);
         this.cmdWarn = new CMD_Warn(this);
+        this.cmdReport = new CMD_Report(this);
 
         // Enable Message \\
 
@@ -517,4 +528,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PermsGetWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsGetWarn")));
     public String PermsRemoveWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsRemoveWarn")));
     public String PermsEnableSeeCommands = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsEnableSeeCommands")));
+    public String PermsListReports = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsListReports")));
+    public String PermsNotifyReports = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsNotifyReports")));
+    public String PermsCloseReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsCloseReport")));
+    public String PermsAcceptReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsAcceptReport")));
 }
