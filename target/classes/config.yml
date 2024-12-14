@@ -193,6 +193,20 @@ Messages:
   BurnPlayerMSG: "&2You successfully set the player &3%player% &2to burning!"
   YouCanNowSeeCommandsMSG: "&2You can now see the commands that other players are executing!"
   YouCannotSeeCommandsMSG: "&4You can no longer see what orders the other players are executing"
+  SuccessReportPlayerMSG: "&2Your successfully reported the player &3%player%&2!"
+  ReportReasonIsAlreadyExistMSG: "&4The player &c%player% &4is already reported with this reason &c%reason%&4!"
+  PlayerHaveNoReportsMSG: "&4The player &c%player% &4have no reports!"
+  PlayerHaveNoReportsWithThisReasonMSG: "&4The player &c%player% &4have no reports with the following reason &c%reason%&4!"
+  ReportAlreadyProgressingMSG: "&4The report is already in progressing!"
+  ReportAlreadyProgressingByMSG: "&2The report editor is §3%player%&2!"
+  WorldNotExistMSG: "&4The world does not exist!"
+  YouAcceptReportMSG: "&2You accepted the report §3%reason%&2!"
+  FinishReportMSG: "&2When you have finished this report following this command, &3/report close %player% %reason%&2!"
+  YouNotEditorFromThisReportMSG: "&4You are not the editor of this report!"
+  ReportEditorFromThisReportMSG: "&4The editor from this report is the §c%player%&4!"
+  YouCloseReportMSG: "&2Your successfully closed this report §3%player% %reason%&2!"
+  ReportsFromThePlayerMSG: "&2Reports from the player &3%player% &2"
+  ThePlayerClosedReportMSG: "&2The player &3%player% &2has closed the following report. &3%reason%"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################

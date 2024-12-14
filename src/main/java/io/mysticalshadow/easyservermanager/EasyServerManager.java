@@ -226,6 +226,19 @@ public class EasyServerManager extends JavaPlugin {
     public String YouDeactivatedGodAnnotherPlayerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouDeactivatedGodAnnotherPlayerMSG")));
     public String MOTDMaintenance = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.MOTDMaintenance")));
     public String SetWarpMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.SetWarpMSG")));
+    public String WorldNotExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.WorldNotExistMSG")));
+    public String FinishReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.FinishReportMSG")));
+    public String ReportsFromThePlayerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportsFromThePlayerMSG")));
+    public String ThePlayerClosedReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ThePlayerClosedReportMSG")));
+    public String YouCloseReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouCloseReportMSG")));
+    public String ReportEditorFromThisReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportEditorFromThisReportMSG")));
+    public String YouNotEditorFromThisReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouNotEditorFromThisReportMSG")));
+    public String YouAcceptReportMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouAcceptReportMSG")));
+    public String ReportAlreadyProgressingByMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportAlreadyProgressingByMSG")));
+    public String ReportAlreadyProgressingMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportAlreadyProgressingMSG")));
+    public String PlayerHaveNoReportsWithThisReasonMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.PlayerHaveNoReportsWithThisReasonMSG")));
+    public String PlayerHaveNoReportsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.PlayerHaveNoReportsMSG")));
+    public String ReportReasonIsAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.ReportReasonIsAlreadyExistMSG")));
     public String YourJailedHomeMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YourJailedHomeMSG")));
     public String YouTeleportToYourHomeMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.YouTeleportToYourHomeMSG")));
     public String HomeNotExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.HomeNotExistMSG")));
@@ -233,6 +246,7 @@ public class EasyServerManager extends JavaPlugin {
     public String WarpDoesNotExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.WarpDoesNotExistMSG")));
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.QuitMessage")));
     public String UseCommandMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.UseCommandMSG")));
+    public String SuccessReportPlayerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.SuccessReportPlayerMSG")));
     public String OnlyRealPlayer = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.OnlyRealPlayer")));
     public String WorldCreatedMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.WorldCreatedMSG")));
     public String WorldAlreadyExistMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Messages.WorldAlreadyExistMSG")));
