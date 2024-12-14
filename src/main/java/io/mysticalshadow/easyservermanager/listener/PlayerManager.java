@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class PlayerManager implements Listener {
 
@@ -38,7 +39,8 @@ public class PlayerManager implements Listener {
         Player p = e.getPlayer();
         String path = plugin.ServerName + ".";
         if (MaintenanceManager.config.getBoolean(path + "Maintenance", Boolean.valueOf(true))) {
-            if (p.hasPermission(plugin.PermMaintenanceJoin) || p.hasPermission(plugin.PermSternchen)) {
+            List<String> whitelistedPlayer = MaintenanceManager.config.getStringList(plugin.ServerName + ".Join.AllowList");
+            if (p.hasPermission(plugin.PermMaintenanceJoin) || p.hasPermission(plugin.PermSternchen) || whitelistedPlayer.contains(p.getName())) {
                 return;
             } else {
                 e.disallow(PlayerLoginEvent.Result.KICK_OTHER, plugin.KickPlayerWhenActivateMaintenance);
@@ -101,7 +103,6 @@ public class PlayerManager implements Listener {
                 p.sendMessage(plugin.Prefix + "§4The jail Location does not Found!");
             }
         }
-        p.getInventory().addItem(ItemAPI.createPlayerHead(p.getName(),1, 0, "Test"));
         if (plugin.AllowJoinMessage == true) {
             String join = plugin.JoinMessage;
             join = join.replace("%player%", e.getPlayer().getName());
