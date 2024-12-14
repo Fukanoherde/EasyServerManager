@@ -7,10 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CMD_Wetter implements CommandExecutor {
+public class CMD_Weather implements CommandExecutor {
 
     private EasyServerManager plugin;
-    public CMD_Wetter(EasyServerManager plugin) {
+    public CMD_Weather(EasyServerManager plugin) {
         this.plugin = plugin;
         Bukkit.getPluginCommand("weather").setExecutor(this);
     }

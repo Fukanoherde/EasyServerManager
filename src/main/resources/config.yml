@@ -174,7 +174,7 @@ Messages:
   DeniedRequestMSG: "&2Deny: /tpa deny &3%player%&2!"
   TpherePlayerMSG: "&2You have successfully teleported the player &3%%player &2to you!"
   WeatherChangedSunMSG: "&2The weather change to sun!"
-  WeatherChangedRainMSG: "&The weather change to rain!"
+  WeatherChangedRainMSG: "&2The weather change to rain!"
   WeatherChangedThunderMSG: "&2The weather change to thunder!"
   CurrentlyJailed: "&4You are currently Jailed!"
   PlayerKilledByPlayerMSG: "&8The player &3%player% &8has killed by &3%killer%&8!"

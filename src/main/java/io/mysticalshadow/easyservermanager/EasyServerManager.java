@@ -38,7 +38,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Teleport teleport;
     private CMD_Vanish cmdVanish;
     private CMD_Time cmdTime;
-    private CMD_Wetter cmdWetter;
+    private CMD_Weather cmdWetter;
     private CMD_Invsee cmdInvsee;
     private CMD_TPHere cmdTPHere;
     private CMD_Heal cmdHeal;
@@ -130,7 +130,7 @@ public class EasyServerManager extends JavaPlugin {
         this.teleport = new CMD_Teleport(this);
         this.cmdVanish = new CMD_Vanish(this);
         this.cmdTime = new CMD_Time(this);
-        this.cmdWetter = new CMD_Wetter(this);
+        this.cmdWetter = new CMD_Weather(this);
         this.cmdInvsee = new CMD_Invsee(this);
         this.cmdTPHere = new CMD_TPHere(this);
         this.cmdHeal = new CMD_Heal(this);
