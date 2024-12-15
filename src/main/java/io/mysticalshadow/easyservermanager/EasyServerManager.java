@@ -179,6 +179,8 @@ public class EasyServerManager extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§l ");
         Bukkit.getConsoleSender().sendMessage("§7Version: §e" + instance.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§7Authors: §e" + instance.getDescription().getAuthors());
+        Bukkit.getConsoleSender().sendMessage("§7E-Mail: §eshadowmystical0@gmail.com");
+        Bukkit.getConsoleSender().sendMessage("§7Discord: §emorphinedev");
         Bukkit.getConsoleSender().sendMessage("§7Status: §eAktiviert");
         Bukkit.getConsoleSender().sendMessage("§l  ");
         Bukkit.getConsoleSender().sendMessage("§9----------------------------------------");
@@ -192,7 +194,8 @@ public class EasyServerManager extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§l ");
         Bukkit.getConsoleSender().sendMessage("§7Version: §e" + instance.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§7Authors: §e" + instance.getDescription().getAuthors());
-        Bukkit.getConsoleSender().sendMessage("§7Discord: §4morphinedev");
+        Bukkit.getConsoleSender().sendMessage("§7E-Mail: §eshadowmystical0@gmail.com");
+        Bukkit.getConsoleSender().sendMessage("§7Discord: §emorphinedev");
         Bukkit.getConsoleSender().sendMessage("§7Status: §4Deaktiviert");
         Bukkit.getConsoleSender().sendMessage("§l  ");
         Bukkit.getConsoleSender().sendMessage("§9----------------------------------------");
