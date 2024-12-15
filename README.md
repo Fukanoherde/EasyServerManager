@@ -87,11 +87,17 @@ Rechte:
     -> Sternchenrechte -> easyservermanager.*
     -> SetWarp -> easyservermanager.warp.set
     -> RemoveWarp -> easyservermanager.warp.remove
+    -> Heal -> easyservermanager.heal
+    -> TPWarp -> easyservermanager.warp.tp
+    -> Alle rechte können auch in der config.yml umgestellt werden.
 Kompatibilität:
 
     Minecraft Versionen: 1.16 bis 1.21.4
 
 Voraussetzungen:
+
+    Java 21 oder höher
+Erläuterungen:
 
     Java 21 oder höher
 
@@ -107,3 +113,108 @@ Support:
 Für Fragen oder Unterstützung besuchen Sie unseren Support-Discord oder lesen Sie die Dokumentation auf unserer Webseite.
 
 Dieses Plugin bietet also grundlegende Funktionen, die für die meisten Minecraft-Server nützlich sind, ohne zu viele komplexe Features zu beinhalten. Es ist einfach zu installieren und eignet sich gut für Serverbetreiber, die nur die wesentlichen Funktionen benötigen.
+
+English Description:
+EasyServerManager is a simple and user-friendly plugin for Minecraft that provides basic server functionalities. It includes essential features such as command management, teleportation, world creation, and basic player interactions. Ideal for servers that want to quickly and easily integrate essential features.
+Features:
+
+    Command Management: A set of basic commands such as /spawn, /home, /tpa, and /msg that make the players' daily server experience easier.
+
+    Teleportation: Allows players to teleport to a set spawn point, to other players, or to custom home points.
+
+    World Creation: Offers simple, basic options to create worlds and also teleport to them.
+
+    Chat Management: Supports private messages between players as well as displaying messages in the chat to enhance the player experience. Also includes personalized rank prefixes. A chat filter is integrated as well, where words to be censored can be added using the command "/censor add <word>".
+Commands:
+
+    -> /gamemode <0, 1, 2, 3> or /gamemode <player> <0, 1, 2, 3> -> Set yours or those of other players in a different game mode..
+        -> Aliases: /gm
+    -> /kick <player> <reason> -> Kicked a player from the server.
+    -> /teleport <player> -> This allows you to teleport to another player.
+        -> Aliases: /tp
+    -> /vanish -> Sit in Vanish so that other players cannot see you without permission.
+        -> Aliases: /v
+    -> /time <day, night, midnight> -> Sets the time of day in the world where you are at the current time of day.
+    -> /weather <sun, rain, thunder> -> Sets the weather in the current world where you are in the respective weather type.
+    -> /invsee <player> -> This allows you to look into other players’ inventories.
+    -> /tphere <player> -> This allows them to teleport other players to themselves.
+    -> /heal or /heal <player> -> This allows them to heal themselves or other players.
+    -> /ping or /ping <player> -> This allows you to display your own ping or that of other players.
+    -> /alert <player> -> You can use this command to send a title message to other players.
+    -> /clear <player> -> This allows them to empty other players’ inventories.
+    -> /fly or /fly <player> -> This way you or other players can change the flight mode.
+    -> /tpa <player> -> This allows you to send other players a request to teleport to them.
+    -> /farm -> This allows you to teleport to the farm point. (It is important that you create a warp point with the name "Farm")
+    -> /spawn -> Teleports you to the server spawn. (It is important that you create a warp point with the name "Spawn")
+    -> /deposit <level> -> With this command you can withdraw levels you have saved yourself.
+        -> Aliases: /depo
+    -> /bank -> This allows you to see how many levels you have saved.
+    -> /warn -> This is how you can warn other players.
+    -> /god or /god <player> -> This way you can activate it for yourself or other players so that they do not take any damage.
+    -> /maintenance on -> This is how you can activate the maintenance work.
+    -> /maintenance off -> This is how you can deactivate the maintenance work.
+    -> /maintenance add <player> -> This way you can allow other players to join during maintenance.
+    -> /maintenance remove <player> -> This way you can revoke other players' permission to join during maintenance.
+    -> /setjail <jailname> -> This allows you to create a jail point.
+    -> /jail <player> <jailname> -> This allows them to jail other players.
+    -> /payout <level> -> This way you can retrieve levels that you have saved.
+    -> /home <homename> -> This allows them to teleport to their own home point.
+    -> /home set <homename> - This way you can create a home point.
+    -> /home remove <homename> This way you can delete your home point again.
+    -> /listhomes -> With this command you can display all your home points.
+    -> /reward -> This command allows you to collect a daily reward (if it is activated)
+    -> /pay <player> <level> -> With this command you can send your saved levels to other players.
+    -> /pvp on -> This allows you to activate your own PvP mode. This allows you to be attacked by other players.
+    -> /pvp off -> This allows them to deactivate their own PvP mode. This means they can no longer be attacked by other players.
+    -> /back -> This allows them to teleport to their final death point.
+    -> /level add <player> <level> -> This way they can level up themselves or other players.
+    -> /level remove <player> <level> -> This allows them to evade levels for themselves or other players.
+    -> /warp <warpname> -> This allows them to teleport to the warp points.
+    -> /setwarp <warpname> -> This allows you to create a new warp point.
+    -> /warpremove <warpname> -> This allows you to delete existing warp points.
+    -> /listwarps -> This allows you to display all existing warp points on the server.
+    -> /censor -> Lists all blocked words. These words will be censored in chat.
+    -> /censor add <word> -> This allows you to add words. These can then no longer be sent.
+    -> /censor remove <word> -> This allows you to remove words from the blocked list. These can then be sent.
+    -> /world create <worldname> <worldtype> This allows you to create worlds in the respective type. Possible types are normal, flat or large.
+    -> /world tp <worldname> -> This allows you to teleport yourself to the specified world.
+    -> /world remove <worldname> -> This allows you to delete worlds again.
+    -> /burn <player> -> This way they can set other players on fire.
+    -> /log -> This allows you to enable or disable the command log. This way you can see what commands others are executing.
+    -> /report add <player> <reason> -> This allows you to report other players.
+    -> /report list <player> -> This way you can see if a player has any open reports.
+    -> /report accept <player> <reason> -> This is how you can edit a report request. You will automatically be teleported to the creation point.
+    -> /report close <player> <reason> -> This way you can close a report that you have finished editing. This is important because only the player who is editing the report can close it.
+    -> /easyservermanager -> This way, all important information can be displayed.
+        -> Aliases: /esm
+    -> /easyservermanager restart now <time> -> This allows you to restart the server in a specified number of seconds.
+        -> Aliases: /esm restart now <time>
+    -> /tpall -> This allows them to teleport all players to them.
+
+Permissions:
+
+    -> All rights can also be changed in the config.yml.
+Compatibility:
+
+    Minecraft Versions: 1.16 to 1.21.4
+
+Requirements:
+
+    Java 21 or higher
+
+Explanation:
+
+    Java 21 or higher required.
+
+Installation:
+
+    Download the plugin from here.
+    Add the file to your server's plugins folder.
+    Restart the server to activate the plugin.
+    Configure the default options in the config.yml file as desired.
+
+Support:
+
+For questions or support, visit our Support Discord or read the documentation on our website.
+
+This plugin provides basic features that are useful for most Minecraft servers without too many complex options. It is easy to install and well-suited for server operators who only need the essential functions.
