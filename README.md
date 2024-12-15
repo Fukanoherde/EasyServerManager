@@ -82,13 +82,83 @@ Befehle:
     -> /easyservermanager restart now <zeit> -> So können sie den server in einer angegebener Sekunden zahl neustarten.
         -> Aliases: /esm restart now <zeit>
     -> /tpall -> So können sie alle Spieler/Spielerinnen zu sich teleportieren.
+    -> /enderchest <spieler> -> So können Sie in den Enderchesten anderer Spieler/Spielerinnen schauen.
+        -> Aliases: /ec <spieler>
+    -> /chatclear -> So können Sie den server chat leeren.
+        -> Aliases: /cc
 Rechte:
 
     -> Sternchenrechte -> easyservermanager.*
-    -> SetWarp -> easyservermanager.warp.set
-    -> RemoveWarp -> easyservermanager.warp.remove
-    -> Heal -> easyservermanager.heal
-    -> TPWarp -> easyservermanager.warp.tp
+    -> /setwarp -> easyservermanager.warp.set
+    -> /removewarp -> easyservermanager.warp.remove
+    -> /heal -> easyservermanager.heal
+    -> /warp -> easyservermanager.warp.tp
+    -> /heal <spieler> -> easyservermanager.heal.other
+    -> /chatclear -> easyservermanager.chatclear
+    -> /clear -> easyservermanager.clear
+    -> /enderchest -> easyservermanager.enderchest
+    -> /fly -> easyservermanager.fly
+    -> /fly <spieler> -> easyservermanager.fly.other
+    -> /gamemode -> easyservermanager.gamemode
+    -> /gamemode <spieler> -> easyservermanager.gamemode.other
+    -> /god -> easyservermanager.god
+    -> /god <spieler> -> easyservermanager.god.other
+    -> /invsee -> easyservermanager.invsee
+    -> /jail -> easyservermanager.jail
+    -> /world create <name> <typ> -> easyservermanager.world.create
+    -> /world tp <name> -> easyservermanager.world.tp
+    -> /world remove <name> -> easyservermanager.world.remove
+    -> /kick -> easyservermanager.kick
+    -> /level -> easyservermanager.level
+    -> /listhomes <spieler> -> easyservermanager.gethomes.other
+    -> /maintenance on  oder off -> easyservermanager.maintenance.activate
+    -> /maintenance add <spieler> -> easyservermanager.maintenance.add
+    -> /maintenance remove <spieler> -> easyservermanager.maintenance.remove
+    -> /ping <spieler> -> easyservermanager.ping
+    -> /setjail -> easyservermanager.setjail
+    -> /teleport <spieler> -> easyservermanager.teleport
+    -> /time -> easyservermanager.time
+    -> /tphere <spieler> -> easyservermanager.tphere
+    -> /weather -> easyservermanager.weather
+    -> /censor -> easyservermanager.censor
+    -> /burn <spieler> -> easyservermanager.burn
+    -> /log -> easyservermanager.seecommands
+    -> /warn add <spieler> grund> -> easyservermanager.warn
+    -> /warn get <spieler> -> easyservermanager.warn.get
+    -> /warn remove <spieler> <grund> -> easyservermanager.warn.remove
+    -> /report list <spieler> -> easyservermanager.report.list
+    -> /report close <spieler> <grund> -> easyservermanager.report.close
+    -> /report accept <spieler> <grund> -> easyservermanager.report.accept
+    -> /easyservermanager restart now -> easyservermanager.restart
+    -> /tpall -> easyservermanager.tpall
+    -> Report benachrichtung -> easyservermanager.report.notify
+    -> Warn benachrichtigung -> easyservermanager.warn.notify
+    -> Sehen von Plugins die auf dem Server laufen -> easyservermanager.plugins
+    -> Reward Benachrichtigun -> easyservermanager.reward.notify
+    -> Maintenance Join -> easyservermanager.maintenance.join
+    -> Chat Prefixe
+        Owner -> prefix.owner
+        CoOwner -> prefix.coowner
+        SrAdmin -> prefix.sradmin
+        Admin -> prefix.admin
+        SrDeveloper -> prefix.srdeveloper
+        Developer -> prefix.developer
+        Test-Developer -> prefix.testdeveloper
+        SrModerator -> prefix.srmod
+        Moderator -> prefix.mod
+        Test-Moderator -> prefix.testmoderator
+        SrSupporter -> prefix.srsupporter
+        Supporter -> prefix.supporter
+        Test-Supporter -> prefix.testsupporter
+        SrBuilder -> prefix.srbuilder
+        Builder -> prefix.builder
+        Test-Builder -> prefix.testbuilder
+        Freund -> prefix.friend
+        YouTuber -> prefix.youtuber
+        Streamer -> prefix.streamer
+        Premium Drei -> prefix.premiumthree
+        Premium Zwei -> prefix.premiumtwo
+        Premium eins -> prefix.premiumone
     -> Alle rechte können auch in der config.yml umgestellt werden.
 Kompatibilität:
 
@@ -110,6 +180,8 @@ Erläuterungen:
     RestartSystem -> So könnt ihr den Server mit einem Countdown neustarten. Die Kick nachricht könnt ihr ebenfalls in der config einstellen.
     ReloadSystem -> Hier könnt ihr einfach mit /rl oder /reload Den server neuladen. Wie im standard Minecraft. Nur ist da eine personalisierte nachricht zu sehen.
     GrundSystem -> Es kann soweit fast alles selbst eingestellt werden. MariaDB sowie MongoDB folgen noch als update. Dort können dann level, Reports, Verwarnungen usw. Gespeichert werden.
+    PrefixSystem -> Ihr könnt die Chat Prefixe selber umstellen.
+    Tablist und Join Titel -> Ihr könnt auch die Tablist sowie die Join Titel nachricht umstellen
 
 Installation:
 
@@ -225,6 +297,8 @@ Explanation:
     RestartSystem -> This system allows you to restart the server with a countdown. You can also customize the kick message displayed to players when the server restarts, via the configuration.
     ReloadSystem -> With this system, you can reload the server using commands like /rl or /reload. The reload process includes a personalized message instead of the default Minecraft message.
     GrundSystem -> This system seems to offer customization for almost everything. It mentions that future updates will integrate MariaDB and MongoDB, which will store data like levels, reports, warnings, and more.
+    PrefixSystem -> You can change the chat prefixes yourself.
+    Tablist and Join Title -> You can also change the tablist and the join title message
 
 Installation:
 

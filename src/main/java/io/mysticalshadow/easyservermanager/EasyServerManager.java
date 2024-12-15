@@ -550,7 +550,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PermPrefixPremiumTwo = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermPremiumTwoPrefix")));
     public String PermPrefixPremiumOne = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermPremiumOnePrefix")));
     public String PermSeePlugins = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermSeePlugins")));
-    public String PermsWorld = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorld")));
+    public String PermsWorldCreate = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorldCreate")));
     public String PermsBurn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsBurn")));
     public String PermsWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWarn")));
     public String PermsNotifyWarn = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsNotifyWarn")));
@@ -563,4 +563,8 @@ public class EasyServerManager extends JavaPlugin {
     public String PermsAcceptReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsAcceptReport")));
     public String PermsServerRestart = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsServerRestart")));
     public String PermsTPAll = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsTPAll")));
+    public String PermMaintenanceAdd = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermMaintenanceAdd")));
+    public String PermMaintenanceRemove = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermMaintenanceRemove")));
+    public String PermsWorldTP = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorldTP")));
+    public String PermsWorldRemove = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorldRemove")));
 }

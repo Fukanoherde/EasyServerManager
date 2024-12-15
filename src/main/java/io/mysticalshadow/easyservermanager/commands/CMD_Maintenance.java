@@ -64,7 +64,7 @@ public class CMD_Maintenance implements CommandExecutor {
         }
         if (args.length == 2) {
             if (args[0].equalsIgnoreCase("add")) {
-                if (sender.hasPermission("")) {
+                if (sender.hasPermission(plugin.PermMaintenanceAdd) || sender.hasPermission(plugin.PermSternchen)) {
                     String target = args[1];
                     try {
                         MaintenanceManager.config.load(MaintenanceManager.file);
@@ -99,7 +99,7 @@ public class CMD_Maintenance implements CommandExecutor {
         }
         if (args.length == 2) {
             if (args[0].equalsIgnoreCase("remove")) {
-                if (sender.hasPermission("")) {
+                if (sender.hasPermission(plugin.PermMaintenanceRemove) || sender.hasPermission(plugin.PermSternchen)) {
                     try {
                         MaintenanceManager.config.load(MaintenanceManager.file);
                     } catch (IOException e) {
