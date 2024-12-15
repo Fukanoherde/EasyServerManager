@@ -393,6 +393,9 @@ public class EasyServerManager extends JavaPlugin {
     public String RestartInTwoSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInTwoSecondsMSG"))));
     public String RestartInOneSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInOneSecondsMSG"))));
     public String RemoveWarnYourselfMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RemoveWarnYourselfMSG"))));
+    public String ReloadStartMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.ReloadStartMSG"))));
+    public String ReloadReadyMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.ReloadReadyMSG"))));
+    public String PlayerHasDeactivatedPVPMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerHasDeactivatedPVPMSG"))));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Title.Header"))));
@@ -567,4 +570,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermMaintenanceRemove = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermMaintenanceRemove")));
     public String PermsWorldTP = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorldTP")));
     public String PermsWorldRemove = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsWorldRemove")));
+    public String PermsReload = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsReload")));
 }

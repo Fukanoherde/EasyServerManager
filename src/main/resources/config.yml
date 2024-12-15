@@ -216,6 +216,9 @@ Messages:
   RestartInTwoSecondsMSG: "&2The server will restarting in &32 &2seconds!"
   RestartInOneSecondsMSG: "&2The server will restarting in &31 &2seconds!"
   RemoveWarnYourselfMSG: "&4You cannot remove a warn yourself!"
+  ReloadStartMSG: "&cPlease everyone stay standing!"
+  ReloadReadyMSG: "&aThe server has been reloaded!"
+  PlayerHasDeactivatedPVPMSG: "&4The player &c%player% &4has deactivated pvp!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -401,6 +404,7 @@ Perms:
   PermsAcceptReport: "easyservermanager.report.accept"
   PermsServerRestart: "easyservermanager.restart"
   PermsTPAll: "easyservermanager.tpall"
+  PermsReload: "easyservermanager.reload"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

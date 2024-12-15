@@ -1,7 +1,4 @@
-# EasyServerManager
-This plugin is subject to copyright protection. You can rewrite it but you still have to credit the author. If it turns out that this is not the case, this will lead to legal prosecution. This plugin is almost completely customizable. You can adjust a lot of things to your needs via the config.
-
-Plugin-Name: EasyServerManager
+# Plugin-Name: EasyServerManager
 
 Beschreibung:
 
@@ -131,6 +128,7 @@ Rechte:
     -> /report accept <spieler> <grund> -> easyservermanager.report.accept
     -> /easyservermanager restart now -> easyservermanager.restart
     -> /tpall -> easyservermanager.tpall
+    -> /reload oder /rl -> easyservermanager.reload
     -> Report benachrichtung -> easyservermanager.report.notify
     -> Warn benachrichtigung -> easyservermanager.warn.notify
     -> Sehen von Plugins die auf dem Server laufen -> easyservermanager.plugins

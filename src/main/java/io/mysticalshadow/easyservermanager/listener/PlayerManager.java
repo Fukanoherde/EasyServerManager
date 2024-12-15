@@ -234,7 +234,9 @@ public class PlayerManager implements Listener {
                     throw new RuntimeException(ex);
                 }
                 if (config.getBoolean(damaged.getName() + ".PvP.Activated", Boolean.valueOf(true))) {
-                    damager.sendMessage(plugin.Prefix + "§4The player §c" + damaged.getName() + " §4has deactivated pvp!");
+                    String playerHasDeactivatedPvP = plugin.PlayerHasDeactivatedPVPMSG;
+                    playerHasDeactivatedPvP = playerHasDeactivatedPvP.replace("%player%", damaged.getDisplayName());
+                    damager.sendMessage(plugin.Prefix + playerHasDeactivatedPvP);
                     e.setCancelled(true);
                 } else {
                     e.setCancelled(false);
@@ -474,17 +476,20 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void onReload(PlayerCommandPreprocessEvent e) {
         Player p = (Player) e.getPlayer();
-
         if (e.getMessage().equalsIgnoreCase("/rl")) {
-            e.setCancelled(true);
-            for (int i = 0; i <= 1000; i++) {
-                Bukkit.broadcastMessage(" ");
+            if (p.hasPermission(plugin.PermsReload) || p.hasPermission(plugin.PermSternchen)) {
+                e.setCancelled(true);
+                for (int i = 0; i <= 1000; i++) {
+                    Bukkit.broadcastMessage(" ");
+                }
+                Bukkit.broadcastMessage("§l ");
+                Bukkit.broadcastMessage(plugin.Prefix + plugin.ReloadStartMSG);
+                Bukkit.reload();
+                Bukkit.broadcastMessage(plugin.Prefix + plugin.ReloadReadyMSG);
+                Bukkit.broadcastMessage("§l  ");
+            } else {
+                p.sendMessage(plugin.Prefix + plugin.NoPermMessage);
             }
-            Bukkit.broadcastMessage("§l ");
-            Bukkit.broadcastMessage(plugin.Prefix + "§cPlease everyone stay standing!");
-            Bukkit.reload();
-            Bukkit.broadcastMessage(plugin.Prefix + "§aThe server has been reloaded!");
-            Bukkit.broadcastMessage("§l  ");
         }
     }
     @EventHandler
