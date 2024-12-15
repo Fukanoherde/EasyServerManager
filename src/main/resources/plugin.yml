@@ -2,9 +2,7 @@ name: EasyServerManager
 version: '3.0.1-SNAPSHOT'
 main: io.mysticalshadow.easyservermanager.EasyServerManager
 api-version: '1.21'
-authors:
-  - MysticalShadow_95
-  - Samus337
+author: MysticalShadow95
 commands:
   gamemode:
     aliases:
@@ -104,3 +102,7 @@ commands:
     description: You can activate or deactivate see commands
   report:
     description: You can reporting a player
+  easyservermanager:
+    aliases:
+      - esm
+    description: You can restart the server

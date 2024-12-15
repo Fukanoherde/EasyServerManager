@@ -14,6 +14,7 @@ EasyServerManager:
   AllowJoinMessage: true
   AllowQuitMessage: true
   AllowPlayTeleportSound: true
+  AllowPlayRestartSound: true
   AllowJoinTitle: true
   MaxPlayers: 10
   SaveType: "file"
@@ -207,6 +208,13 @@ Messages:
   YouCloseReportMSG: "&2Your successfully closed this report §3%player% %reason%&2!"
   ReportsFromThePlayerMSG: "&2Reports from the player &3%player% &2"
   ThePlayerClosedReportMSG: "&2The player &3%player% &2has closed the following report. &3%reason%"
+  PlayerKickWhenServerRestartMSG: "&3ServerName\n&aYou was kicked from the server!\n\n&4REASON: &cServer Restart\n&3been kicked by: &4System"
+  StartRestartCountdownMSG: "&2You successfully starting the restart countdown!"
+  RestartInTenSecondsMSG: "&2The server will restarting in &310 &2seconds!"
+  RestartInFiveSecondsMSG: "&2The server will restarting in &35 &2seconds!"
+  RestartInThreeSecondsMSG: "&2The server will restarting in &33 &2seconds!"
+  RestartInTwoSecondsMSG: "&2The server will restarting in &32 &2seconds!"
+  RestartInOneSecondsMSG: "&2The server will restarting in &31 &2seconds!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -385,6 +393,7 @@ Perms:
   PermsNotifyReports: "easyservermanager.report.notify"
   PermsCloseReport: "easyservermanager.report.close"
   PermsAcceptReport: "easyservermanager.report.accept"
+  PermsServerRestart: "easyservermanager.restart"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

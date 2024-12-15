@@ -75,6 +75,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_ListWarps cmdListWarps;
     private CMD_Warn cmdWarn;
     private CMD_Report cmdReport;
+    private CMD_EasyServerManager cmdEasyServerManager;
 
     @Override
     public void onEnable() {
@@ -167,6 +168,7 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdListWarps = new CMD_ListWarps(this);
         this.cmdWarn = new CMD_Warn(this);
         this.cmdReport = new CMD_Report(this);
+        this.cmdEasyServerManager = new CMD_EasyServerManager(this);
 
         // Enable Message \\
 
@@ -201,6 +203,7 @@ public class EasyServerManager extends JavaPlugin {
     public boolean AllowJoinMessage = getConfig().getBoolean("EasyServerManager.AllowJoinMessage");
     public boolean AllowQuitMessage = getConfig().getBoolean("EasyServerManager.AllowQuitMessage");
     public boolean AllowPlayTeleportSound = getConfig().getBoolean("EasyServerManager.AllowPlayTeleportSound");
+    public boolean AllowPlayRestartSound = getConfig().getBoolean("EasyServerManager.AllowPlayRestartSound");
     public boolean AllowJoinTitle = getConfig().getBoolean("EasyServerManager.AllowJoinTitle");
     public int MaxPlayer = getConfig().getInt("EasyServerManager.MaxPlayers");
     public int MaxWarnsBeforeKick = getConfig().getInt("EasyServerManager.MaxWarnsBeforeKick");
@@ -379,6 +382,13 @@ public class EasyServerManager extends JavaPlugin {
     public String PlayerHaveNoWarnsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerHaveNoWarnsMSG"))));
     public String WeatherChangedThunderMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WeatherChangedThunderMSG"))));
     public String WarpsNotExistOnServerMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.WarpsNotExistOnServerMSG"))));
+    public String PlayerKickWhenServerRestartMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.PlayerKickWhenServerRestartMSG"))));
+    public String StartRestartCountdownMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.StartRestartCountdownMSG"))));
+    public String RestartInTenSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInTenSecondsMSG"))));
+    public String RestartInFiveSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInFiveSecondsMSG"))));
+    public String RestartInThreeSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInThreeSecondsMSG"))));
+    public String RestartInTwoSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInTwoSecondsMSG"))));
+    public String RestartInOneSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInOneSecondsMSG"))));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Title.Header"))));
@@ -546,4 +556,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermsNotifyReports = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsNotifyReports")));
     public String PermsCloseReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsCloseReport")));
     public String PermsAcceptReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsAcceptReport")));
+    public String PermsServerRestart = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsServerRestart")));
 }
