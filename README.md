@@ -187,6 +187,12 @@ Installation:
     Fügen Sie die Datei in den plugins-Ordner Ihres Servers ein.
     Starten Sie den Server neu, um das Plugin zu aktivieren.
     Konfigurieren Sie die Standardoptionen in der config.yml nach Ihren Wünschen.
+Benutzung des Quellcodes:
+
+    Laden Sie das Plugin von hier herunter.
+    Fügen Sie die Datei in den plugins-Ordner Ihres Servers ein.
+    Starten Sie den Server neu, um das Plugin zu aktivieren.
+    Konfigurieren Sie die Standardoptionen in der config.yml nach Ihren Wünschen.
 
 Support:
 
