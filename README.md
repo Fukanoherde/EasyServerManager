@@ -189,16 +189,18 @@ Installation:
     Konfigurieren Sie die Standardoptionen in der config.yml nach Ihren Wünschen.
 Benutzung des Quellcodes:
 
-    Laden Sie das Plugin von hier herunter.
-    Fügen Sie die Datei in den plugins-Ordner Ihres Servers ein.
-    Starten Sie den Server neu, um das Plugin zu aktivieren.
-    Konfigurieren Sie die Standardoptionen in der config.yml nach Ihren Wünschen.
+    Der Quellcode ist Opensource. Dieser ist allerdings durch ein Copyright geschützt. Alle rechte unterliegen dem Author MysticalShadow95
+    Ihr dürft diesen Code verwenden und ein wenig umschreiben. Dazu gibt es allerdings ein paar regeln zu beachten.
+    1, Ihr seid dazu verpflichtet beim Umschreiben mich als Author drin stehen zu lassen. Ihr dürft euch dann mit eintragen aber mehr auch dies bezuüglich nicht.
+    2, Bei der Verwendung des Quellcodes werden sämtliche regeln und bedinungen akzeptiert. Bei nicht einhaltung behält der Author sich vor Rechtliche Schritte gegen Sie einzuleiten.
+    3, Dieser Code darf nicht für Illigale zwecke zwecks entfremdet werden.
+    4, Zur gewalt verleitende Zwecken ist der Code nicht gemacht. Achte demnach darauf das keine Gewalt verleitende dinge drin sind.
+    5, Solltest du dir den Quellcode runterladen akzeptierst die die Bedinungen. Ein nicht lesen schützt sie nicht vor der Strafe.
 
 Support:
 
-Für Fragen oder Unterstützung besuchen Sie unseren Support-Discord oder lesen Sie die Dokumentation auf unserer Webseite.
-
-Dieses Plugin bietet also grundlegende Funktionen, die für die meisten Minecraft-Server nützlich sind, ohne zu viele komplexe Features zu beinhalten. Es ist einfach zu installieren und eignet sich gut für Serverbetreiber, die nur die wesentlichen Funktionen benötigen.
+    Für Fragen oder Unterstützung Schreiben sie mir eine Mail unter der adresse. shadowmystical0@gmail.com
+    Dieses Plugin bietet also grundlegende Funktionen, die für die meisten Minecraft-Server nützlich sind, ohne zu viele komplexe Features zu beinhalten. Es ist einfach zu installieren und eignet sich gut für Serverbetreiber, die nur die wesentlichen Funktionen benötigen.
 
 English Description:
 EasyServerManager is a simple and user-friendly plugin for Minecraft that provides basic server functionalities. It includes essential features such as command management, teleportation, world creation, and basic player interactions. Ideal for servers that want to quickly and easily integrate essential features.
@@ -311,8 +313,17 @@ Installation:
     Restart the server to activate the plugin.
     Configure the default options in the config.yml file as desired.
 
+Using the source code:
+    
+    The source code is open source. However, it is protected by copyright. All rights are reserved by the author MysticalShadow95
+    You can use this code and rewrite it a little. However, there are a few rules to follow.
+    1, You are obliged to include me as the author when rewriting it. You can then register yourself, but that's all.
+    2, When using the source code, all rules and conditions are accepted. If you do not comply, the author reserves the right to take legal action against you.
+    3, This code may not be used for illegal purposes.
+    4, The code is not designed to incite violence. Therefore, make sure that there are no things in it that incite violence.
+    5, If you download the source code, you accept the conditions. Not reading it does not protect you from punishment.
+
 Support:
 
-For questions or support, visit our Support Discord or read the documentation on our website.
-
-This plugin provides basic features that are useful for most Minecraft servers without too many complex options. It is easy to install and well-suited for server operators who only need the essential functions.
+    For questions or support, send me an email at shadowmystical0@gmail.com
+    This plugin provides basic features that are useful for most Minecraft servers without too many complex options. It is easy to install and well-suited for server operators who only need the essential functions.
