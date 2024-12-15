@@ -32,8 +32,9 @@ public class CMD_Reward implements CommandExecutor {
             File file = new File("plugins//EasyServerManager//Players", p.getUniqueId() + ".yml");
             YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
             if (args.length == 0) {
-                SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-                String orginal = date.format(new Date());
+                if (plugin.ActivatedRewards == true) {
+                    SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+                    String orginal = date.format(new Date());
                     if (!config.getBoolean(p.getName() + ".Rewards.Pickup.Date." + orginal)) {
                         config.set((p.getName()) + ".Rewards.Pickup.Date." + orginal, true);
                         try {
@@ -136,11 +137,15 @@ public class CMD_Reward implements CommandExecutor {
                         p.sendMessage(plugin.Prefix + plugin.ThePathNotFoundMSG);
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "reward");
+                    p.sendMessage(plugin.Prefix + "§4Rewards Are disabled on this server!");
+                    return true;
                 }
             } else {
-            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
+                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "reward");
             }
+        } else {
+            sender.sendMessage(plugin.Prefix + plugin.OnlyRealPlayer);
+        }
         return false;
     }
 }

@@ -106,3 +106,5 @@ commands:
     aliases:
       - esm
     description: You can restart the server
+  tpall:
+    description: You can teleported all player to yourself

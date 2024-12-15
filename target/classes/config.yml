@@ -1,7 +1,7 @@
 ##############################################################
 # EasyServerManager                                          #
 # Created by MysticalShadow95                                #
-# Support on Discord http://discord.aniheaven.net/           #
+# Support on Discord morphinedev                             #
 # All right reserved by MysticalShadow95                     #
 # Minecraft version tested on 1.21.3                         #
 ##############################################################
@@ -215,6 +215,7 @@ Messages:
   RestartInThreeSecondsMSG: "&2The server will restarting in &33 &2seconds!"
   RestartInTwoSecondsMSG: "&2The server will restarting in &32 &2seconds!"
   RestartInOneSecondsMSG: "&2The server will restarting in &31 &2seconds!"
+  RemoveWarnYourselfMSG: "&4You cannot remove a warn yourself!"
 ##############################################################
 #                  Setting the Rank Prefix                   #
 ##############################################################
@@ -246,6 +247,7 @@ Rank:
 #                  Setting the RewardItems                   #
 ##############################################################
 Reward:
+  Activated: false
   One:
     Item: "NETHERITE_BLOCK"
     Name: "Test"
@@ -394,6 +396,7 @@ Perms:
   PermsCloseReport: "easyservermanager.report.close"
   PermsAcceptReport: "easyservermanager.report.accept"
   PermsServerRestart: "easyservermanager.restart"
+  PermsTPAll: "easyservermanager.tpall"
   PermOwnerPrefix: "prefix.owner"
   PermCoOwnerPrefix: "prefix.coowner"
   PermSrAdminPrefix: "prefix.sradmin"

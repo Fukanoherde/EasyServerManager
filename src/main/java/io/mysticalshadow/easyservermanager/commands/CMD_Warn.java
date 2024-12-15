@@ -173,50 +173,55 @@ public class CMD_Warn implements CommandExecutor {
                     if (args[0].equalsIgnoreCase("remove")) {
                         Player target = Bukkit.getPlayer(args[1]);
                         if (target != null) {
-                            File file = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
-                            YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-                            try {
-                                config.load(file);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            } catch (InvalidConfigurationException e) {
-                                throw new RuntimeException(e);
-                            }
-                            if (config.isSet(target.getName() + ".Warn." + args[2])) {
-                                List<String> removeWarn = config.getStringList(target.getName() + ".WarnList");
-                                removeWarn.remove(args[2]);
-                                config.set(target.getName() + ".WarnList", removeWarn);
+                            if (target != p) {
+                                File file = new File("plugins//EasyServerManager//Players", target.getUniqueId() + ".yml");
+                                YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
                                 try {
-                                    config.save(file);
+                                    config.load(file);
                                 } catch (IOException e) {
                                     throw new RuntimeException(e);
+                                } catch (InvalidConfigurationException e) {
+                                    throw new RuntimeException(e);
                                 }
-                                if (removeWarn.isEmpty()) {
-                                    config.set(target.getName() + ".Warn", null);
+                                if (config.isSet(target.getName() + ".Warn." + args[2])) {
+                                    List<String> removeWarn = config.getStringList(target.getName() + ".WarnList");
+                                    removeWarn.remove(args[2]);
+                                    config.set(target.getName() + ".WarnList", removeWarn);
                                     try {
                                         config.save(file);
                                     } catch (IOException e) {
                                         throw new RuntimeException(e);
                                     }
+                                    if (removeWarn.isEmpty()) {
+                                        config.set(target.getName() + ".Warn", null);
+                                        try {
+                                            config.save(file);
+                                        } catch (IOException e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    } else {
+                                        config.set(target.getName() + ".Warn." + args[2], null);
+                                        try {
+                                            config.save(file);
+                                        } catch (IOException e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }
+                                    String warnRemoved = plugin.SuccessfullyRemoveWarnMSG;
+                                    warnRemoved = warnRemoved.replace("%reason%", args[2]);
+                                    warnRemoved = warnRemoved.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + warnRemoved);
+                                    return true;
                                 } else {
-                                    config.set(target.getName() + ".Warn." + args[2], null);
-                                    try {
-                                        config.save(file);
-                                    } catch (IOException e) {
-                                        throw new RuntimeException(e);
-                                    }
+                                    String playerIsNotWarnedWithThisReason = plugin.PlayerHasNoWarnWithThisReasonMSG;
+                                    playerIsNotWarnedWithThisReason = playerIsNotWarnedWithThisReason.replace("%reason%", args[2]);
+                                    playerIsNotWarnedWithThisReason = playerIsNotWarnedWithThisReason.replace("%player%", target.getDisplayName());
+                                    p.sendMessage(plugin.Prefix + playerIsNotWarnedWithThisReason);
+                                    p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "warn get <player>");
+                                    return true;
                                 }
-                                String warnRemoved = plugin.SuccessfullyRemoveWarnMSG;
-                                warnRemoved = warnRemoved.replace("%reason%", args[2]);
-                                warnRemoved = warnRemoved.replace("%player%", target.getDisplayName());
-                                p.sendMessage(plugin.Prefix + warnRemoved);
-                                return true;
                             } else {
-                                String playerIsNotWarnedWithThisReason = plugin.PlayerHasNoWarnWithThisReasonMSG;
-                                playerIsNotWarnedWithThisReason = playerIsNotWarnedWithThisReason.replace("%reason%", args[2]);
-                                playerIsNotWarnedWithThisReason = playerIsNotWarnedWithThisReason.replace("%player%", target.getDisplayName());
-                                p.sendMessage(plugin.Prefix + playerIsNotWarnedWithThisReason);
-                                p.sendMessage(plugin.Prefix + plugin.UseCommandMSG + "warn get <player>");
+                                p.sendMessage(plugin.Prefix + plugin.RemoveWarnYourselfMSG);
                                 return true;
                             }
                         } else {

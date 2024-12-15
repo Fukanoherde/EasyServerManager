@@ -76,6 +76,7 @@ public class EasyServerManager extends JavaPlugin {
     private CMD_Warn cmdWarn;
     private CMD_Report cmdReport;
     private CMD_EasyServerManager cmdEasyServerManager;
+    private CMD_TPHereAll cmdTpHereAll;
 
     @Override
     public void onEnable() {
@@ -169,11 +170,12 @@ public class EasyServerManager extends JavaPlugin {
         this.cmdWarn = new CMD_Warn(this);
         this.cmdReport = new CMD_Report(this);
         this.cmdEasyServerManager = new CMD_EasyServerManager(this);
+        this.cmdTpHereAll = new CMD_TPHereAll(this);
 
         // Enable Message \\
 
         Bukkit.getConsoleSender().sendMessage("§l");
-        Bukkit.getConsoleSender().sendMessage("§9---------- §3§lEasy§b§lSiedler§3§lManager §9----------");
+        Bukkit.getConsoleSender().sendMessage("§9---------- §3§lEasy§b§lServer§3§lManager §9----------");
         Bukkit.getConsoleSender().sendMessage("§l ");
         Bukkit.getConsoleSender().sendMessage("§7Version: §e" + instance.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§7Authors: §e" + instance.getDescription().getAuthors());
@@ -186,10 +188,11 @@ public class EasyServerManager extends JavaPlugin {
     public void onDisable() {
 
         Bukkit.getConsoleSender().sendMessage("§l");
-        Bukkit.getConsoleSender().sendMessage("§9---------- §3§lEasy§b§lSiedler§3§lManager §9----------");
+        Bukkit.getConsoleSender().sendMessage("§9---------- §3§lEasy§b§lServer§3§lManager §9----------");
         Bukkit.getConsoleSender().sendMessage("§l ");
         Bukkit.getConsoleSender().sendMessage("§7Version: §e" + instance.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§7Authors: §e" + instance.getDescription().getAuthors());
+        Bukkit.getConsoleSender().sendMessage("§7Discord: §4morphinedev");
         Bukkit.getConsoleSender().sendMessage("§7Status: §4Deaktiviert");
         Bukkit.getConsoleSender().sendMessage("§l  ");
         Bukkit.getConsoleSender().sendMessage("§9----------------------------------------");
@@ -389,6 +392,7 @@ public class EasyServerManager extends JavaPlugin {
     public String RestartInThreeSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInThreeSecondsMSG"))));
     public String RestartInTwoSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInTwoSecondsMSG"))));
     public String RestartInOneSecondsMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RestartInOneSecondsMSG"))));
+    public String RemoveWarnYourselfMSG = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Messages.RemoveWarnYourselfMSG"))));
 
     // Title \\
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Title.Header"))));
@@ -420,6 +424,7 @@ public class EasyServerManager extends JavaPlugin {
     public String PrefixPlayer = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Rank.Player"))));
 
     // RewardSettings \\
+    public boolean ActivatedRewards = getConfig().getBoolean("Reward.Activated");
     public String OneItem = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Reward.One.Item"))));
     public String OneName = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Objects.requireNonNull(getConfig().getString("Reward.One.Name"))));
     public int OneAmount = getConfig().getInt("Reward.One.Amount");
@@ -557,4 +562,5 @@ public class EasyServerManager extends JavaPlugin {
     public String PermsCloseReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsCloseReport")));
     public String PermsAcceptReport = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsAcceptReport")));
     public String PermsServerRestart = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsServerRestart")));
+    public String PermsTPAll = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(getConfig().getString("Perms.PermsTPAll")));
 }
