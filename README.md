@@ -49,7 +49,43 @@ Funktionen:
         -> /setjail <jailname> -> Damit können sie einen Jail punkt erstellen.
         -> /jail <spieler> <jailname> -> So können sie anderen Spieler/Spielerinnen jailen.
         -> /payout <level> -> So können sie sich selbst Level abholen die sie eingespeichert haben.
-        -> 
+        -> /home <homename> -> So können sie sich zu ihrem eigenen Homepunkt teleportieren.
+        -> /home set <homename> - So können sie sich einen Homepunkt erstellen.
+        -> /home remove <homename> So können sie ihren Homepunkt wieder löschen.
+        -> /listhomes -> Mit diesem befehl lassen sich all ihre Homepunkte anzeigen.
+        -> /reward -> Dieses befehl ermöglicht euch eine Tägliche belohnung abzuholen (Wenn es aktiviert ist)
+        -> /pay <spieler> <level> -> Mit diesem Befehl können Sie anderen Spieler/Spielerinnen eingespeicherte Level von sich selbst senden.
+        -> /pvp on -> So können Sie ihren eigenen PvP Modus aktivieren. So können sie von anderen Spieler/Spielerinnen angegriffen werden.
+        -> /pvp off -> So können sie ihren eigenen PvP Modus deaktivieren. So können sie von anderen Spieler/Spielerinnen nicht mehr angegriffen werden.
+        -> /back -> So können sie sich zu ihrem letzten Todespunkt teleportieren.
+        -> /level add <spieler> <level> -> So können sie sich selbst oder auch anderen Spieler/Spielerinnen level geben.
+        -> /level remove <spieler> <level> -> So können sie sich oder auch anderen Spieler/Spielerinnnen level entziehen.
+        -> /warp <warpname> -> Damit können sie sich zu den Warp Punkten teleportieren.
+        -> /setwarp <warpname> -> Damit können sie einen neuen Warp Punkt erstellen.
+        -> /warpremove <warpname> -> Damit können sie bestehende Warp Punkte wieder löschen.
+        -> /listwarps -> Damit lassen sich alle bestehende Warp Punkte aufm Server anzeigen.
+        -> /censor -> Listet alle gesperrte wörter an. Diese wörter werden im Chat zensiert.
+        -> /censor add <wort> -> Damit lassen sich wörter hinzufügen. Diese können dann nicht mehr gesendet werden.
+        -> /censor remove <wort> -> Damit lassen sich wörter aus der Gesperrten liste entfernen. Diese können dann gesendet werden.
+        -> /world create <worldname> <worldtype> Damit lassen sich welten in dem jeweiligen Typ erstellen. Mögliche typen sind normal, flat oder large.
+        -> /world tp <worldname> -> Damit können Sie sich selber zu dem angegebenen welt teleportieren.
+        -> /world remove <worldname> -> Damit lassen sich welten wieder löschen.
+        -> /burn <spieler> -> So können sie anderen Spieler/Spielerinnen in brand setzen.
+        -> /log -> So können sie den Befehl Log aktivieren oder deaktivieren. So können sie sehen welche befehle andere ausführen.
+        -> /report add <spieler> <grund> -> Damit können Sie andere Spieler/Spielerinnen melden.
+        -> /report list <spieler> -> So können Sie sehen ob ein Spieler offene Reports hat.
+        -> /report accept <spieler> <grund> -> So können sie einen report anfrage bearbeiten. Sie werden automatisch an den erstellungspunkt teleportiert.
+        -> /report close <spieler> <grund> -> So können sie einen fertig bearbeiten report wieder Schließen. Wichtig da nur das nur der Spieler der den Report bearbeitet diesen wieder schließen kann.
+        -> /easyservermanager -> So lassen sich alle wichtigen Infos anzeigen.
+            -> Aliases: /esm
+        -> /easyservermanager restart now <zeit> -> So können sie den server in einer angegebener Sekunden zahl neustarten.
+            -> Aliases: /esm restart now <zeit>
+        -> /tpall -> So können sie alle Spieler/Spielerinnen zu sich teleportieren.
+Rechte:
+
+    -> Sternchenrechte -> easyservermanager.*
+    -> SetWarp -> easyservermanager.warp.set
+    -> RemoveWarp -> easyservermanager.warp.remove
 Kompatibilität:
 
     Minecraft Versionen: 1.16 bis 1.21.4
