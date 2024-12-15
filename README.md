@@ -99,7 +99,17 @@ Voraussetzungen:
     Java 21 oder höher
 Erläuterungen:
 
-    Java 21 oder höher
+    RewardSystem -> Mit diesem system können Sie einstellen was man täglich als belohnung bekommen kann.
+    WorldSystem -> Dies biete verinfachte möglichkeiten welten erstellen zu können.
+    ReportSystem -> So könnt ihr andere für Verstöße jegliche art melden. Diese werden in einer file gespeichert und können in nachhinein bearbeitet werden.
+    WarnSystem -> In diesem System könnt ihr Spieler verwarnen. Nach einer bestimmten anzahl der Verwarnungen wird der Spieler vom Server gekickt. Diese grenze kann in der config.yml eingestellt werden.
+    LevelSystem -> Du sowie die Spieler können so Level in einer Datei speichern. Dabei gibt es eine maximal grenze diese kann in der Config umgestellt werden.
+    PaySystem -> Das Pay system läuft über eure Level. Die level müssen eingespeichert sein. Ihr könnt dabei nicht mehr versenden als ihr eingespeichert habt.
+    MaintenanceSystem -> Ihr könnt die Wartung aktivieren und deaktivieren. Aber das ist noch nicht alles. So könnt ihr einem Spieler rechte geben auch während der Wartung joinen zu können. So müsst ihr dem Spieler nicht gleich Wartungs rechte geben.
+    BanSystem -> Dieses System wird noch in den kommenden Updates folgen.
+    RestartSystem -> So könnt ihr den Server mit einem Countdown neustarten. Die Kick nachricht könnt ihr ebenfalls in der config einstellen.
+    ReloadSystem -> Hier könnt ihr einfach mit /rl oder /reload Den server neuladen. Wie im standard Minecraft. Nur ist da eine personalisierte nachricht zu sehen.
+    GrundSystem -> Es kann soweit fast alles selbst eingestellt werden. MariaDB sowie MongoDB folgen noch als update. Dort können dann level, Reports, Verwarnungen usw. Gespeichert werden.
 
 Installation:
 
@@ -204,7 +214,17 @@ Requirements:
 
 Explanation:
 
-    Java 21 or higher required.
+    RewardSystem -> This system allows you to set daily rewards for players. It offers flexibility in defining what players can receive as a reward.
+    WorldSystem -> This system simplifies the process of creating and managing worlds on the server. It likely provides tools to create new worlds easily.
+    ReportSystem -> Players can report violations or issues (e.g., cheating, abuse) through this system. The reports are stored in a file and can be reviewed and edited later.
+    WarnSystem -> This system lets you issue warnings to players. If a player accumulates too many warnings, they will be kicked from the server. The threshold for this can be configured in the config.yml file.
+    LevelSystem -> Players, including the server administrator, can save and track their levels in a file. There is a maximum level cap, which can be adjusted in the config file.
+    PaySystem -> This system works based on player levels. Players can send currency or rewards, but only up to the amount they have saved. Levels must be stored for this system to function properly.
+    MaintenanceSystem -> This system allows you to activate or deactivate maintenance mode on the server. Additionally, you can grant specific players permission to join the server during maintenance without giving them full maintenance rights.
+    BanSystem -> The BanSystem will be introduced in future updates. It will likely allow you to ban players who violate rules.
+    RestartSystem -> This system allows you to restart the server with a countdown. You can also customize the kick message displayed to players when the server restarts, via the configuration.
+    ReloadSystem -> With this system, you can reload the server using commands like /rl or /reload. The reload process includes a personalized message instead of the default Minecraft message.
+    GrundSystem -> This system seems to offer customization for almost everything. It mentions that future updates will integrate MariaDB and MongoDB, which will store data like levels, reports, warnings, and more.
 
 Installation:
 
